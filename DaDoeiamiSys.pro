@@ -16,16 +16,40 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    eiamisyswindows.cpp
+    src/_APL/main/eiamisyswindows.cpp \
+    src/_APL/main/main.cpp
+
 
 HEADERS += \
-    eiamisyswindows.h
+    src/_APL/main/eiamisyswindows.h
+
 
 FORMS += \
-    eiamisyswindows.ui
+    src/_APL/main/eiamisyswindows.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+## 配置输出目录
+CONFIG(debug, debug|release){
+    DESTDIR = $$PWD/_output/debug
+}else{
+    DESTDIR = $$PWD/_output/release
+}
+
+## 输出文件分类
+build_type =
+CONFIG(debug, debug|release) {
+    build_type = debug
+} else {
+    build_type = release
+}
+
+DESTDIR     = $$build_type/out
+OBJECTS_DIR = $$build_type/obj
+MOC_DIR     = $$build_type/moc
+RCC_DIR     = $$build_type/rcc
+UI_DIR      = $$build_type/ui
