@@ -9,10 +9,10 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //主界面
+    /// 主界面
     EiamiSysWindows w;
 
-    //登录界面
+    /// 登录界面
     UserLoginForm _userLoginForm(&w);
     _userLoginForm.show();
 
