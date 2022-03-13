@@ -48,18 +48,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/_APL/main/eiamisyswindows.cpp \
+    src/_APL/userlogin/userloginform.cpp \
+    src/_BK/AccountEnt/AccountEnt.cpp \
+    src/_BK/BaseEnt/BaseEnt.cpp \
     src/_base/main.cpp
-
 
 HEADERS += \
     src/_APL/main/eiamisyswindows.h \
+    src/_APL/userlogin/userloginform.h \
+    src/_BK/AccountEnt/AccountEnt.h \
+    src/_BK/BaseEnt/BaseEnt.h \
     src/_base/export.h \
     src/_base/precompiled.h
 
-
 FORMS += \
-    src/_APL/main/eiamisyswindows.ui
-
+    src/_APL/main/eiamisyswindows.ui \
+    src/_APL/userlogin/userloginform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -68,5 +72,21 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 # Add Link Lib & DLL & a
 DISTFILES += \
+    .gitignore \
     3rd/QxOrm/lib/QxOrmd.dll \
-    3rd/QxOrm/lib/libQxOrmd.a
+    3rd/QxOrm/lib/libQxOrmd.a \
+    README.md
+
+# 分类存放输出文件
+build_type =
+CONFIG(debug, debug|release) {
+    build_type = debug
+} else {
+    build_type = release
+}
+
+DESTDIR     = $$build_type/exe
+OBJECTS_DIR = $$build_type/obj
+MOC_DIR     = $$build_type/moc
+RCC_DIR     = $$build_type/rcc
+UI_DIR      = $$build_type/ui
