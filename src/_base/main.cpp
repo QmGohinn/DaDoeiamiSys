@@ -1,8 +1,6 @@
-#include "eiamisyswindows.h"
+#include "../_APL/main/eiamisyswindows.h"
 
 #include <QApplication>
-
-#include "QxDao/QxDao.h"
 
 int main(int argc, char *argv[])
 {

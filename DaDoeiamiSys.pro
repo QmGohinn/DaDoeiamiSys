@@ -1,22 +1,32 @@
-## 添加Orm三方库
-##  ▼▼▼▼▼ 以下为自定义 ▼▼▼▼▼
-#_BUILDING_USER，通过它可以知道项目是否正在编译
-DEFINES += _BUILDING_APP
 
-#包含模块的pri文件，一些宏定义使用中需要用到
+##  ▼▼▼▼▼ 以下为自定义 ▼▼▼▼▼
+
+## 添加Orm三方库
+## 包含QxOrm模块的pri文件
 include($$PWD/3rd/QxOrm/QxOrm.pri)
 
-#添加源代码的头文件路劲，后面代码包含头文件的时候就可以使用相对路径了
-INCLUDEPATH += $$PWD/3rd/QxOrm/include
+DEFINES += _BUILDING_APP
 
-#添加编译好的动态库，QxOrm源码编译的动态库在QxOrm/lib目录中，最好编译debug、release两个版本
+# 预编译头文件
+!contains(DEFINES, _QX_NO_PRECOMPILED_HEADER) {
+    PRECOMPILED_HEADER = src/_base/precompiled.h
+}
+
+#添加源代码的头文件路劲和链接库路径
+INCLUDEPATH += $$PWD/3rd/QxOrm/include
 LIBS += -L$$PWD/3rd/QxOrm/lib
-## 根据编译环境不同链接不同的库
+
+DESTDIR = $$PWD/_output
+
+## 根据编译环境不同链接不同的库并生成不同的程序
 CONFIG(debug, debug|release) {
+TARGET = DaDoeiamiSysD
 LIBS += -lQxOrmd
 } else {
-LIBS +=  -lQxOrm
+TARGET = DaDoeiamiSys
+LIBS += -lQxOrm
 }
+
 ## ▲▲▲▲▲ *********** ▲▲▲▲▲
 
 QT       += core gui
@@ -38,11 +48,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/_APL/main/eiamisyswindows.cpp \
-    src/_APL/main/main.cpp
+    src/_base/main.cpp
 
 
 HEADERS += \
-    src/_APL/main/eiamisyswindows.h
+    src/_APL/main/eiamisyswindows.h \
+    src/_base/export.h \
+    src/_base/precompiled.h
 
 
 FORMS += \
@@ -54,23 +66,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-## 配置输出目录
-CONFIG(debug, debug|release){
-    DESTDIR = $$PWD/_output/debug
-}else{
-    DESTDIR = $$PWD/_output/release
-}
-
-## 输出文件分类
-build_type =
-CONFIG(debug, debug|release) {
-    build_type = debug
-} else {
-    build_type = release
-}
-
-DESTDIR     = $$build_type/out
-OBJECTS_DIR = $$build_type/obj
-MOC_DIR     = $$build_type/moc
-RCC_DIR     = $$build_type/rcc
-UI_DIR      = $$build_type/ui
+# Add Link Lib & DLL & a
+DISTFILES += \
+    3rd/QxOrm/lib/QxOrmd.dll \
+    3rd/QxOrm/lib/libQxOrmd.a
