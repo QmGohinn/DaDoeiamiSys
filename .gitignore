@@ -53,3 +53,6 @@ compile_commands.json
 
 # QxOrm Lib Use
 3rd
+
+# output file
+_output
