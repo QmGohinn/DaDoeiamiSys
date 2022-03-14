@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setWindowIcon(QIcon("../../../res/exelogo.ico"));
 
     /// 主界面
     EiamiSysWindows w;
@@ -22,6 +23,8 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    w.show();
+    /// 主界面显示
+    w.show(); w.m_trayIcon->show();
+
     return a.exec();
 }

@@ -20,10 +20,10 @@ DESTDIR = $$PWD/_output
 
 ## 根据编译环境不同链接不同的库并生成不同的程序
 CONFIG(debug, debug|release) {
-TARGET = DaDoeiamiSysD
+TARGET = UVisionD
 LIBS += -lQxOrmd
 } else {
-TARGET = DaDoeiamiSys
+TARGET = UVision
 LIBS += -lQxOrm
 }
 
@@ -75,7 +75,12 @@ DISTFILES += \
     .gitignore \
     3rd/QxOrm/lib/QxOrmd.dll \
     3rd/QxOrm/lib/libQxOrmd.a \
-    README.md
+    README.md \ \
+    res/applogo.ico \
+    res/exelogo.ico \
+    res/loginLogo.ico
+
+RC_ICONS += res/applogo.ico
 
 # 分类存放输出文件
 build_type =
