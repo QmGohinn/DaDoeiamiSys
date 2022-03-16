@@ -19,7 +19,7 @@ public:
     /// 托盘图标
     QSystemTrayIcon* m_trayIcon;
 
-/// 信号与槽函数
+    /// 信号与槽函数
 private slots:
     /// 登录按钮绑定的槽函数
     void on_m_LoginBtn_clicked();

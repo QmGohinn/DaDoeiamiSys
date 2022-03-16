@@ -1,0 +1,37 @@
+#ifndef ACCOUNTENT_H
+#define ACCOUNTENT_H
+
+#include "../../_BK/BaseEnt/BaseEnt.h"
+
+class UserEnt;
+
+/// 用户管理
+class QX_QM_EXPORT UserEnt : public BaseEnt
+{
+    QX_REGISTER_FRIEND_CLASS(UserEnt)
+    QX_PERSISTABLE_HPP(UserEnt)
+
+public:
+    UserEnt() : BaseEnt() {}
+    virtual ~UserEnt() {}
+    virtual void makeAbstractClass() { ; }
+
+    long id;
+    /// 账号
+    QString userName;
+    /// 密码
+    QString password;
+    /// 权限
+    /// 1:admin  2:operator
+    int role;
+};
+
+QX_REGISTER_HPP_QM(UserEnt, BaseEnt, 1)
+
+typedef QSharedPointer<UserEnt> UserEntPtr;
+typedef qx::QxCollection<long, UserEntPtr> List_UserEnt;
+
+Q_DECLARE_METATYPE(UserEntPtr);
+
+#endif
+/// ACCOUNTENT_H

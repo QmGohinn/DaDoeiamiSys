@@ -19,7 +19,6 @@ public:
 
     void onBeforeInsert(qx::dao::detail::IxDao_Helper* dao);
     void onBeforeUpdate(qx::dao::detail::IxDao_Helper* dao);
-
 };
 
 QX_REGISTER_ABSTRACT_CLASS(BaseEnt)
@@ -32,7 +31,6 @@ namespace detail {
 template <>
 struct QxDao_Trigger<BaseEnt>
 {
-
    static inline void onBeforeInsert(BaseEnt* t, qx::dao::detail::IxDao_Helper* dao) { if (t) { t->onBeforeInsert(dao); } }
    static inline void onBeforeUpdate(BaseEnt* t, qx::dao::detail::IxDao_Helper* dao) { if (t) { t->onBeforeUpdate(dao); } }
    static inline void onBeforeDelete(BaseEnt* t, qx::dao::detail::IxDao_Helper* dao) { Q_UNUSED(t); Q_UNUSED(dao); }
@@ -41,7 +39,6 @@ struct QxDao_Trigger<BaseEnt>
    static inline void onAfterUpdate(BaseEnt* t, qx::dao::detail::IxDao_Helper* dao)  { Q_UNUSED(t); Q_UNUSED(dao); }
    static inline void onAfterDelete(BaseEnt* t, qx::dao::detail::IxDao_Helper* dao)  { Q_UNUSED(t); Q_UNUSED(dao); }
    static inline void onAfterFetch(BaseEnt* t, qx::dao::detail::IxDao_Helper* dao)   { Q_UNUSED(t); Q_UNUSED(dao); }
-
 };
 
 } // namespace detail

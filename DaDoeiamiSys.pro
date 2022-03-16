@@ -30,6 +30,10 @@ LIBS += -lQxOrm
 ## ▲▲▲▲▲ *********** ▲▲▲▲▲
 
 QT       += core gui
+QT       += sql
+
+INCLUDEPATH += "D:/psql/include"
+LIBS += "D:/psql/lib/libpq.lib"
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -51,6 +55,7 @@ SOURCES += \
     src/_APL/userlogin/userloginform.cpp \
     src/_BK/AccountEnt/AccountEnt.cpp \
     src/_BK/BaseEnt/BaseEnt.cpp \
+    src/_base/DBSetup.cpp \
     src/_base/main.cpp
 
 HEADERS += \
@@ -58,6 +63,8 @@ HEADERS += \
     src/_APL/userlogin/userloginform.h \
     src/_BK/AccountEnt/AccountEnt.h \
     src/_BK/BaseEnt/BaseEnt.h \
+    src/_base/DBSetup.h \
+    src/_base/dbTableReg.hpp \
     src/_base/export.h \
     src/_base/precompiled.h
 
@@ -75,7 +82,7 @@ DISTFILES += \
     .gitignore \
     3rd/QxOrm/lib/QxOrmd.dll \
     3rd/QxOrm/lib/libQxOrmd.a \
-    README.md \ \
+    README.md \
     res/applogo.ico \
     res/exelogo.ico \
     res/loginLogo.ico
@@ -95,3 +102,6 @@ OBJECTS_DIR = $$build_type/obj
 MOC_DIR     = $$build_type/moc
 RCC_DIR     = $$build_type/rcc
 UI_DIR      = $$build_type/ui
+
+RESOURCES += \
+    Resource.qrc

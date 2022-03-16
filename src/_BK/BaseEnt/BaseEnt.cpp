@@ -16,7 +16,6 @@ template <> void register_class(QxClass<BaseEnt>& t)
    pData = t.data(& BaseEnt::userModification, "user_id");
 }}
 
-
 void BaseEnt::onBeforeInsert(qx::dao::detail::IxDao_Helper* dao)
 {
    Q_UNUSED(dao);
@@ -30,9 +29,6 @@ void BaseEnt::onBeforeInsert(qx::dao::detail::IxDao_Helper* dao)
 void BaseEnt::onBeforeUpdate(qx::dao::detail::IxDao_Helper* dao)
 {
    Q_UNUSED(dao);
-//    if(createdAt.isValid() || createdAt.isNull())
-//        createdAt = QDateTime::currentDateTime();
-
    updatedAt = QDateTime::currentDateTime();
    userModification = "1";
 }
