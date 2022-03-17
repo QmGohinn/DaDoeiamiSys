@@ -13,4 +13,5 @@ void DBSetup::DBInit()
     qx::QxSqlDatabase::getSingleton()->setUserName("uvision");
     qx::QxSqlDatabase::getSingleton()->setPassword("uvision");
     qx::QxSqlDatabase::getSingleton()->setPort(5432);
+
 };

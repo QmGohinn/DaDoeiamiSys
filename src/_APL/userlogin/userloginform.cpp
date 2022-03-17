@@ -1,18 +1,15 @@
+#include <QMenu>
+#include <QMessageBox>
+
 #include "userloginform.h"
 #include "ui_userloginform.h"
 #include "../../_base/DBSetup.h"
-
-#include <QMenu>
-#include <QMessageBox>
 
 UserLoginForm::UserLoginForm(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::UserLoginForm)
 {
     ui->setupUi(this);
-
-    /// 初始化数据库
-    DBSetup::DBInit();
 
     /// 为方便登录
     ui->m_AccountLineEdit->setText("qm");
@@ -42,21 +39,32 @@ UserLoginForm::~UserLoginForm()
 /// 登录界面的登录按钮槽函数
 void UserLoginForm::on_m_LoginBtn_clicked()
 {
-    if(ui->m_AccountLineEdit->text() == "qm" && ui->m_PasswordLineEdit->text() == "qm")
+
+    QString input_Account = ui->m_AccountLineEdit->text().trimmed();
+    QString input_Password = ui->m_PasswordLineEdit->text();
+
+    if(input_Account == "" || input_Password == "")
+    {
+        QMessageBox::critical(this, " ", "账号和密码不能为空!", QMessageBox::Yes);
+        return;
+    }
+
+    QString str_Query = QString("select from userlist where username = '%1' and password = '%2' ")
+            .arg(input_Account).arg(input_Password);
+    qx::QxSqlQuery query_User(str_Query);
+    qx::dao::call_query(query_User);
+
+    if(query_User.getSqlResultRowCount() > 0)
     {
         m_trayIcon->hide();
 
-        //        QThread::sleep(2);
+        // QThread::sleep(2);
 
-        //        ui->m_LoginBtn->setEnabled(0);
-        //        ui->m_LoginBtn->setText("登录中...");
+        // ui->m_LoginBtn->setEnabled(0);
+        // ui->m_LoginBtn->setText("登录中...");
 
-        QDialog::accept(); return;
-    }
-
-    if(ui->m_AccountLineEdit->text() == "" || ui->m_PasswordLineEdit->text() == "")
-    {
-        QMessageBox::critical(this, " ", "账号和密码不能为空!", QMessageBox::Yes);
+        QDialog::accept();
+        return;
     }
     else
     {

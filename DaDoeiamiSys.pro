@@ -32,8 +32,8 @@ LIBS += -lQxOrm
 QT       += core gui
 QT       += sql
 
-INCLUDEPATH += "D:/psql/include"
-LIBS += "D:/psql/lib/libpq.lib"
+#INCLUDEPATH += "D:/psql/include"
+#LIBS += "D:/psql/lib/libpq.lib"
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -80,7 +80,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 # Add Link Lib & DLL & a
 DISTFILES += \
     .gitignore \
+    3rd/QxOrm/lib/QxOrm.dll \
     3rd/QxOrm/lib/QxOrmd.dll \
+    3rd/QxOrm/lib/libQxOrm.a \
     3rd/QxOrm/lib/libQxOrmd.a \
     README.md \
     res/applogo.ico \
