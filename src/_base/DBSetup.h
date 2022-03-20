@@ -5,7 +5,7 @@ class DBSetup
 {
 public:
     DBSetup();
-    static void DBInit();
+    static void DBConnect();
 };
 
 #endif // DBSETUP_H

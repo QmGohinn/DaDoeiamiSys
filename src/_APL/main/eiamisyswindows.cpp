@@ -1,6 +1,8 @@
 #include "eiamisyswindows.h"
 #include "ui_eiamisyswindows.h"
 
+#include "../../_base/UVGlobal.h"
+
 #include <QTimer>
 
 EiamiSysWindows::EiamiSysWindows(QWidget *parent)
@@ -11,19 +13,32 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 
     /// 窗口最大化
     this->setWindowState(Qt::WindowMaximized);
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+    m_w1tab1Timer = new QTimer;
+    connect(m_w1tab1Timer, SIGNAL(timeout()), this, SLOT(updatew1tab1Chart()));
+    m_w1tab1Timer->start(1300);
+
+    m_buttomTxtTimer = new QTimer;
+    connect(m_buttomTxtTimer, SIGNAL(timeout()), this, SLOT(updateButtomTxt()));
+    m_buttomTxtTimer->start(5000);
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     /// 主界面时间主动刷新
     ui->m_TimeEdit->setDisplayFormat("yyyy-MM-dd hh:mm:ss ddd");
     ui->m_TimeEdit->setDateTime(QDateTime::currentDateTime());
-    QTimer* _timer_timeEdit = new QTimer;
-    connect(_timer_timeEdit, SIGNAL(timeout()), this, SLOT(slotUpdateTime()));
-    _timer_timeEdit->start(1000);
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+    m_timeEditTimer = new QTimer;
+    connect(m_timeEditTimer, SIGNAL(timeout()), this, SLOT(slotUpdateTime()));
+    m_timeEditTimer->start(1000);
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
     m_trayIcon->setIcon(QIcon("../../../res/applogo.ico"));
@@ -35,8 +50,8 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     m_trayIcon->setContextMenu(menu);
     connect(m_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(slotIconActivated(QSystemTrayIcon::ActivationReason)));
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 }
 
 EiamiSysWindows::~EiamiSysWindows()
@@ -64,4 +79,29 @@ void EiamiSysWindows::slotIconActivated(QSystemTrayIcon::ActivationReason reason
 void EiamiSysWindows::slotUpdateTime()
 {
     ui->m_TimeEdit->setDateTime(QDateTime::currentDateTime());
+}
+
+void EiamiSysWindows::updatew1tab1Chart()
+{
+    static int num = 0;
+    static int num2 = 100;
+
+    m_w1tab1Chart = new QChart();
+
+    QLineSeries* _lineSeries = new QLineSeries;
+    *_lineSeries << QPointF(11, 9) << QPointF(12, --num2) << QPointF(17, 6) << QPointF(18, ++num) << QPointF(20, 2);
+
+    m_w1tab1Chart->legend()->hide();
+    m_w1tab1Chart->addSeries(_lineSeries);
+    m_w1tab1Chart->createDefaultAxes();
+    m_w1tab1Chart->setTitle("设备巡检总览");
+
+    ui->m_w1tab1Chart->setChart(m_w1tab1Chart);
+    ui->m_w1tab1Chart->setRenderHint(QPainter::Antialiasing);
+}
+
+void EiamiSysWindows::updateButtomTxt()
+{
+    int _mark = rand() % 5 + 1;
+    ui->statusbar->showMessage(UVGlobal::g_mapIntQStr[_mark], 4000);
 }

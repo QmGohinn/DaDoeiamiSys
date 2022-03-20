@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QThreadPool>
 
-#include "../_base/DBSetup.h"
+#include "../_base/SysInit.h"
 
 /// 主界面
 #include "../_APL/main/eiamisyswindows.h"
@@ -16,14 +16,11 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     /// 设置Logo图片
-    a.setWindowIcon(QIcon("../../../res/exelogo.ico"));
+    a.setWindowIcon(QIcon("../../../res/applogo.ico"));
     /// 设置程序名字
     a.setApplicationName("UVision");
     /// 设置程序版本
     a.setApplicationVersion("1.0.1");
-
-    /// 初始化数据库 -- Connect PSql DB
-    DBSetup::DBInit();
 
     if(DBScratch::_BuildTableFlg)
     {
@@ -32,10 +29,13 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     qx::QxClassX::registerAllClasses(true);
     qx::QxCollection<QString, qx::IxClass *>*
             pAllClasses = qx::QxClassX::getSingleton()->getAll();
-
+///                                                                             注册所有的类
+///                                                                             设置最大线程数
     for (long k = 0; k < pAllClasses->count(); k++)
     {
         qx::IxClass * pClass = pAllClasses->getByIndex(k);
@@ -47,18 +47,16 @@ int main(int argc, char *argv[])
         /// where your assertion is thrown
         pClass->getAllValidator();
     }
-    ///
+    /// set the max thread num is 100
     QThreadPool::globalInstance()->setMaxThreadCount(200);
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
-    if (qx::dao::count<UserEnt>() == 0)
-    {
-        UserEntPtr u;
-        u.reset(new UserEnt());
-        u->userName = "qm";
-        u->password = "qm";
-        u->role = 1;
-        qx::dao::save(u);
-    }
+    /// 初始化数据库 -- Connect PSql DB
+    /// system do init
+    SysInit::Init();
+    /// Add a Default user named qm if user num == 0
+    SysInit::AddDefaultUser();
 
     /// 主界面
     EiamiSysWindows w;

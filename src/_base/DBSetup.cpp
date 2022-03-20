@@ -2,7 +2,7 @@
 
 DBSetup::DBSetup(){ ; };
 
-void DBSetup::DBInit()
+void DBSetup::DBConnect()
 {
     /// Clear all db before init
     qx::QxSqlDatabase::clearAllDatabases();

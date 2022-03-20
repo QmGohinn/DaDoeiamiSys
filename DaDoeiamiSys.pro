@@ -31,6 +31,7 @@ LIBS += -lQxOrm
 
 QT       += core gui
 QT       += sql
+QT       += charts
 
 #INCLUDEPATH += "D:/psql/include"
 #LIBS += "D:/psql/lib/libpq.lib"
@@ -58,6 +59,7 @@ SOURCES += \
     src/_BK/TotalShow/TotalShow.cpp \
     src/_base/DBSetup.cpp \
     src/_base/SysInit.cpp \
+    src/_base/UVGlobal.cpp \
     src/_base/main.cpp
 
 HEADERS += \
@@ -68,6 +70,7 @@ HEADERS += \
     src/_BK/TotalShow/TotalShow.h \
     src/_base/DBSetup.h \
     src/_base/SysInit.h \
+    src/_base/UVGlobal.h \
     src/_base/dbTableReg.hpp \
     src/_base/export.h \
     src/_base/precompiled.h

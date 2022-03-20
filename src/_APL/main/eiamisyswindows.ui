@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1080</height>
+    <height>1000</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1920</width>
-    <height>1080</height>
+    <height>1000</height>
    </size>
   </property>
   <property name="font">
    <font>
     <family>Arial</family>
-    <pointsize>11</pointsize>
+    <pointsize>9</pointsize>
    </font>
   </property>
   <property name="windowTitle">
@@ -27,10 +27,17 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_5">
-    <item row="1" column="2">
-     <widget class="Line" name="line_8">
+    <item row="2" column="0">
+     <widget class="Line" name="line_17">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="Line" name="line_11">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
@@ -42,12 +49,12 @@
          <widget class="QToolBox" name="toolBox">
           <property name="font">
            <font>
-            <family>Arial</family>
-            <pointsize>11</pointsize>
+            <family>Bahnschrift Light</family>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
@@ -55,7 +62,7 @@
              <x>0</x>
              <y>0</y>
              <width>298</width>
-             <height>415</height>
+             <height>377</height>
             </rect>
            </property>
            <attribute name="label">
@@ -68,7 +75,7 @@
              <x>0</x>
              <y>0</y>
              <width>298</width>
-             <height>415</height>
+             <height>377</height>
             </rect>
            </property>
            <attribute name="label">
@@ -87,6 +94,12 @@
            <widget class="QDateTimeEdit" name="m_TimeEdit">
             <property name="enabled">
              <bool>true</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>宋体</family>
+              <pointsize>10</pointsize>
+             </font>
             </property>
             <property name="mouseTracking">
              <bool>false</bool>
@@ -114,12 +127,12 @@
            <widget class="QTabWidget" name="tabWidget">
             <property name="font">
              <font>
-              <family>Arial</family>
-              <pointsize>11</pointsize>
+              <family>宋体</family>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="tab_8">
              <attribute name="icon">
@@ -128,7 +141,7 @@
                <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
              </attribute>
              <attribute name="title">
-              <string>Tab 1</string>
+              <string>巡检日志</string>
              </attribute>
             </widget>
             <widget class="QWidget" name="tab_9">
@@ -138,7 +151,7 @@
                <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
              </attribute>
              <attribute name="title">
-              <string>Tab 2</string>
+              <string>日志筛选</string>
              </attribute>
             </widget>
            </widget>
@@ -173,8 +186,10 @@
          <widget class="QLabel" name="label">
           <property name="font">
            <font>
-            <family>Arial</family>
-            <pointsize>11</pointsize>
+            <family>Bahnschrift Light</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="focusPolicy">
@@ -196,80 +211,15 @@
       </item>
      </layout>
     </item>
+    <item row="4" column="2">
+     <widget class="Line" name="line_16">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
     <item row="4" column="1">
      <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="Line" name="line_11">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QTabWidget" name="m_TabVec1">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <widget class="QWidget" name="tab">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>
-           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-         </attribute>
-         <attribute name="title">
-          <string>Tab 1</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab_2">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>
-           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-         </attribute>
-         <attribute name="title">
-          <string>Tab 2</string>
-         </attribute>
-        </widget>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="4">
-     <widget class="Line" name="line_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="Line" name="line_12">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="Line" name="line_5">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="Line" name="line_9">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -282,91 +232,14 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="Line" name="line_16">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="Line" name="line_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="0">
-       <widget class="QTabWidget" name="m_TabVec2">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="currentIndex">
-         <number>1</number>
-        </property>
-        <widget class="QWidget" name="tab_3">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>:/res/loginLogo.ico</iconset>
-         </attribute>
-         <attribute name="title">
-          <string>Tab 1</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab_4">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/applogo.ico</normaloff>:/res/applogo.ico</iconset>
-         </attribute>
-         <attribute name="title">
-          <string>Tab 2</string>
-         </attribute>
-        </widget>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="0">
-     <widget class="Line" name="line_4">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="Line" name="line_3">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="Line" name="line_13">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="Line" name="line_7">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="3">
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">
        <widget class="QTabWidget" name="m_TabVec3">
         <property name="font">
          <font>
-          <family>Arial</family>
-          <pointsize>11</pointsize>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="currentIndex">
@@ -382,7 +255,7 @@
            <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
          </attribute>
          <attribute name="title">
-          <string>用电设备</string>
+          <string>分类巡检记录</string>
          </attribute>
         </widget>
         <widget class="QWidget" name="tab_6">
@@ -393,7 +266,7 @@
           </iconset>
          </attribute>
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>设备定向巡检记录</string>
          </attribute>
         </widget>
         <widget class="QWidget" name="tab_7">
@@ -403,43 +276,15 @@
            <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
          </attribute>
          <attribute name="title">
-          <string>页</string>
+          <string>故障预测</string>
          </attribute>
         </widget>
        </widget>
       </item>
      </layout>
     </item>
-    <item row="2" column="2">
-     <widget class="Line" name="line_15">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="Line" name="line_17">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="4">
      <widget class="Line" name="line_18">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="Line" name="line_19">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="4">
-     <widget class="Line" name="line_20">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -452,8 +297,205 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="2">
+     <widget class="Line" name="line_15">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="Line" name="line_12">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="Line" name="line_20">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QTabWidget" name="m_TabVec2">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/loginLogo.ico</normaloff>:/res/loginLogo.ico</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>巡检设备查询</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/applogo.ico</normaloff>:/res/applogo.ico</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>分类查询</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="2">
+     <widget class="Line" name="line_7">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="Line" name="line_19">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="Line" name="line_13">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="Line" name="line_5">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="Line" name="line_9">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QTabWidget" name="m_TabVec1">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/loginLogo.ico</normaloff>
+           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>巡检进度</string>
+         </attribute>
+         <widget class="QChartView" name="m_w1tab1Chart">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>911</width>
+            <height>431</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/loginLogo.ico</normaloff>
+           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>巡检概览</string>
+         </attribute>
+         <widget class="QGraphicsView" name="m_w1tab2Chart">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>911</width>
+            <height>431</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="0">
      <widget class="Line" name="line_22">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="Line" name="line_6">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="Line" name="line_8">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="Line" name="line_3">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -467,12 +509,49 @@
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono NL</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menu_M">
+    <property name="title">
+     <string>菜单(&amp;M)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>工具(&amp;T)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_V">
+    <property name="title">
+     <string>视图(&amp;V)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_S">
+    <property name="title">
+     <string>选项(&amp;S)</string>
+    </property>
+   </widget>
+   <addaction name="menu_M"/>
+   <addaction name="menu_T"/>
+   <addaction name="menu_V"/>
+   <addaction name="menu_S"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>qtcharts/qchartview.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>m_TabVec1</tabstop>
   <tabstop>m_TabVec2</tabstop>
