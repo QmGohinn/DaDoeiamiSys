@@ -55,7 +55,9 @@ SOURCES += \
     src/_APL/userlogin/userloginform.cpp \
     src/_BK/AccountEnt/AccountEnt.cpp \
     src/_BK/BaseEnt/BaseEnt.cpp \
+    src/_BK/TotalShow/TotalShow.cpp \
     src/_base/DBSetup.cpp \
+    src/_base/SysInit.cpp \
     src/_base/main.cpp
 
 HEADERS += \
@@ -63,7 +65,9 @@ HEADERS += \
     src/_APL/userlogin/userloginform.h \
     src/_BK/AccountEnt/AccountEnt.h \
     src/_BK/BaseEnt/BaseEnt.h \
+    src/_BK/TotalShow/TotalShow.h \
     src/_base/DBSetup.h \
+    src/_base/SysInit.h \
     src/_base/dbTableReg.hpp \
     src/_base/export.h \
     src/_base/precompiled.h

@@ -23,7 +23,9 @@ private:
     Ui::EiamiSysWindows *ui;
 
 private slots:
-    /// 托盘图标
+    /// 托盘图标槽函数
     void slotIconActivated(QSystemTrayIcon::ActivationReason reason);
+    /// 时间刷新函数
+    void slotUpdateTime();
 };
 #endif // EIAMISYSWINDOWS_H

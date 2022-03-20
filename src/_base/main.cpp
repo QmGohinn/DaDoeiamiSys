@@ -22,8 +22,15 @@ int main(int argc, char *argv[])
     /// 设置程序版本
     a.setApplicationVersion("1.0.1");
 
-    /// 初始化数据库
+    /// 初始化数据库 -- Connect PSql DB
     DBSetup::DBInit();
+
+    if(DBScratch::_BuildTableFlg)
+    {
+        /// 生成表
+        DBScratch::buildSqlite();
+        return 0;
+    }
 
     qx::QxClassX::registerAllClasses(true);
     qx::QxCollection<QString, qx::IxClass *>*
@@ -52,10 +59,6 @@ int main(int argc, char *argv[])
         u->role = 1;
         qx::dao::save(u);
     }
-
-    /// 生成表
-    //    DBScratch::buildSqlite();
-    //    return 0;
 
     /// 主界面
     EiamiSysWindows w;

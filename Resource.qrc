@@ -1,2 +1,7 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/">
+        <file>res/applogo.ico</file>
+        <file>res/exelogo.ico</file>
+        <file>res/loginLogo.ico</file>
+    </qresource>
+</RCC>

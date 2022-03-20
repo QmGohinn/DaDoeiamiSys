@@ -5,6 +5,7 @@
 
 #include "../_BK/BaseEnt/BaseEnt.h"
 #include "../_BK/AccountEnt/AccountEnt.h"
+#include "../_BK/TotalShow/TotalShow.h"
 
 class DBScratch
 {
@@ -21,7 +22,14 @@ public:
         QSqlError daoError;
 
         daoError = qx::dao::create_table<UserEnt>();
+        daoError = qx::dao::create_table<TotalShowEnt>();
     }
+
+    /// 程序走向标志 0：正常执行 1：生成表文件
+    static int _BuildTableFlg;
 };
+
+int DBScratch::_BuildTableFlg = 0;
+//int DBScratch::_BuildTableFlg = 1;
 
 #endif // DBTABLEREG_HPP

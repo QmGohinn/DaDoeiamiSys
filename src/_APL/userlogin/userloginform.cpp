@@ -1,5 +1,6 @@
 #include <QMenu>
 #include <QMessageBox>
+#include <QPixmap>
 
 #include "userloginform.h"
 #include "ui_userloginform.h"
@@ -11,24 +12,36 @@ UserLoginForm::UserLoginForm(QWidget *parent)
 {
     ui->setupUi(this);
 
-    /// 为方便登录
+    /// 设置三个按钮悬停时小手指针
+    ui->m_LoginBtn->setCursor(QCursor(Qt::PointingHandCursor));
+    ui->m_ExitBtn->setCursor(QCursor(Qt::PointingHandCursor));
+    ui->m_RegisterBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+    /// 为方便登录 预先设置好账号密码
     ui->m_AccountLineEdit->setText("qm");
     ui->m_PasswordLineEdit->setText("qm");
 
+    /// 设置登录界面的LabelLogo
+    ui->m_LogoLabel->setPixmap(QPixmap(":/res/applogo.ico").scaled(243,149));
+
+/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
     m_trayIcon->setIcon(QIcon("../../../res/loginlogo.ico"));
     /// 设置鼠标放上去显示的信息
     m_trayIcon->setToolTip(tr("优视巡检登录"));
-    /// 右键菜单
+    /// 右键菜单                                            设置托盘栏图标
     QMenu *menu = new QMenu(this);
-
     /// 设置右键菜单
     m_trayIcon->setContextMenu(menu);
     connect(m_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(slotIconActivated(QSystemTrayIcon::ActivationReason)));
     /// 显示
     m_trayIcon->show();
+/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+/// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
 }
 
 UserLoginForm::~UserLoginForm()
@@ -78,10 +91,14 @@ void UserLoginForm::on_m_ExitBtn_clicked()
     QDialog::close();
 }
 
+/// 托盘图标的槽函数 （目前是点击托盘程序时，会置顶显示窗口）
 void UserLoginForm::slotIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch(reason)
     {
+    /// 双击
+    case QSystemTrayIcon::DoubleClick:
+    /// 单击
     case QSystemTrayIcon::Trigger :
         setWindowState(Qt::WindowActive);
         activateWindow();

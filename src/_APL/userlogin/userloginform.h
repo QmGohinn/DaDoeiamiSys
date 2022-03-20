@@ -25,7 +25,7 @@ private slots:
     void on_m_LoginBtn_clicked();
     /// 退出按钮绑定的槽函数
     void on_m_ExitBtn_clicked();
-    /// 托盘图标
+    /// 托盘图标槽函数
     void slotIconActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:
