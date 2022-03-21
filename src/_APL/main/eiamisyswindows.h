@@ -21,6 +21,8 @@ public:
     EiamiSysWindows(QWidget *parent = nullptr);
     ~EiamiSysWindows();
 
+    void closeEvent(QCloseEvent* e);
+
     /// 托盘栏
     QSystemTrayIcon* m_trayIcon;
 

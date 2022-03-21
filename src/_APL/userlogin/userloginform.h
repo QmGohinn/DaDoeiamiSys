@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QSystemTrayIcon>
 
+#include "../../_base/UVThread.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class UserLoginForm; }
 QT_END_NAMESPACE
@@ -19,7 +21,9 @@ public:
     /// 托盘图标
     QSystemTrayIcon* m_trayIcon;
 
-    /// 信号与槽函数
+    /// A new UVThread to show loading gif
+    UVThread* m_thread;
+
 private slots:
     /// 登录按钮绑定的槽函数
     void on_m_LoginBtn_clicked();
@@ -27,7 +31,10 @@ private slots:
     void on_m_ExitBtn_clicked();
     /// 托盘图标槽函数
     void slotIconActivated(QSystemTrayIcon::ActivationReason reason);
-
+    /// show loading gif
+    void showLoadingGif();
+    /// accept slot func
+    void killAndAccept();
 private:
     Ui::UserLoginForm *ui;
 };

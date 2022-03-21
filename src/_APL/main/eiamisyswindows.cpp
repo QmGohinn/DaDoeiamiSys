@@ -18,11 +18,12 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_w1tab1Timer = new QTimer;
     connect(m_w1tab1Timer, SIGNAL(timeout()), this, SLOT(updatew1tab1Chart()));
-    m_w1tab1Timer->start(1300);
+    m_w1tab1Timer->start(1000);
 
+    updateButtomTxt();
     m_buttomTxtTimer = new QTimer;
     connect(m_buttomTxtTimer, SIGNAL(timeout()), this, SLOT(updateButtomTxt()));
-    m_buttomTxtTimer->start(5000);
+    m_buttomTxtTimer->start(12000);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -57,6 +58,18 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 EiamiSysWindows::~EiamiSysWindows()
 {
     delete ui;
+}
+
+void EiamiSysWindows::closeEvent(QCloseEvent *e)
+{
+    if(0 == QMessageBox::information(this, "提示", "您确定退出优视巡检吗?", tr("确定"), tr("取消")))
+    {
+        e->accept();
+    }
+    else
+    {
+        e->ignore();
+    }
 }
 
 void EiamiSysWindows::slotIconActivated(QSystemTrayIcon::ActivationReason reason)
@@ -103,5 +116,5 @@ void EiamiSysWindows::updatew1tab1Chart()
 void EiamiSysWindows::updateButtomTxt()
 {
     int _mark = rand() % 5 + 1;
-    ui->statusbar->showMessage(UVGlobal::g_mapIntQStr[_mark], 4000);
+    ui->statusbar->showMessage(UVGlobal::g_mapIntQStr[_mark], 10000);
 }

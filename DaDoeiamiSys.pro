@@ -60,6 +60,7 @@ SOURCES += \
     src/_base/DBSetup.cpp \
     src/_base/SysInit.cpp \
     src/_base/UVGlobal.cpp \
+    src/_base/UVThread.cpp \
     src/_base/main.cpp
 
 HEADERS += \
@@ -71,6 +72,7 @@ HEADERS += \
     src/_base/DBSetup.h \
     src/_base/SysInit.h \
     src/_base/UVGlobal.h \
+    src/_base/UVThread.h \
     src/_base/dbTableReg.hpp \
     src/_base/export.h \
     src/_base/precompiled.h

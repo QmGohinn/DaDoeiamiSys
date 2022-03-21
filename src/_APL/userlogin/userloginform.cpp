@@ -1,16 +1,26 @@
 #include <QMenu>
 #include <QMessageBox>
+#include <QMovie>
 #include <QPixmap>
+#include <QThread>
+#include <QTimer>
 
 #include "userloginform.h"
 #include "ui_userloginform.h"
 #include "../../_base/DBSetup.h"
+
 
 UserLoginForm::UserLoginForm(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::UserLoginForm)
 {
     ui->setupUi(this);
+
+    /// all new action
+    m_thread = new UVThread;
+
+    /// all connect action
+    connect(m_thread, SIGNAL(UVThreadRun()), this, SLOT(showLoadingGif()));
 
     /// 设置三个按钮悬停时小手指针
     ui->m_LoginBtn->setCursor(QCursor(Qt::PointingHandCursor));
@@ -22,7 +32,7 @@ UserLoginForm::UserLoginForm(QWidget *parent)
     ui->m_PasswordLineEdit->setText("qm");
 
     /// 设置登录界面的LabelLogo
-    ui->m_LogoLabel->setPixmap(QPixmap(":/res/applogo.ico").scaled(243,149));
+    ui->m_LogoLabel->setPixmap(QPixmap(":/res/loading.png").scaled(243,149));
 
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
@@ -41,7 +51,6 @@ UserLoginForm::UserLoginForm(QWidget *parent)
     m_trayIcon->show();
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-
 }
 
 UserLoginForm::~UserLoginForm()
@@ -52,13 +61,12 @@ UserLoginForm::~UserLoginForm()
 /// 登录界面的登录按钮槽函数
 void UserLoginForm::on_m_LoginBtn_clicked()
 {
-
     QString input_Account = ui->m_AccountLineEdit->text().trimmed();
     QString input_Password = ui->m_PasswordLineEdit->text();
 
     if(input_Account == "" || input_Password == "")
     {
-        QMessageBox::critical(this, " ", "账号和密码不能为空!", QMessageBox::Yes);
+        QMessageBox::critical(this, "提示", "账号和密码不能为空!", tr("确定"));
         return;
     }
 
@@ -69,19 +77,12 @@ void UserLoginForm::on_m_LoginBtn_clicked()
 
     if(query_User.getSqlResultRowCount() > 0)
     {
-        m_trayIcon->hide();
-
-        // QThread::sleep(2);
-
-        // ui->m_LoginBtn->setEnabled(0);
-        // ui->m_LoginBtn->setText("登录中...");
-
-        QDialog::accept();
-        return;
+        m_thread->start();
+        QTimer::singleShot(4000, this, SLOT(killAndAccept()));
     }
     else
     {
-        QMessageBox::warning(this, " ", "用户不存在或密码错误!", QMessageBox::Yes);
+        QMessageBox::warning(this, "提示", "用户不存在或密码错误!", tr("确定"));
     }
 }
 
@@ -106,4 +107,25 @@ void UserLoginForm::slotIconActivated(QSystemTrayIcon::ActivationReason reason)
     default:
         break;
     }
+}
+
+void UserLoginForm::showLoadingGif()
+{
+    ui->m_LoginBtn->setEnabled(false);
+    ui->m_RegisterBtn->setEnabled(false);
+    ui->m_AccountLineEdit->setEnabled(false);
+    ui->m_PasswordLineEdit->setEnabled(false);
+
+    QMovie* _movie = new QMovie(":/res/gif/loading2.gif");
+    ui->m_LogoLabel->setMovie(_movie);
+    ui->m_LogoLabel->resize(100,50);
+    _movie->resized(QSize(100,50));
+    _movie->start();
+}
+
+void UserLoginForm::killAndAccept()
+{
+    m_thread->exit();
+    m_trayIcon->hide();
+    QDialog::accept();
 }
