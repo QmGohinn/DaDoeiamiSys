@@ -42,7 +42,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
-    m_trayIcon->setIcon(QIcon("../../../res/applogo.ico"));
+    m_trayIcon->setIcon(QIcon("../../../res/logo.png"));
     /// 设置鼠标放上去显示的信息
     m_trayIcon->setToolTip(tr("UVision"));
     /// 右键菜单                                      设置托盘栏程序图标

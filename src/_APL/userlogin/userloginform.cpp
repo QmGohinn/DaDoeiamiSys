@@ -38,7 +38,7 @@ UserLoginForm::UserLoginForm(QWidget *parent)
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
-    m_trayIcon->setIcon(QIcon("../../../res/loginlogo.ico"));
+    m_trayIcon->setIcon(QIcon("../../../res/exeunlogo.jpg"));
     /// 设置鼠标放上去显示的信息
     m_trayIcon->setToolTip(tr("优视巡检登录"));
     /// 右键菜单                                            设置托盘栏图标
@@ -78,7 +78,7 @@ void UserLoginForm::on_m_LoginBtn_clicked()
     if(query_User.getSqlResultRowCount() > 0)
     {
         m_thread->start();
-        QTimer::singleShot(4000, this, SLOT(killAndAccept()));
+        QTimer::singleShot(1500, this, SLOT(killAndAccept()));
     }
     else
     {

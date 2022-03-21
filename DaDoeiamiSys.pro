@@ -94,11 +94,13 @@ DISTFILES += \
     3rd/QxOrm/lib/libQxOrm.a \
     3rd/QxOrm/lib/libQxOrmd.a \
     README.md \
-    res/applogo.ico \
     res/exelogo.ico \
-    res/loginLogo.ico
+    res/gif/loading.gif \
+    res/gif/loading2.gif \
+    res/loading.png \
+    res/logo.png
 
-RC_ICONS += res/applogo.ico
+RC_ICONS += res/exelogo.ico
 
 # 分类存放输出文件
 build_type =
