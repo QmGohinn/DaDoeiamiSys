@@ -73,7 +73,8 @@ int main(int argc, char *argv[])
     }
 
     /// 主界面显示
-    w.show();
+    _userLoginForm.~UserLoginForm();
+    QThread::sleep(2); w.show();
     w.m_trayIcon->show();
 
     return a.exec();

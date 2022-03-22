@@ -42,7 +42,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
-    m_trayIcon->setIcon(QIcon("../../../res/logo.png"));
+    m_trayIcon->setIcon(QIcon(":/res/tp/logo.png"));
     /// 设置鼠标放上去显示的信息
     m_trayIcon->setToolTip(tr("UVision"));
     /// 右键菜单                                      设置托盘栏程序图标
@@ -64,6 +64,7 @@ void EiamiSysWindows::closeEvent(QCloseEvent *e)
 {
     if(0 == QMessageBox::information(this, "提示", "您确定退出优视巡检吗?", tr("确定"), tr("取消")))
     {
+        this->~EiamiSysWindows();
         e->accept();
     }
     else
@@ -96,13 +97,19 @@ void EiamiSysWindows::slotUpdateTime()
 
 void EiamiSysWindows::updatew1tab1Chart()
 {
-    static int num = 0;
-    static int num2 = 100;
+    static int num = 10;
 
     m_w1tab1Chart = new QChart();
 
     QLineSeries* _lineSeries = new QLineSeries;
-    *_lineSeries << QPointF(11, 9) << QPointF(12, --num2) << QPointF(17, 6) << QPointF(18, ++num) << QPointF(20, 2);
+    *_lineSeries << QPointF(11, num - 2) << QPointF(12, num) << QPointF(17, num + 2) << QPointF(18, num) << QPointF(20, num * 1.1);
+
+    if(rand() % 2 == 1){
+        num += 10;
+    }
+    else{
+        num -= 10;
+    }
 
     m_w1tab1Chart->legend()->hide();
     m_w1tab1Chart->addSeries(_lineSeries);

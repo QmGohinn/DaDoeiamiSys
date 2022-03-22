@@ -62,7 +62,7 @@
              <x>0</x>
              <y>0</y>
              <width>298</width>
-             <height>377</height>
+             <height>376</height>
             </rect>
            </property>
            <attribute name="label">
@@ -75,7 +75,7 @@
              <x>0</x>
              <y>0</y>
              <width>298</width>
-             <height>377</height>
+             <height>376</height>
             </rect>
            </property>
            <attribute name="label">
@@ -132,24 +132,14 @@
              </font>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="tab_8">
-             <attribute name="icon">
-              <iconset resource="../../../Resource.qrc">
-               <normaloff>:/res/loginLogo.ico</normaloff>
-               <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-             </attribute>
              <attribute name="title">
               <string>巡检日志</string>
              </attribute>
             </widget>
             <widget class="QWidget" name="tab_9">
-             <attribute name="icon">
-              <iconset resource="../../../Resource.qrc">
-               <normaloff>:/res/loginLogo.ico</normaloff>
-               <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-             </attribute>
              <attribute name="title">
               <string>日志筛选</string>
              </attribute>
@@ -243,38 +233,22 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>
-           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-         </attribute>
          <attribute name="title">
           <string>分类巡检记录</string>
          </attribute>
         </widget>
         <widget class="QWidget" name="tab_6">
-         <attribute name="icon">
-          <iconset>
-           <normalon>:/res/loginLogo.ico</normalon>
-           <disabledoff>:/res/applogo.ico</disabledoff>
-          </iconset>
-         </attribute>
          <attribute name="title">
           <string>设备定向巡检记录</string>
          </attribute>
         </widget>
         <widget class="QWidget" name="tab_7">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>
-           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-         </attribute>
          <attribute name="title">
           <string>故障预测</string>
          </attribute>
@@ -331,22 +305,14 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_3">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>:/res/loginLogo.ico</iconset>
-         </attribute>
          <attribute name="title">
           <string>巡检设备查询</string>
          </attribute>
         </widget>
         <widget class="QWidget" name="tab_4">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/applogo.ico</normaloff>:/res/applogo.ico</iconset>
-         </attribute>
          <attribute name="title">
           <string>分类查询</string>
          </attribute>
@@ -415,14 +381,9 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>
-           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-         </attribute>
          <attribute name="title">
           <string>巡检进度</string>
          </attribute>
@@ -444,11 +405,6 @@
          </widget>
         </widget>
         <widget class="QWidget" name="tab_2">
-         <attribute name="icon">
-          <iconset resource="../../../Resource.qrc">
-           <normaloff>:/res/loginLogo.ico</normaloff>
-           <normalon>:/res/applogo.ico</normalon>:/res/loginLogo.ico</iconset>
-         </attribute>
          <attribute name="title">
           <string>巡检概览</string>
          </attribute>
@@ -560,8 +516,6 @@
   <tabstop>textEdit</tabstop>
   <tabstop>m_TimeEdit</tabstop>
  </tabstops>
- <resources>
-  <include location="../../../Resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>优视巡检账户登录</string>
+   <string>- UVision Login</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(251, 251, 251);</string>
@@ -69,6 +69,9 @@
          <bold>false</bold>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="text">
         <string>账 号 :</string>
        </property>
@@ -107,11 +110,14 @@
          <height>140</height>
         </size>
        </property>
+       <property name="cursor">
+        <cursorShape>ForbiddenCursor</cursorShape>
+       </property>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">background-color: rgb(251, 251, 251);</string>
        </property>
        <property name="text">
         <string/>
@@ -187,6 +193,9 @@
          <weight>50</weight>
          <bold>false</bold>
         </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="text">
         <string>密 码 :</string>

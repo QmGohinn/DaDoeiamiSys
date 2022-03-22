@@ -15,6 +15,7 @@ UserLoginForm::UserLoginForm(QWidget *parent)
     , ui(new Ui::UserLoginForm)
 {
     ui->setupUi(this);
+    this->setWindowIcon(QIcon(":/res/windows/people.ico"));
 
     /// all new action
     m_thread = new UVThread;
@@ -38,7 +39,7 @@ UserLoginForm::UserLoginForm(QWidget *parent)
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
-    m_trayIcon->setIcon(QIcon("../../../res/exeunlogo.jpg"));
+    m_trayIcon->setIcon(QIcon(":/res/tp/exeunlogo.jpg"));
     /// 设置鼠标放上去显示的信息
     m_trayIcon->setToolTip(tr("优视巡检登录"));
     /// 右键菜单                                            设置托盘栏图标
@@ -78,7 +79,7 @@ void UserLoginForm::on_m_LoginBtn_clicked()
     if(query_User.getSqlResultRowCount() > 0)
     {
         m_thread->start();
-        QTimer::singleShot(1500, this, SLOT(killAndAccept()));
+        QTimer::singleShot(rand() % 2000 + 1800, this, SLOT(killAndAccept()));
     }
     else
     {
@@ -116,16 +117,15 @@ void UserLoginForm::showLoadingGif()
     ui->m_AccountLineEdit->setEnabled(false);
     ui->m_PasswordLineEdit->setEnabled(false);
 
-    QMovie* _movie = new QMovie(":/res/gif/loading2.gif");
+    QMovie* _movie = new QMovie(":/res/gif/loading.gif");
     ui->m_LogoLabel->setMovie(_movie);
-    ui->m_LogoLabel->resize(100,50);
-    _movie->resized(QSize(100,50));
     _movie->start();
 }
 
 void UserLoginForm::killAndAccept()
 {
-    m_thread->exit();
+    m_thread->~UVThread();
+    this->hide();
     m_trayIcon->hide();
     QDialog::accept();
 }

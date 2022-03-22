@@ -1,9 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>res/gif/loading.gif</file>
-        <file>res/gif/loading2.gif</file>
         <file>res/loading.png</file>
-        <file>res/logo.png</file>
-        <file>res/exelogo.ico</file>
+        <file>res/windows/user.ico</file>
+        <file>res/sys/program.ico</file>
+        <file>res/windows/people.ico</file>
+        <file>res/logo/exelogo.ico</file>
+        <file>res/tp/exeunlogo.jpg</file>
+        <file>res/tp/logo.png</file>
     </qresource>
 </RCC>
