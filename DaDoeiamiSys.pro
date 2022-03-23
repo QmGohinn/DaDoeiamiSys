@@ -93,7 +93,18 @@ DISTFILES += \
     3rd/QxOrm/lib/QxOrmd.dll \
     3rd/QxOrm/lib/libQxOrm.a \
     3rd/QxOrm/lib/libQxOrmd.a \
-    README.md
+    README.md \
+    doc/中间文档/uvision.xlsx \
+    doc/交付物/开题报告.doc \
+    doc/交付物/文献综述.doc \
+    doc/交付物/文献翻译.doc \
+    doc/提供物/企业巡检分析管理信息系统设计与开发-任务书-吴斌.docx \
+    doc/提供物/关于做好2022届本科毕业设计（论文）工作的通知.doc \
+    doc/提供物/开题报告.doc \
+    doc/提供物/文献综述.doc \
+    doc/提供物/文献翻译.doc \
+    doc/提供物/题目.txt \
+    doc/版本文档/开题报告初版.doc
 
 RC_ICONS += res/logo/exelogo.ico
 

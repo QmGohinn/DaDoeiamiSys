@@ -1,9 +1,10 @@
+#include <QTimer>
+
 #include "eiamisyswindows.h"
 #include "ui_eiamisyswindows.h"
 
 #include "../../_base/UVGlobal.h"
-
-#include <QTimer>
+#include "../../_BK/TotalShow/TotalShow.h"
 
 EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     : QMainWindow(parent)
@@ -16,9 +17,10 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+    updatew1tab1Chart();
     m_w1tab1Timer = new QTimer;
     connect(m_w1tab1Timer, SIGNAL(timeout()), this, SLOT(updatew1tab1Chart()));
-    m_w1tab1Timer->start(1000);
+    m_w1tab1Timer->start(10000);
 
     updateButtomTxt();
     m_buttomTxtTimer = new QTimer;
@@ -92,36 +94,58 @@ void EiamiSysWindows::slotIconActivated(QSystemTrayIcon::ActivationReason reason
 
 void EiamiSysWindows::slotUpdateTime()
 {
-    ui->m_TimeEdit->setDateTime(QDateTime::currentDateTime());
-}
-
-void EiamiSysWindows::updatew1tab1Chart()
-{
-    static int num = 10;
-
-    m_w1tab1Chart = new QChart();
-
-    QLineSeries* _lineSeries = new QLineSeries;
-    *_lineSeries << QPointF(11, num - 2) << QPointF(12, num) << QPointF(17, num + 2) << QPointF(18, num) << QPointF(20, num * 1.1);
-
-    if(rand() % 2 == 1){
-        num += 10;
-    }
-    else{
-        num -= 10;
-    }
-
-    m_w1tab1Chart->legend()->hide();
-    m_w1tab1Chart->addSeries(_lineSeries);
-    m_w1tab1Chart->createDefaultAxes();
-    m_w1tab1Chart->setTitle("设备巡检总览");
-
-    ui->m_w1tab1Chart->setChart(m_w1tab1Chart);
-    ui->m_w1tab1Chart->setRenderHint(QPainter::Antialiasing);
+    UVGlobal::g_DATETIME = QDateTime::currentDateTime();
+    ui->m_TimeEdit->setDateTime(UVGlobal::g_DATETIME);
 }
 
 void EiamiSysWindows::updateButtomTxt()
 {
     int _mark = rand() % 5 + 1;
     ui->statusbar->showMessage(UVGlobal::g_mapIntQStr[_mark], 10000);
+}
+
+void EiamiSysWindows::updatew1tab1Chart()
+{
+    List_TotalShowEntPtr lst;
+    qx::dao::fetch_all(lst);
+    if(lst.size() <= 0){
+        return;
+    }
+
+    /// DB data into charts
+    QStringList _devTypeLst;
+    QBarSet* _setTotalNum = new QBarSet("设备总数          ");
+    QBarSet* _setReadNum = new QBarSet("已检设备数          ");
+    QBarSet* _setQuestionNum = new QBarSet("风险设备数          ");
+    QBarSet* _setErrorNum = new QBarSet("故障设备数");
+///                                                                     循环获取到库里的模拟数据
+    /// loop func to change data into charts
+    for(const auto& loop_TotalInfo : lst){
+        _devTypeLst << loop_TotalInfo.second.devType;
+        (*_setTotalNum) << loop_TotalInfo.second.totalDevNum;
+        (*_setReadNum) << loop_TotalInfo.second.realDevNum;
+        (*_setQuestionNum) << loop_TotalInfo.second.questionDevNum;
+        (*_setErrorNum) << loop_TotalInfo.second.errorDevNum;
+    }
+
+    QBarSeries* _series = new QBarSeries();
+    _series->append(_setTotalNum);
+    _series->append(_setReadNum);
+    _series->append(_setQuestionNum);
+    _series->append(_setErrorNum);
+
+    QBarCategoryAxis* _axis = new QBarCategoryAxis();
+    _axis->append(_devTypeLst);
+
+    m_w1tab1Chart = new QChart();
+    m_w1tab1Chart->addSeries(_series);
+    m_w1tab1Chart->setTitle("各设备巡检进度");
+    m_w1tab1Chart->setAnimationOptions(QChart::SeriesAnimations);
+    m_w1tab1Chart->createDefaultAxes();
+    m_w1tab1Chart->setAxisX(_axis);
+
+    m_w1tab1Chart->legend()->setVisible(true);
+    m_w1tab1Chart->legend()->setAlignment(Qt::AlignBottom);
+
+    ui->m_w1tab1Chart->setChart(m_w1tab1Chart);
 }

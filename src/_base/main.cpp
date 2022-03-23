@@ -2,7 +2,6 @@
 #include <QThreadPool>
 
 #include "../_base/SysInit.h"
-
 /// 主界面
 #include "../_APL/main/eiamisyswindows.h"
 /// 登录界面
@@ -10,13 +9,11 @@
 /// 数据库表注册头文件
 #include "../_base/dbTableReg.hpp"
 
-#include "../_BK/AccountEnt/AccountEnt.h"
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     /// 设置Logo图片
-    a.setWindowIcon(QIcon("../../../res/logo.png"));
+    a.setWindowIcon(QIcon(":/res/tp/logo.png"));
     /// 设置程序名字
     a.setApplicationName("UVision");
     /// 设置程序版本
@@ -52,11 +49,8 @@ int main(int argc, char *argv[])
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
-    /// 初始化数据库 -- Connect PSql DB
     /// system do init
     SysInit::Init();
-    /// Add a Default user named qm if user num == 0
-    SysInit::AddDefaultUser();
 
     /// 主界面
     EiamiSysWindows w;

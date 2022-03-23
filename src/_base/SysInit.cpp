@@ -7,20 +7,12 @@
 
 void SysInit::Init()
 {
+    /// Connect PSQL
     DBSetup::DBConnect();
-    SysInit::AddDefaultUser();
+    /// Add a default user
+    DBSetup::AddDefaultUser();
+    /// Global param Ready
     UVGlobal::init();
-}
-
-void SysInit::AddDefaultUser()
-{
-    if (qx::dao::count<UserEnt>() == 0)
-    {
-        UserEntPtr u;
-        u.reset(new UserEnt());
-        u->userName = "qm";
-        u->password = "qm";
-        u->role = 1;
-        qx::dao::save(u);
-    }
+    /// simulate totalshow table data into db
+    DBSetup::DBInsertSimulate();
 }
