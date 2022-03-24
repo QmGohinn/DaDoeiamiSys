@@ -39,6 +39,6 @@ QX_REGISTER_HPP_QM(TotalShowEnt, BaseEnt, 1)
 typedef QSharedPointer<TotalShowEnt> TotalShowEntPtr;
 typedef qx::QxCollection<long, TotalShowEnt> List_TotalShowEntPtr;
 
-Q_DECLARE_METATYPE(TotalShowEnt);
+Q_DECLARE_METATYPE(TotalShowEntPtr);
 
 #endif // TOTALSHOW_H

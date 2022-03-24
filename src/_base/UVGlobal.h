@@ -27,6 +27,20 @@ public:
     static QMap<int, QString> g_devType;
     /// 运行日期
     static QDateTime g_DATETIME;
+
+    static int g_transformsNum ;
+    static int g_pipelineNum;
+    static int g_beltNum;
+    static int g_motorNum;
+    static int g_boilerNum;
+};
+
+enum PATROLRES{
+    NRM = 1,
+    ERROE = 0,
+    QUESTION_1_LEVEL = -1,
+    QUESTION_2_LEVEL = -2,
+    QUESTION_3_LEVEL = -3
 };
 
 #endif // UVGLOBAL_H

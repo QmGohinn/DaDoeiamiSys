@@ -9,10 +9,13 @@ void SysInit::Init()
 {
     /// Connect PSQL
     DBSetup::DBConnect();
-    /// Add a default user
-    DBSetup::AddDefaultUser();
+
     /// Global param Ready
     UVGlobal::init();
+
+    /// Add a default user
+    DBSetup::AddDefaultUser();
+
     /// simulate totalshow table data into db
     DBSetup::DBInsertSimulate();
 }

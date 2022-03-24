@@ -23,6 +23,7 @@ public:
 
     void closeEvent(QCloseEvent* e);
 
+    QLabel* m_tooltip = nullptr;
     /// 托盘栏
     QSystemTrayIcon* m_trayIcon;
 
@@ -52,6 +53,8 @@ private slots:
     void updateButtomTxt();
     /// 更新图表
     void updatew1tab1Chart();
+    /// 鼠标悬停函数
+    void sltTooltip(bool status, int index, QBarSet *barset);
 
 };
 #endif // EIAMISYSWINDOWS_H

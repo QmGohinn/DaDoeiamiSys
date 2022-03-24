@@ -52,11 +52,8 @@ int main(int argc, char *argv[])
     /// system do init
     SysInit::Init();
 
-    /// 主界面
-    EiamiSysWindows w;
-
     /// 登录界面
-    UserLoginForm _userLoginForm(&w);
+    UserLoginForm _userLoginForm;
     /// 显示
     _userLoginForm.show();
 
@@ -65,10 +62,13 @@ int main(int argc, char *argv[])
     {
         return 0;
     }
-
-    /// 主界面显示
+    /// 销毁登录界面
     _userLoginForm.~UserLoginForm();
-    QThread::sleep(2); w.show();
+
+    /// 主界面
+    EiamiSysWindows w;
+    QThread::sleep(2);
+    w.show();
     w.m_trayIcon->show();
 
     return a.exec();

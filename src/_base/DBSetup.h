@@ -12,6 +12,8 @@ public:
     /// add a default user named 'qm' passworded 'qm'
     /// when user num == 0
     static void AddDefaultUser();
+    /// 插入输煤皮带数据
+    static void DB_Belt_Simulate();
 private:
     /// 总数表模拟
     static void DB_TotalShow_Simulate();

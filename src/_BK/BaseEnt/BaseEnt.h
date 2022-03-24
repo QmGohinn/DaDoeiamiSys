@@ -4,7 +4,7 @@
 /// 数据库关系映射基础类
 class QX_QM_EXPORT BaseEnt : public qx::IxPersistable
 {
-    QX_REGISTER_FRIEND_CLASS(SKVBaseEnt)
+    QX_REGISTER_FRIEND_CLASS(BaseEnt)
 protected:
 public:
     BaseEnt() : id(0)  { ; }

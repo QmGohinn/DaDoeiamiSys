@@ -6,6 +6,9 @@
 #include "../_BK/BaseEnt/BaseEnt.h"
 #include "../_BK/AccountEnt/AccountEnt.h"
 #include "../_BK/TotalShow/TotalShow.h"
+#include "../_BK/InspectorEnt/InspectorEnt.h"
+
+#include "../_BK/BeltEnt/BeltEnt.h"
 
 class DBScratch
 {
@@ -23,6 +26,8 @@ public:
 
         daoError = qx::dao::create_table<UserEnt>();
         daoError = qx::dao::create_table<TotalShowEnt>();
+        daoError = qx::dao::create_table<InspecorEnt>();
+        daoError = qx::dao::create_table<BeltEnt>();
     }
 
     /// 程序走向标志 0：正常执行 1：生成表文件

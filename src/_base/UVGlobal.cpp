@@ -1,4 +1,5 @@
 #include "UVGlobal.h"
+#include "../_BK/TotalShow/TotalShow.h"
 
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
@@ -8,6 +9,12 @@ QMap<int, QString> UVGlobal::g_mapIntQStr;
 QMap<int, QString> UVGlobal::g_devType;
 
 QDateTime UVGlobal::g_DATETIME;
+
+int UVGlobal::g_boilerNum = 0;
+int UVGlobal::g_motorNum = 0;
+int UVGlobal::g_beltNum = 0;
+int UVGlobal::g_pipelineNum = 0;
+int UVGlobal::g_transformsNum = 0;
 
 /// the global param define end
 /// * * * * * * * * * * * * * * * * * * *
