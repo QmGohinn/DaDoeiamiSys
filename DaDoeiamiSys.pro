@@ -32,6 +32,8 @@ LIBS += -lQxOrm
 QT       += core gui
 QT       += sql
 QT       += charts
+QT       += xml
+#QT       += webenginewidgets
 
 #INCLUDEPATH += "D:/psql/include"
 #LIBS += "D:/psql/lib/libpq.lib"
@@ -65,6 +67,7 @@ SOURCES += \
     src/_BK/TransformerEnt/TransformerEnt.cpp \
     src/_base/DBSetup.cpp \
     src/_base/SysInit.cpp \
+    src/_base/UVConfigXmlHander.cpp \
     src/_base/UVGlobal.cpp \
     src/_base/UVThread.cpp \
     src/_base/main.cpp
@@ -83,6 +86,7 @@ HEADERS += \
     src/_BK/TransformerEnt/TransformerEnt.h \
     src/_base/DBSetup.h \
     src/_base/SysInit.h \
+    src/_base/UVConfigXmlHander.h \
     src/_base/UVGlobal.h \
     src/_base/UVThread.h \
     src/_base/dbTableReg.hpp \
@@ -106,6 +110,7 @@ DISTFILES += \
     3rd/QxOrm/lib/libQxOrm.a \
     3rd/QxOrm/lib/libQxOrmd.a \
     README.md \
+    config/cfg.xml \
     doc/中间文档/uvision.xlsx \
     doc/交付物/开题报告.doc \
     doc/交付物/文献综述.doc \
@@ -116,7 +121,8 @@ DISTFILES += \
     doc/提供物/文献综述.doc \
     doc/提供物/文献翻译.doc \
     doc/提供物/题目.txt \
-    doc/版本文档/开题报告初版.doc
+    doc/版本文档/开题报告初版.doc \
+    log/sys.log
 
 RC_ICONS += res/logo/exelogo.ico
 

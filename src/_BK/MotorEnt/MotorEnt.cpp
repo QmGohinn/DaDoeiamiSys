@@ -14,6 +14,7 @@ void register_class(QxClass<MotorEnt> &t)
 
     t.setName("motor");
 
-
+    t.data(&MotorEnt::m_devSerial, "devserial", 1);
+    t.data(&MotorEnt::m_baseInfo, "baseinfo", 1);
 }
 } // namespace qx

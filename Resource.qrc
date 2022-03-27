@@ -8,5 +8,7 @@
         <file>res/logo/exelogo.ico</file>
         <file>res/tp/exeunlogo.jpg</file>
         <file>res/tp/logo.png</file>
+        <file>config/cfg.xml</file>
+        <file>log/sys.log</file>
     </qresource>
 </RCC>

@@ -3,6 +3,10 @@
 #include "../_BK/TotalShow/TotalShow.h"
 #include "../_BK/AccountEnt/AccountEnt.h"
 #include "../_BK/BeltEnt/BeltEnt.h"
+#include "../_BK/BoilerEnt/BoilerEnt.h"
+#include "../_BK/MotorEnt/MotorEnt.h"
+#include "../_BK/PipelineEnt/PipelineEnt.h"
+#include "../_BK/TransformerEnt/TransformerEnt.h"
 
 #include "../_base/UVGlobal.h"
 
@@ -28,6 +32,10 @@ void DBSetup::DBInsertSimulate()
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     DBSetup::DB_TotalShow_Simulate();
     DBSetup::DB_Belt_Simulate();
+    DBSetup::DB_Boiler_Simulate();
+    DBSetup::DB_Motor_Simulate();
+    DBSetup::DB_Pipeline_Simulate();
+    DBSetup::DB_Transformer_Simulate();
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 }
@@ -141,5 +149,125 @@ void DBSetup::DB_Belt_Simulate()
         p_belt->m_devSerial = _devName;
         p_belt->m_baseInfo = *p_Info;
         qx::dao::save(p_belt);
+    }
+}
+
+void DBSetup::DB_Boiler_Simulate()
+{
+    if(qx::dao::count<BoilerEnt>() != 0){
+        return;
+    }
+
+    BoilerEntPtr p_boiler;
+    InspecorEntPtr p_Info;
+
+    for(int _size = 1; _size <= UVGlobal::g_boilerNum; _size++)
+    {
+        QString _devName = QString("GL%1").arg(_size);
+
+        p_Info.reset(new InspecorEnt());
+
+        p_Info->m_res = NRM;
+        p_Info->m_name = "wu.b";
+        p_Info->m_phone = "4381108820";
+        p_Info->m_patrolTime = QDateTime::currentDateTime();
+        p_Info->m_devSerial = _devName;
+        qx::dao::save(p_Info);
+
+        p_boiler.reset(new BoilerEnt());
+
+        p_boiler->m_devSerial = _devName;
+        p_boiler->m_baseInfo = *p_Info;
+        qx::dao::save(p_boiler);
+    }
+}
+
+void DBSetup::DB_Motor_Simulate()
+{
+    if(qx::dao::count<MotorEnt>() != 0){
+        return;
+    }
+
+    MotorEntPtr p_motor;
+    InspecorEntPtr p_Info;
+
+    for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
+    {
+        QString _devName = QString("QJ%1").arg(_size);
+
+        p_Info.reset(new InspecorEnt());
+
+        p_Info->m_res = NRM;
+        p_Info->m_name = "wu.b";
+        p_Info->m_phone = "4381108820";
+        p_Info->m_patrolTime = QDateTime::currentDateTime();
+        p_Info->m_devSerial = _devName;
+        qx::dao::save(p_Info);
+
+        p_motor.reset(new MotorEnt());
+
+        p_motor->m_devSerial = _devName;
+        p_motor->m_baseInfo = *p_Info;
+        qx::dao::save(p_motor);
+    }
+}
+
+void DBSetup::DB_Pipeline_Simulate()
+{
+    if(qx::dao::count<PipelineEnt>() != 0){
+        return;
+    }
+
+    PipelineEntPtr p_pipeline;
+    InspecorEntPtr p_Info;
+
+    for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
+    {
+        QString _devName = QString("GD%1").arg(_size);
+
+        p_Info.reset(new InspecorEnt());
+
+        p_Info->m_res = NRM;
+        p_Info->m_name = "wu.b";
+        p_Info->m_phone = "4381108820";
+        p_Info->m_patrolTime = QDateTime::currentDateTime();
+        p_Info->m_devSerial = _devName;
+        qx::dao::save(p_Info);
+
+        p_pipeline.reset(new PipelineEnt());
+
+        p_pipeline->m_devSerial = _devName;
+        p_pipeline->m_baseInfo = *p_Info;
+        qx::dao::save(p_pipeline);
+    }
+}
+
+void DBSetup::DB_Transformer_Simulate()
+{
+    if(qx::dao::count<TransformerEnt>() != 0){
+        return;
+    }
+
+    TransformerEntPtr p_transformer;
+    InspecorEntPtr p_Info;
+
+    for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
+    {
+        QString _devName = QString("BY%1").arg(_size);
+
+        p_Info.reset(new InspecorEnt());
+
+        p_Info->m_res = NRM;
+        p_Info->m_name = "wu.b";
+        p_Info->m_phone = "4381108820";
+        p_Info->m_patrolTime = QDateTime::currentDateTime();
+        p_Info->m_devSerial = _devName;
+        qx::dao::save(p_Info);
+
+        p_transformer.reset(new TransformerEnt());
+
+        p_transformer->m_devSerial = _devName;
+        p_transformer->m_baseInfo = *p_Info;
+        qx::dao::save(p_transformer);
     }
 }

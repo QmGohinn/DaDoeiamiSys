@@ -1,0 +1,10 @@
+#ifndef UVCONFIGXMLHANDER_H
+#define UVCONFIGXMLHANDER_H
+
+class XmlHander
+{
+
+
+};
+
+#endif // UVCONFIGXMLHANDER_H

@@ -14,6 +14,7 @@ void register_class(QxClass<PipelineEnt> &t)
 
     t.setName("pipeline");
 
-
+    t.data(&PipelineEnt::m_devSerial, "devserial", 1);
+    t.data(&PipelineEnt::m_baseInfo, "baseinfo", 1);
 }
 } // namespace qx

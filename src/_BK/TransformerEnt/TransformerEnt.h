@@ -7,6 +7,7 @@
 #define TRANSFORMERENT_H
 
 #include "../../_BK/BaseEnt/BaseEnt.h"
+#include "../../_BK/InspectorEnt/InspectorEnt.h"
 
 class TransformerEnt;
 
@@ -22,7 +23,9 @@ public:
     virtual void makeAbstractClass() { ; }
 
     /// DIY Param
-
+    QString m_devSerial = "";
+    /// baseinfo
+    InspecorEnt m_baseInfo;
 };
 
 QX_REGISTER_HPP_QM(TransformerEnt, BaseEnt, 1)

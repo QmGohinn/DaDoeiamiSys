@@ -14,6 +14,7 @@ void register_class(QxClass<BoilerEnt> &t)
 
     t.setName("boiler");
 
-
+    t.data(&BoilerEnt::m_devSerial, "devserial", 1);
+    t.data(&BoilerEnt::m_baseInfo, "baseinfo", 1);
 }
 } // namespace qx

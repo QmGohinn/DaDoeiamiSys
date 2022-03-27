@@ -14,6 +14,7 @@ void register_class(QxClass<TransformerEnt> &t)
 
     t.setName("transformer");
 
-
+    t.data(&TransformerEnt::m_devSerial, "devserial", 1);
+    t.data(&TransformerEnt::m_baseInfo, "baseinfo", 1);
 }
 } // namespace qx
