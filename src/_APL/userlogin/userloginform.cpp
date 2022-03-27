@@ -7,14 +7,19 @@
 
 #include "userloginform.h"
 #include "ui_userloginform.h"
-#include "../../_base/DBSetup.h"
 
+#include "../../_base/DBSetup.h"
+#include "../../_base/UVGlobal.h"
+
+#include "../../_BK/AccountEnt/AccountEnt.h"
+#include "../../_BK/LogEnt/LogEnt.h"
 
 UserLoginForm::UserLoginForm(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::UserLoginForm)
 {
     ui->setupUi(this);
+    this->setWindowState(Qt::WindowActive);
     this->setWindowIcon(QIcon(":/res/windows/people.ico"));
 
     /// all new action
@@ -78,6 +83,14 @@ void UserLoginForm::on_m_LoginBtn_clicked()
 
     if(query_User.getSqlResultRowCount() > 0)
     {
+        qx::QxSqlQuery _tmpQuery(QString("where username = '%1' and password = '%2'")
+                                 .arg(input_Account).arg(input_Password));
+        List_UserEnt _tmpUserLst;
+        qx::dao::fetch_by_query(_tmpQuery, _tmpUserLst);
+        UVGlobal::g_currentRole = _tmpUserLst.begin()->second->role;
+        UVGlobal::g_userName = _tmpUserLst.begin()->second->userName;
+        UVGlobal::g_passWord = _tmpUserLst.begin()->second->password;
+
         m_thread->start();
         QTimer::singleShot(rand() % 2000 + 1800, this, SLOT(killAndAccept()));
     }
@@ -127,5 +140,8 @@ void UserLoginForm::killAndAccept()
     m_thread->~UVThread();
     this->hide();
     m_trayIcon->hide();
+
+    LogEnt::DBLogCreate(SysLog, "成功登录优视（UVision）客户端");
+
     QDialog::accept();
 }

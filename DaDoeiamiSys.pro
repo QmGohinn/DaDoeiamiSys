@@ -61,6 +61,7 @@ SOURCES += \
     src/_BK/BeltEnt/BeltEnt.cpp \
     src/_BK/BoilerEnt/BoilerEnt.cpp \
     src/_BK/InspectorEnt/InspectorEnt.cpp \
+    src/_BK/LogEnt/LogEnt.cpp \
     src/_BK/MotorEnt/MotorEnt.cpp \
     src/_BK/PipelineEnt/PipelineEnt.cpp \
     src/_BK/TotalShow/TotalShow.cpp \
@@ -80,6 +81,7 @@ HEADERS += \
     src/_BK/BeltEnt/BeltEnt.h \
     src/_BK/BoilerEnt/BoilerEnt.h \
     src/_BK/InspectorEnt/InspectorEnt.h \
+    src/_BK/LogEnt/LogEnt.h \
     src/_BK/MotorEnt/MotorEnt.h \
     src/_BK/PipelineEnt/PipelineEnt.h \
     src/_BK/TotalShow/TotalShow.h \

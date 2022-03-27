@@ -6,6 +6,8 @@
 #include "../../_base/UVGlobal.h"
 #include "../../_BK/TotalShow/TotalShow.h"
 
+#include "../../_BK/LogEnt/LogEnt.h"
+
 EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::EiamiSysWindows)
@@ -14,6 +16,13 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 
     /// 窗口最大化
     this->setWindowState(Qt::WindowMaximized);
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+/// 日志窗口初始化操作
+    ui->m_logTable->hideColumn(2);
+    ui->m_mmsgLineEdit->hide();
+    ui->m_logTable->setColumnWidth(0, 155);
+    ui->m_logTable->setColumnWidth(1, 300);
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
@@ -26,6 +35,11 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     m_buttomTxtTimer = new QTimer;
     connect(m_buttomTxtTimer, SIGNAL(timeout()), this, SLOT(updateButtomTxt()));
     m_buttomTxtTimer->start(12000);
+
+    updateLogTable();
+    m_logTableTimer = new QTimer;
+    connect(m_logTableTimer, SIGNAL(timeout()), this, SLOT(updateLogTable()));
+    m_logTableTimer->start(1000);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -67,6 +81,7 @@ void EiamiSysWindows::closeEvent(QCloseEvent *e)
     if(0 == QMessageBox::information(this, "提示", "您确定退出优视巡检吗?", tr("确定"), tr("取消")))
     {
         this->~EiamiSysWindows();
+        LogEnt::DBLogCreate(SysLog, "退出优视客户端");
         e->accept();
     }
     else
@@ -199,5 +214,55 @@ void EiamiSysWindows::sltTooltip(bool status, int index, QBarSet *barset)
     else
     {
         m_tooltip->hide();
+    }
+}
+
+void EiamiSysWindows::updateLogTable()
+{
+    int _currrentLogNum = qx::dao::count<LogEnt>();
+    if(_currrentLogNum == 0 || _currrentLogNum == UVGlobal::g_logNum){
+        return;
+    }
+
+    UVGlobal::g_logNum = _currrentLogNum;
+
+    List_LogEnt _logLst;
+    qx::QxSqlQuery _query(QString("order by created_at DESC limit 300"));
+
+    qx::dao::fetch_by_query(_query, _logLst);
+
+//    ui->m_logTable->clear();
+
+    while(ui->m_logTable->rowCount() != 0){
+        ui->m_logTable->removeRow(0);
+    }
+
+    int i = 0;
+    for(const auto& loop_Log : _logLst)
+    {
+        ui->m_logTable->insertRow(i);
+
+        ui->m_logTable->setItem(i, 0, new QTableWidgetItem(loop_Log.second->createdAt.toString("ddd MM-dd hh:mm")));
+        ui->m_logTable->setItem(i, 1, new QTableWidgetItem(loop_Log.second->m_msg));
+        ui->m_logTable->setItem(i, 2, new QTableWidgetItem(QString("%1").arg(loop_Log.second->id)));
+        ++i;
+    }
+}
+
+void EiamiSysWindows::on_m_logTable_itemClicked(QTableWidgetItem *item)
+{
+    LogEntPtr _tmpLogEntPtr;
+    _tmpLogEntPtr.reset(new LogEnt());
+
+    qx::QxSqlQuery _query(QString("where id = '%1'").arg(ui->m_logTable->item(item->row(), 2)->text()));
+    qx::dao::fetch_by_query(_query, _tmpLogEntPtr);
+
+    ui->m_mmsgLineEdit->show();
+
+    if(_tmpLogEntPtr->m_mmsg == ""){
+        ui->m_mmsgLineEdit->setText("无更多明细内容!");
+    }
+    else{
+        ui->m_mmsgLineEdit->setText(_tmpLogEntPtr->m_mmsg);
     }
 }

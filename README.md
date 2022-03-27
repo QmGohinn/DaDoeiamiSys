@@ -28,3 +28,4 @@ delete from pipeline;
 delete from totalshow;
 delete from transformer;
 delete from userlist;
+delete from dblog;

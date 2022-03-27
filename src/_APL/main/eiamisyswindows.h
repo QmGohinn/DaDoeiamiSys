@@ -30,6 +30,9 @@ public:
     /// 时间更新定时器
     QTimer* m_timeEditTimer;
 
+    /// 日志表更新定时器
+    QTimer* m_logTableTimer;
+
     /// 介绍文字定时器
     QTimer* m_buttomTxtTimer;
 
@@ -55,6 +58,9 @@ private slots:
     void updatew1tab1Chart();
     /// 鼠标悬停函数
     void sltTooltip(bool status, int index, QBarSet *barset);
-
+    /// 日志表更新函数
+    void updateLogTable();
+    void on_m_logTable_itemClicked(QTableWidgetItem *item);
+    void on_m_logTable_itemChanged(QTableWidgetItem *item);
 };
 #endif // EIAMISYSWINDOWS_H

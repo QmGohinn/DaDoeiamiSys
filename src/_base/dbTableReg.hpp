@@ -15,6 +15,8 @@
 #include "../_BK/PipelineEnt/PipelineEnt.h"
 #include "../_BK/TransformerEnt/TransformerEnt.h"
 
+#include "../_BK/LogEnt/LogEnt.h"
+
 class DBScratch
 {
 public:
@@ -38,6 +40,7 @@ public:
         daoError = qx::dao::create_table<MotorEnt>();
         daoError = qx::dao::create_table<PipelineEnt>();
         daoError = qx::dao::create_table<TransformerEnt>();
+        daoError = qx::dao::create_table<LogEnt>();
     }
 
     /// 程序走向标志 0：正常执行 1：生成表文件

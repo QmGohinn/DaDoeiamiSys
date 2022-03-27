@@ -16,6 +16,12 @@ int UVGlobal::g_beltNum = 0;
 int UVGlobal::g_pipelineNum = 0;
 int UVGlobal::g_transformsNum = 0;
 
+int UVGlobal::g_currentRole = -1;
+QString UVGlobal::g_userName = "";
+QString UVGlobal::g_passWord = "";
+
+int UVGlobal::g_logNum = 0;
+
 /// the global param define end
 /// * * * * * * * * * * * * * * * * * * *
 
