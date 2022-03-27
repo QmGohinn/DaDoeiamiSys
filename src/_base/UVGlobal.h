@@ -11,6 +11,14 @@
 #define DEV4TYPE "高压管道"
 #define DEV5TYPE "变压器"
 
+enum PATROLRES{
+    NRM = 1,
+    ERROE = 0,
+    QUESTION_1_LEVEL = -1,
+    QUESTION_2_LEVEL = -2,
+    QUESTION_3_LEVEL = -3
+};
+
 class UVGlobal
 {
 public:
@@ -39,14 +47,8 @@ public:
     static QString g_passWord;
 
     static int g_logNum;
-};
 
-enum PATROLRES{
-    NRM = 1,
-    ERROE = 0,
-    QUESTION_1_LEVEL = -1,
-    QUESTION_2_LEVEL = -2,
-    QUESTION_3_LEVEL = -3
+    static QString gFunc_PatrolRes2Str(const PATROLRES&);
 };
 
 #endif // UVGLOBAL_H

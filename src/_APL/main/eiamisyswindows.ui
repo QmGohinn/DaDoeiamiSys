@@ -182,6 +182,12 @@
                    <pointsize>9</pointsize>
                   </font>
                  </property>
+                 <property name="cursor" stdset="0">
+                  <cursorShape>OpenHandCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
                  <property name="editTriggers">
                   <set>QAbstractItemView::NoEditTriggers</set>
                  </property>
@@ -235,6 +241,9 @@
                </item>
                <item>
                 <widget class="QTextEdit" name="m_mmsgLineEdit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>

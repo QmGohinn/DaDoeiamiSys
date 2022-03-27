@@ -47,3 +47,26 @@ void UVGlobal::init()
 }
 
 int UVGlobal::g_devKindNum = 5;
+
+QString UVGlobal::gFunc_PatrolRes2Str(const PATROLRES& _tmpRes)
+{
+    QString _tmpStrRes = "";
+    switch (_tmpRes) {
+    case NRM:
+        _tmpStrRes = "正常";
+        break;
+    case ERROE:
+        _tmpStrRes = "故障";
+        break;
+    case QUESTION_1_LEVEL:
+        _tmpStrRes = "一级风险";
+        break;
+    case QUESTION_2_LEVEL:
+        _tmpStrRes = "二级风险";
+        break;
+    case QUESTION_3_LEVEL:
+        _tmpStrRes = "三级风险";
+        break;
+    }
+    return _tmpStrRes;
+}

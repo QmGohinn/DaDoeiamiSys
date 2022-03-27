@@ -31,5 +31,5 @@ void BoilerEnt::Create(const QString & _devserial, const InspecorEnt & _info)
     qx::dao::save(p);
 
     LogEnt::Create(SysLog, QString("%1 新增一条巡检信息!").arg(_devserial),
-                   QString("巡检结果为%1").arg(_info.m_res));
+                   QString("巡检结果为%1").arg(UVGlobal::gFunc_PatrolRes2Str(_info.m_res)));
 }

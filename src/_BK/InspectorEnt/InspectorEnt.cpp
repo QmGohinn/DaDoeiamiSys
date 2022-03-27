@@ -37,7 +37,10 @@ InspecorEnt InspecorEnt::Create(const PATROLRES & _res, const QDateTime & _patro
     qx::dao::save(p);
 
     LogEnt::Create(SysLog, QString("%1 新提交一条巡检信息!").arg(_name),
-                   QString("设备:%1 结果为:%2 联系方式为:%3").arg(_devSerial).arg(_res).arg(_phone));
+                   QString("设备:%1 结果为:%2 联系方式为:%3")
+                   .arg(_devSerial)
+                   .arg(UVGlobal::gFunc_PatrolRes2Str(_res))
+                   .arg(_phone));
 
     return *p;
 }
