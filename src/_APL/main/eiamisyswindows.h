@@ -60,7 +60,7 @@ private slots:
     void sltTooltip(bool status, int index, QBarSet *barset);
     /// 日志表更新函数
     void updateLogTable();
+    /// LogTable update Func
     void on_m_logTable_itemClicked(QTableWidgetItem *item);
-    void on_m_logTable_itemChanged(QTableWidgetItem *item);
 };
 #endif // EIAMISYSWINDOWS_H

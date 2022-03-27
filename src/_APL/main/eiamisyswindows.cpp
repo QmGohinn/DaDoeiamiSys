@@ -251,18 +251,19 @@ void EiamiSysWindows::updateLogTable()
 
 void EiamiSysWindows::on_m_logTable_itemClicked(QTableWidgetItem *item)
 {
-    LogEntPtr _tmpLogEntPtr;
-    _tmpLogEntPtr.reset(new LogEnt());
+        LogEntPtr _tmpLogEntPtr;
+        _tmpLogEntPtr.reset(new LogEnt());
 
-    qx::QxSqlQuery _query(QString("where id = '%1'").arg(ui->m_logTable->item(item->row(), 2)->text()));
-    qx::dao::fetch_by_query(_query, _tmpLogEntPtr);
+        qx::QxSqlQuery _query(QString("where id = '%1'")
+                              .arg(ui->m_logTable->item(item->row(), 2)->text().toInt()));
+        qx::dao::fetch_by_query(_query, _tmpLogEntPtr);
 
-    ui->m_mmsgLineEdit->show();
+        ui->m_mmsgLineEdit->show();
 
-    if(_tmpLogEntPtr->m_mmsg == ""){
-        ui->m_mmsgLineEdit->setText("无更多明细内容!");
-    }
-    else{
-        ui->m_mmsgLineEdit->setText(_tmpLogEntPtr->m_mmsg);
-    }
+        if(_tmpLogEntPtr->m_mmsg == ""){
+            ui->m_mmsgLineEdit->setText("无更多明细内容!");
+        }
+        else{
+            ui->m_mmsgLineEdit->setText(_tmpLogEntPtr->m_mmsg);
+        }
 }

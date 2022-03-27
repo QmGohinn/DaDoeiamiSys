@@ -158,7 +158,7 @@
              </font>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="tab_8">
              <attribute name="title">
@@ -218,6 +218,17 @@
                     <green>170</green>
                     <blue>255</blue>
                    </color>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>日志编号</string>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>JetBrains Mono</family>
+                    <pointsize>10</pointsize>
+                   </font>
                   </property>
                  </column>
                 </widget>
