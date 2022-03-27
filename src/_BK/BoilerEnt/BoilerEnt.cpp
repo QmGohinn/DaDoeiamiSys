@@ -2,6 +2,7 @@
 #include <QxOrm_Impl.h>
 
 #include "BoilerEnt.h"
+#include "../LogEnt/LogEnt.h"
 
 QX_REGISTER_CPP_QM(BoilerEnt)
 QX_PERSISTABLE_CPP(BoilerEnt)
@@ -18,3 +19,17 @@ void register_class(QxClass<BoilerEnt> &t)
     t.data(&BoilerEnt::m_baseInfo, "baseinfo", 1);
 }
 } // namespace qx
+
+void BoilerEnt::Create(const QString & _devserial, const InspecorEnt & _info)
+{
+    BoilerEntPtr p;
+    p.reset(new BoilerEnt());
+
+    p->m_devSerial = _devserial;
+    p->m_baseInfo = _info;
+
+    qx::dao::save(p);
+
+    LogEnt::Create(SysLog, QString("%1 新增一条巡检信息!").arg(_devserial),
+                   QString("巡检结果为%1").arg(_info.m_res));
+}

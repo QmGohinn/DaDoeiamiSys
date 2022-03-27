@@ -62,5 +62,6 @@ private slots:
     void updateLogTable();
     /// LogTable update Func
     void on_m_logTable_itemClicked(QTableWidgetItem *item);
+    void on_tabWidget_currentChanged(int index);
 };
 #endif // EIAMISYSWINDOWS_H

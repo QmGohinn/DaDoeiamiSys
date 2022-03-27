@@ -20,7 +20,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// 日志窗口初始化操作
     ui->m_logTable->hideColumn(2);
     ui->m_mmsgLineEdit->hide();
-    ui->m_logTable->setColumnWidth(0, 155);
+    ui->m_logTable->setColumnWidth(0, 120);
     ui->m_logTable->setColumnWidth(1, 300);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -81,7 +81,7 @@ void EiamiSysWindows::closeEvent(QCloseEvent *e)
     if(0 == QMessageBox::information(this, "提示", "您确定退出优视巡检吗?", tr("确定"), tr("取消")))
     {
         this->~EiamiSysWindows();
-        LogEnt::DBLogCreate(SysLog, "退出优视客户端");
+        LogEnt::Create(SysLog, "退出优视客户端");
         e->accept();
     }
     else
@@ -242,7 +242,7 @@ void EiamiSysWindows::updateLogTable()
     {
         ui->m_logTable->insertRow(i);
 
-        ui->m_logTable->setItem(i, 0, new QTableWidgetItem(loop_Log.second->createdAt.toString("ddd MM-dd hh:mm")));
+        ui->m_logTable->setItem(i, 0, new QTableWidgetItem(loop_Log.second->createdAt.toString("MM-dd hh:mm")));
         ui->m_logTable->setItem(i, 1, new QTableWidgetItem(loop_Log.second->m_msg));
         ui->m_logTable->setItem(i, 2, new QTableWidgetItem(QString("%1").arg(loop_Log.second->id)));
         ++i;
@@ -266,4 +266,9 @@ void EiamiSysWindows::on_m_logTable_itemClicked(QTableWidgetItem *item)
         else{
             ui->m_mmsgLineEdit->setText(_tmpLogEntPtr->m_mmsg);
         }
+}
+
+void EiamiSysWindows::on_tabWidget_currentChanged(int index)
+{
+    ui->m_mmsgLineEdit->hide();
 }

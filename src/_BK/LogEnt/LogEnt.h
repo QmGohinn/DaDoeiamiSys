@@ -26,7 +26,7 @@ public:
     virtual ~LogEnt() {}
     virtual void makeAbstractClass() { ; }
 
-    static void DBLogCreate(const LogType&, const QString&, const QString& _mmsg = "");
+    static void Create(const LogType&, const QString&, const QString& _mmsg = "");
 
     /// 日志类型
     LogType m_type = SysLog;

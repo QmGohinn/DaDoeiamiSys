@@ -46,47 +46,26 @@ void DBSetup::DB_TotalShow_Simulate()
     }
     else
     {
-        TotalShowEntPtr p;
-
         for(int i = 0; i < UVGlobal::g_devKindNum; ++i)
         {
-            p.reset(new TotalShowEnt());
-            p->devType = UVGlobal::g_devType[i];
             switch (i)
             {
             case 0:
-                p->totalDevNum = 50;
-                p->realDevNum = 42;
-                p->questionDevNum = 1;
-                p->errorDevNum = 0;
+                TotalShowEnt::Create(UVGlobal::g_devType[i], 50, 42, 5, 2);
                 break;
             case 1:
-                p->totalDevNum = 31;
-                p->realDevNum = 25;
-                p->questionDevNum = 2;
-                p->errorDevNum = 1;
+                TotalShowEnt::Create(UVGlobal::g_devType[i], 31, 25, 3, 1);
                 break;
             case 2:
-                p->totalDevNum = 152;
-                p->realDevNum = 87;
-                p->questionDevNum = 2;
-                p->errorDevNum = 0;
+                TotalShowEnt::Create(UVGlobal::g_devType[i], 152, 87, 10, 5);
                 break;
             case 3:
-                p->totalDevNum = 73;
-                p->realDevNum = 65;
-                p->questionDevNum = 0;
-                p->errorDevNum = 0;
+                TotalShowEnt::Create(UVGlobal::g_devType[i], 73, 65, 5, 1);
                 break;
             case 4:
-                p->totalDevNum = 268;
-                p->realDevNum = 255;
-                p->questionDevNum = 1;
-                p->errorDevNum = 0;
+                TotalShowEnt::Create(UVGlobal::g_devType[i], 268, 255, 8, 2);
                 break;
             }
-            /// into db
-            qx::dao::save(p);
         }
     }
 
@@ -113,12 +92,7 @@ void DBSetup::AddDefaultUser()
 {
     if (qx::dao::count<UserEnt>() == 0)
     {
-        UserEntPtr u;
-        u.reset(new UserEnt());
-        u->userName = "qm";
-        u->password = "qm";
-        u->role = 1;
-        qx::dao::save(u);
+        UserEnt::Create("qm", "qm", 1);
     }
 }
 
@@ -128,27 +102,12 @@ void DBSetup::DB_Belt_Simulate()
         return;
     }
 
-    BeltEntPtr p_belt;
-    InspecorEntPtr p_Info;
-
     for(int _size = 1; _size <= UVGlobal::g_beltNum; _size++)
     {
         QString _devName = QString("PD%1").arg(_size);
 
-        p_Info.reset(new InspecorEnt());
-
-        p_Info->m_res = NRM;
-        p_Info->m_name = "wu.b";
-        p_Info->m_phone = "4381108820";
-        p_Info->m_patrolTime = QDateTime::currentDateTime();
-        p_Info->m_devSerial = _devName;
-        qx::dao::save(p_Info);
-
-        p_belt.reset(new BeltEnt());
-
-        p_belt->m_devSerial = _devName;
-        p_belt->m_baseInfo = *p_Info;
-        qx::dao::save(p_belt);
+        BeltEnt::Create(_devName,
+                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
@@ -158,27 +117,12 @@ void DBSetup::DB_Boiler_Simulate()
         return;
     }
 
-    BoilerEntPtr p_boiler;
-    InspecorEntPtr p_Info;
-
     for(int _size = 1; _size <= UVGlobal::g_boilerNum; _size++)
     {
         QString _devName = QString("GL%1").arg(_size);
 
-        p_Info.reset(new InspecorEnt());
-
-        p_Info->m_res = NRM;
-        p_Info->m_name = "wu.b";
-        p_Info->m_phone = "4381108820";
-        p_Info->m_patrolTime = QDateTime::currentDateTime();
-        p_Info->m_devSerial = _devName;
-        qx::dao::save(p_Info);
-
-        p_boiler.reset(new BoilerEnt());
-
-        p_boiler->m_devSerial = _devName;
-        p_boiler->m_baseInfo = *p_Info;
-        qx::dao::save(p_boiler);
+        BoilerEnt::Create(_devName,
+                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
@@ -188,27 +132,12 @@ void DBSetup::DB_Motor_Simulate()
         return;
     }
 
-    MotorEntPtr p_motor;
-    InspecorEntPtr p_Info;
-
     for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
     {
         QString _devName = QString("QJ%1").arg(_size);
 
-        p_Info.reset(new InspecorEnt());
-
-        p_Info->m_res = NRM;
-        p_Info->m_name = "wu.b";
-        p_Info->m_phone = "4381108820";
-        p_Info->m_patrolTime = QDateTime::currentDateTime();
-        p_Info->m_devSerial = _devName;
-        qx::dao::save(p_Info);
-
-        p_motor.reset(new MotorEnt());
-
-        p_motor->m_devSerial = _devName;
-        p_motor->m_baseInfo = *p_Info;
-        qx::dao::save(p_motor);
+        MotorEnt::Create(_devName,
+                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
@@ -218,27 +147,12 @@ void DBSetup::DB_Pipeline_Simulate()
         return;
     }
 
-    PipelineEntPtr p_pipeline;
-    InspecorEntPtr p_Info;
-
     for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
     {
         QString _devName = QString("GD%1").arg(_size);
 
-        p_Info.reset(new InspecorEnt());
-
-        p_Info->m_res = NRM;
-        p_Info->m_name = "wu.b";
-        p_Info->m_phone = "4381108820";
-        p_Info->m_patrolTime = QDateTime::currentDateTime();
-        p_Info->m_devSerial = _devName;
-        qx::dao::save(p_Info);
-
-        p_pipeline.reset(new PipelineEnt());
-
-        p_pipeline->m_devSerial = _devName;
-        p_pipeline->m_baseInfo = *p_Info;
-        qx::dao::save(p_pipeline);
+        PipelineEnt::Create(_devName,
+                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
@@ -248,26 +162,11 @@ void DBSetup::DB_Transformer_Simulate()
         return;
     }
 
-    TransformerEntPtr p_transformer;
-    InspecorEntPtr p_Info;
-
     for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
     {
         QString _devName = QString("BY%1").arg(_size);
 
-        p_Info.reset(new InspecorEnt());
-
-        p_Info->m_res = NRM;
-        p_Info->m_name = "wu.b";
-        p_Info->m_phone = "4381108820";
-        p_Info->m_patrolTime = QDateTime::currentDateTime();
-        p_Info->m_devSerial = _devName;
-        qx::dao::save(p_Info);
-
-        p_transformer.reset(new TransformerEnt());
-
-        p_transformer->m_devSerial = _devName;
-        p_transformer->m_baseInfo = *p_Info;
-        qx::dao::save(p_transformer);
+        TransformerEnt::Create(_devName,
+                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }

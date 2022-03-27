@@ -11,7 +11,7 @@
 
 class BoilerEnt;
 
-/// 用户管理
+/// 锅炉
 class QX_QM_EXPORT BoilerEnt : public BaseEnt
 {
     QX_REGISTER_FRIEND_CLASS(BoilerEnt)
@@ -26,6 +26,8 @@ public:
     QString m_devSerial = "";
     /// baseinfo
     InspecorEnt m_baseInfo;
+
+    static void Create(const QString&, const InspecorEnt&);
 };
 
 QX_REGISTER_HPP_QM(BoilerEnt, BaseEnt, 1)

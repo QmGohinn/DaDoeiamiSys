@@ -27,8 +27,10 @@ public:
     /// 密码
     QString password;
     /// 权限
-    /// 1:admin  2:operator
+    /// 1:admin  0:operator
     int role;
+
+    static void Create(const QString&, const QString&, const int& _role = 0);
 };
 
 QX_REGISTER_HPP_QM(UserEnt, BaseEnt, 1)

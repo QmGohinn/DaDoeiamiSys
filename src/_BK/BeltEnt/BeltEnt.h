@@ -11,7 +11,6 @@
 
 class BeltEnt;
 
-/// 用户管理
 class QX_QM_EXPORT BeltEnt : public BaseEnt
 {
     QX_REGISTER_FRIEND_CLASS(BeltEnt)
@@ -26,6 +25,8 @@ public:
     QString m_devSerial = "";
     /// baseinfo
     InspecorEnt m_baseInfo;
+
+    static void Create(const QString&, const InspecorEnt&);
 };
 
 QX_REGISTER_HPP_QM(BeltEnt, BaseEnt, 1)

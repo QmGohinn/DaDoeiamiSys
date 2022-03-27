@@ -32,6 +32,8 @@ public:
     int questionDevNum = 0;
     /// 故障设备
     int errorDevNum = 0;
+
+    static void Create(const QString&, const int&, const int&, const int&, const int&);
 };
 
 QX_REGISTER_HPP_QM(TotalShowEnt, BaseEnt, 1)

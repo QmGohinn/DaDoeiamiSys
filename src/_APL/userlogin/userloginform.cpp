@@ -88,8 +88,8 @@ void UserLoginForm::on_m_LoginBtn_clicked()
         List_UserEnt _tmpUserLst;
         qx::dao::fetch_by_query(_tmpQuery, _tmpUserLst);
         UVGlobal::g_currentRole = _tmpUserLst.begin()->second->role;
-        UVGlobal::g_userName = _tmpUserLst.begin()->second->userName;
-        UVGlobal::g_passWord = _tmpUserLst.begin()->second->password;
+        UVGlobal::g_userName = input_Account;
+        UVGlobal::g_passWord = input_Password;
 
         m_thread->start();
         QTimer::singleShot(rand() % 2000 + 1800, this, SLOT(killAndAccept()));
@@ -141,7 +141,7 @@ void UserLoginForm::killAndAccept()
     this->hide();
     m_trayIcon->hide();
 
-    LogEnt::DBLogCreate(SysLog, "成功登录优视（UVision）客户端");
+    LogEnt::Create(SysLog, "登录 UVision 客户端");
 
     QDialog::accept();
 }

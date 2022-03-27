@@ -22,7 +22,7 @@ void register_class(QxClass<LogEnt> &t)
 }
 } // namespace qx
 
-void LogEnt::DBLogCreate(const LogType& _type, const QString& _msg, const QString& _mmsg)
+void LogEnt::Create(const LogType& _type, const QString& _msg, const QString& _mmsg)
 {
     LogEntPtr _tmpLog;
     _tmpLog.reset(new LogEnt());

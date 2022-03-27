@@ -11,6 +11,9 @@
 
 class InspecorEnt;
 
+typedef QSharedPointer<InspecorEnt> InspecorEntPtr;
+typedef qx::QxCollection<long, InspecorEnt> List_InspecorEnt;
+
 /// 用户管理
 class QX_QM_EXPORT InspecorEnt : public BaseEnt
 {
@@ -33,12 +36,11 @@ public:
     QString m_phone = "";
     /// 巡检设备编号
     QString m_devSerial = "";
+
+    static InspecorEnt Create(const PATROLRES&, const QDateTime&, const QString&, const QString&, const QString&);
 };
 
 QX_REGISTER_HPP_QM(InspecorEnt, BaseEnt, 1)
-
-typedef QSharedPointer<InspecorEnt> InspecorEntPtr;
-typedef qx::QxCollection<long, InspecorEnt> List_InspecorEnt;
 
 Q_DECLARE_METATYPE(InspecorEntPtr);
 

@@ -26,6 +26,8 @@ public:
     QString m_devSerial = "";
     /// baseinfo
     InspecorEnt m_baseInfo;
+
+    static void Create(const QString&, const InspecorEnt&);
 };
 
 QX_REGISTER_HPP_QM(TransformerEnt, BaseEnt, 1)
