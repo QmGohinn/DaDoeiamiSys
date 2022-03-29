@@ -1,3 +1,7 @@
+/**
+ *  库文件必须
+*/
+
 #ifndef EXPORT_H
 #define EXPORT_H
 

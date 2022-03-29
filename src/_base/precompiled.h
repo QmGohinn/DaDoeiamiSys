@@ -1,3 +1,7 @@
+/*
+ *  预编译头文件
+ */
+
 #ifndef PRECOMPILED_H
 #define PRECOMPILED_H
 

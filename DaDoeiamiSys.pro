@@ -1,21 +1,19 @@
-
-##  ▼▼▼▼▼ 以下为自定义 ▼▼▼▼▼
-
-## 添加Orm三方库
-## 包含QxOrm模块的pri文件
+## 包含QxOrm模块和QsLog库的pri文件
 include($$PWD/3rd/QxOrm/QxOrm.pri)
+include($$PWD/3rd/QsLog/QsLog.pri)
 
 DEFINES += _BUILDING_APP
 
-# 预编译头文件
+## 预编译头文件
 !contains(DEFINES, _QX_NO_PRECOMPILED_HEADER) {
     PRECOMPILED_HEADER = src/_base/precompiled.h
 }
 
-#添加源代码的头文件路劲和链接库路径
+## 添加QxOrm源代码的头文件路劲和链接库路径
 INCLUDEPATH += $$PWD/3rd/QxOrm/include
 LIBS += -L$$PWD/3rd/QxOrm/lib
 
+## 设置输出目录
 DESTDIR = $$PWD/_output
 
 ## 根据编译环境不同链接不同的库并生成不同的程序
@@ -27,14 +25,14 @@ TARGET = UVision
 LIBS += -lQxOrm
 }
 
-## ▲▲▲▲▲ *********** ▲▲▲▲▲
-
+## 添加的Qt模块
 QT       += core gui
 QT       += sql
 QT       += charts
 QT       += xml
 #QT       += webenginewidgets
 
+## PSQL驱动
 #INCLUDEPATH += "D:/psql/include"
 #LIBS += "D:/psql/lib/libpq.lib"
 
@@ -126,6 +124,7 @@ DISTFILES += \
     doc/版本文档/开题报告初版.doc \
     log/sys.log
 
+## 程序LOGO
 RC_ICONS += res/logo/exelogo.ico
 
 # 分类存放输出文件
@@ -136,11 +135,13 @@ CONFIG(debug, debug|release) {
     build_type = release
 }
 
+## 输出目录分类
 DESTDIR     = $$build_type/exe
 OBJECTS_DIR = $$build_type/obj
 MOC_DIR     = $$build_type/moc
 RCC_DIR     = $$build_type/rcc
 UI_DIR      = $$build_type/ui
 
+## Res File
 RESOURCES += \
     Resource.qrc

@@ -1,3 +1,8 @@
+/**
+ *  主界面头文件
+ *  继承自QMainWindows
+ */
+
 #ifndef EIAMISYSWINDOWS_H
 #define EIAMISYSWINDOWS_H
 
@@ -23,6 +28,7 @@ public:
 
     void closeEvent(QCloseEvent* e);
 
+    /// 鼠标悬停时显示设备数
     QLabel* m_tooltip = nullptr;
     /// 托盘栏
     QSystemTrayIcon* m_trayIcon;
@@ -62,6 +68,7 @@ private slots:
     void updateLogTable();
     /// LogTable update Func
     void on_m_logTable_itemClicked(QTableWidgetItem *item);
+    /// widget1tab1 changed slot
     void on_tabWidget_currentChanged(int index);
 };
 #endif // EIAMISYSWINDOWS_H

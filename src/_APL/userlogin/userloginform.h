@@ -1,3 +1,8 @@
+/**
+ *  登录窗体头文件
+ *  继承自QDialog
+ */
+
 #ifndef USERLOGINFORM_H
 #define USERLOGINFORM_H
 

@@ -1,3 +1,9 @@
+/**
+ *  模板头文件(HPP File)
+ *  主要功能为根据实体类自动生成.db文件
+ *  然后去Psql建表
+*/
+
 #ifndef DBTABLEREG_HPP
 #define DBTABLEREG_HPP
 

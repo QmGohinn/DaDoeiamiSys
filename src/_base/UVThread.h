@@ -1,3 +1,7 @@
+/*
+ *  继承QThread类自定义线程
+*/
+
 #ifndef UVTHREAD_H
 #define UVTHREAD_H
 

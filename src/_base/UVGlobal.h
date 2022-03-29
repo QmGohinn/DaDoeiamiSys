@@ -1,9 +1,21 @@
+/*
+ *  全局变量头文件
+*/
+
 #ifndef UVGLOBAL_H
 #define UVGLOBAL_H
 
 #include <QMap>
 #include <QString>
 #include <QTime>
+
+#include "3rd/QsLog/include/QsLog.h"
+#include "3rd/QsLog/include/QsLogDest.h"
+#include "3rd/QsLog/include/QsLogLevel.h"
+
+#include <QCoreApplication>
+#include <QDir>
+#include <iostream>
 
 #define DEV1TYPE "高温锅炉"
 #define DEV2TYPE "汽机"
