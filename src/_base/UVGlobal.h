@@ -31,6 +31,8 @@ enum PATROLRES{
     QUESTION_3_LEVEL = -3
 };
 
+void logFunction(const QString &message, QsLogging::Level level);
+
 class UVGlobal
 {
 public:
@@ -47,19 +49,24 @@ public:
     static QMap<int, QString> g_devType;
     /// 运行日期
     static QDateTime g_DATETIME;
+
     /// 五种巡检设备的总数
     static int g_transformsNum ;
     static int g_pipelineNum;
     static int g_beltNum;
     static int g_motorNum;
     static int g_boilerNum;
+
     /// 当前用户权限 账号名 密码
     static int g_currentRole;
     static QString g_userName;
     static QString g_passWord;
 
+    /// 日志数量
     static int g_logNum;
-
+    /// 全局日志类
+    static QsLogging::Logger& Log;
+    /// 设备类型转字符串
     static QString gFunc_PatrolRes2Str(const PATROLRES&);
 };
 

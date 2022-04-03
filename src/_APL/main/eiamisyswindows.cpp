@@ -81,6 +81,7 @@ void EiamiSysWindows::closeEvent(QCloseEvent *e)
     if(0 == QMessageBox::information(this, "提示", "您确定退出优视巡检吗?", tr("确定"), tr("取消")))
     {
         this->~EiamiSysWindows();
+        QLOG_INFO() << "    退出系统";
         LogEnt::Create(SysLog, "退出优视客户端");
         e->accept();
     }

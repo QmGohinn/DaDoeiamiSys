@@ -1,26 +1,27 @@
 #include "UVGlobal.h"
 #include "../_BK/TotalShow/TotalShow.h"
 
+#include <QApplication>
+
+/// QsLog namespace
+using namespace QsLogging;
+
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
 
-QMap<int, QString> UVGlobal::g_mapIntQStr;
-
-QMap<int, QString> UVGlobal::g_devType;
-
-QDateTime UVGlobal::g_DATETIME;
-
-int UVGlobal::g_boilerNum = 0;
+int UVGlobal::g_logNum = 0;int UVGlobal::g_boilerNum = 0;
 int UVGlobal::g_motorNum = 0;
 int UVGlobal::g_beltNum = 0;
 int UVGlobal::g_pipelineNum = 0;
 int UVGlobal::g_transformsNum = 0;
-
 int UVGlobal::g_currentRole = -1;
+int UVGlobal::g_devKindNum = 5;
+QMap<int, QString> UVGlobal::g_mapIntQStr;
+QMap<int, QString> UVGlobal::g_devType;
+QDateTime UVGlobal::g_DATETIME;
 QString UVGlobal::g_userName = "";
 QString UVGlobal::g_passWord = "";
-
-int UVGlobal::g_logNum = 0;
+QsLogging::Logger& UVGlobal::Log = QsLogging::Logger::instance();
 
 /// the global param define end
 /// * * * * * * * * * * * * * * * * * * *
@@ -44,9 +45,26 @@ void UVGlobal::init()
     UVGlobal::g_devType[2] = DEV3TYPE;
     UVGlobal::g_devType[3] = DEV4TYPE;
     UVGlobal::g_devType[4] = DEV5TYPE;
-}
 
-int UVGlobal::g_devKindNum = 5;
+    UVGlobal::Log.setLoggingLevel(QsLogging::TraceLevel);
+
+    DestinationPtr fileDestination(DestinationFactory::MakeFileDestination(
+                                       QString("../../../log/%1.log").arg(QDate::currentDate().toString("yyyy-MM-dd ddd")),
+                                       EnableLogRotation,
+                                       MaxSizeBytes(512),
+                                       MaxOldLogCount(2)));
+
+    Log.addDestination(fileDestination);
+
+//    DestinationPtr debugDestination(DestinationFactory::MakeDebugOutputDestination());
+//    DestinationPtr functorDestination(DestinationFactory::MakeFunctorDestination(&logFunction));
+
+//    Log.addDestination(debugDestination);
+//    Log.addDestination(functorDestination);
+
+    QLOG_INFO() << "    系统初始化";
+    QLOG_INFO() << "    系统启动";
+}
 
 QString UVGlobal::gFunc_PatrolRes2Str(const PATROLRES& _tmpRes)
 {
@@ -69,4 +87,10 @@ QString UVGlobal::gFunc_PatrolRes2Str(const PATROLRES& _tmpRes)
         break;
     }
     return _tmpStrRes;
+}
+
+void logFunction(const QString &message, Level level)
+{
+    std::cout << "From log function: " << qPrintable(message) << " " << static_cast<int>(level)
+              << std::endl;
 }

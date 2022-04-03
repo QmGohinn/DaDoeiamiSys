@@ -105,6 +105,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 # Add Link Lib & DLL & a
 DISTFILES += \
     .gitignore \
+    3rd/QsLog/lib/QsLog2.dll \
+    3rd/QsLog/lib/libQsLog2.a \
     3rd/QxOrm/lib/QxOrm.dll \
     3rd/QxOrm/lib/QxOrmd.dll \
     3rd/QxOrm/lib/libQxOrm.a \
@@ -121,8 +123,7 @@ DISTFILES += \
     doc/提供物/文献综述.doc \
     doc/提供物/文献翻译.doc \
     doc/提供物/题目.txt \
-    doc/版本文档/开题报告初版.doc \
-    log/sys.log
+    doc/版本文档/开题报告初版.doc
 
 ## 程序LOGO
 RC_ICONS += res/logo/exelogo.ico
