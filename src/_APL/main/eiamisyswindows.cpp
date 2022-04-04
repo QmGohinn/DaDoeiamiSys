@@ -262,7 +262,7 @@ void EiamiSysWindows::on_m_logTable_itemClicked(QTableWidgetItem *item)
     ui->m_mmsgLineEdit->show();
 
     if(item->column() == 0){
-        ui->m_mmsgLineEdit->setText(_tmpLogEntPtr->createdAt.toString());
+        ui->m_mmsgLineEdit->setText(_tmpLogEntPtr->createdAt.toString("yyyy-MM-dd hh:mm:ss ddd"));
     }
     else{
         if(_tmpLogEntPtr->m_mmsg == ""){
@@ -276,5 +276,6 @@ void EiamiSysWindows::on_m_logTable_itemClicked(QTableWidgetItem *item)
 
 void EiamiSysWindows::on_tabWidget_currentChanged(int index)
 {
+    Q_UNUSED(index)
     ui->m_mmsgLineEdit->hide();
 }

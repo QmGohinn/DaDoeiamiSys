@@ -51,7 +51,7 @@ void UVGlobal::init()
     DestinationPtr fileDestination(DestinationFactory::MakeFileDestination(
                                        QString("../../../log/%1.log").arg(QDate::currentDate().toString("yyyy-MM-dd ddd")),
                                        EnableLogRotation,
-                                       MaxSizeBytes(512),
+                                       MaxSizeBytes(512000),
                                        MaxOldLogCount(2)));
 
     Log.addDestination(fileDestination);

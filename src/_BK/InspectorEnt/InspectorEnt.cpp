@@ -4,6 +4,8 @@
 #include "InspectorEnt.h"
 #include "../LogEnt/LogEnt.h"
 
+#include "../../_base/UVGlobal.h"
+
 QX_REGISTER_CPP_QM(InspecorEnt)
 QX_PERSISTABLE_CPP(InspecorEnt)
 

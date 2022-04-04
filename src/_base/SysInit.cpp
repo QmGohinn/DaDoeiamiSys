@@ -7,11 +7,11 @@
 
 void SysInit::Init()
 {
-    /// Connect PSQL
-    DBSetup::DBConnect();
-
     /// Global param Ready
     UVGlobal::init();
+
+    /// Connect PSQL
+    DBSetup::DBConnect();
 
     /// Add a default user
     DBSetup::AddDefaultUser();
