@@ -43,183 +43,6 @@
     </item>
     <item row="1" column="3">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="5">
-       <widget class="Line" name="line_24">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <layout class="QFormLayout" name="formLayout">
-        <item row="0" column="0" colspan="2">
-         <widget class="QToolBox" name="toolBox">
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Bahnschrift Light</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="page">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>198</width>
-             <height>341</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>功能选项</string>
-           </attribute>
-           <widget class="QWidget" name="formLayoutWidget">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>0</y>
-              <width>198</width>
-              <height>341</height>
-             </rect>
-            </property>
-            <layout class="QFormLayout" name="formLayout_2">
-             <item row="0" column="0">
-              <widget class="QPushButton" name="pushButton">
-               <property name="minimumSize">
-                <size>
-                 <width>95</width>
-                 <height>95</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>95</width>
-                 <height>95</height>
-                </size>
-               </property>
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="../../../Resource.qrc">
-                 <normaloff>:/res/logo/exelogo.ico</normaloff>:/res/logo/exelogo.ico</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>90</width>
-                 <height>90</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="pushButton_2">
-               <property name="minimumSize">
-                <size>
-                 <width>95</width>
-                 <height>95</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>88</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-          <widget class="QWidget" name="page_3">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>198</width>
-             <height>341</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>业务选项</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="page_2">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>198</width>
-             <height>341</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>管理员</string>
-           </attribute>
-          </widget>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="1">
-       <widget class="Line" name="line_14">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="6">
-       <layout class="QGridLayout" name="gridLayout_9">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="font">
-           <font>
-            <family>Bahnschrift Light</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::NoFocus</enum>
-          </property>
-          <property name="text">
-           <string>备忘录：</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QTextEdit" name="m_txtEdit">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
       <item row="1" column="0">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -272,11 +95,14 @@
              </font>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
+            </property>
+            <property name="tabBarAutoHide">
+             <bool>false</bool>
             </property>
             <widget class="QWidget" name="tab_8">
              <attribute name="title">
-              <string>系统日志</string>
+              <string>巡检日志</string>
              </attribute>
              <widget class="QWidget" name="verticalLayoutWidget">
               <property name="geometry">
@@ -385,6 +211,141 @@
          </layout>
         </item>
        </layout>
+      </item>
+      <item row="1" column="3">
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0" colspan="2">
+         <widget class="QToolBox" name="toolBox">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Bahnschrift Light</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>456</width>
+             <height>341</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>功能选项</string>
+           </attribute>
+           <widget class="QWidget" name="formLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>251</width>
+              <height>341</height>
+             </rect>
+            </property>
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="pushButton">
+               <property name="minimumSize">
+                <size>
+                 <width>95</width>
+                 <height>95</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>95</width>
+                 <height>95</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="../../../Resource.qrc">
+                 <normaloff>:/res/logo/exelogo.ico</normaloff>:/res/logo/exelogo.ico</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>90</width>
+                 <height>90</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="minimumSize">
+                <size>
+                 <width>95</width>
+                 <height>95</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>88</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>456</width>
+             <height>341</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>业务选项</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>456</width>
+             <height>341</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>管理员</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <widget class="Line" name="line_14">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -787,7 +748,6 @@
   <tabstop>m_TabVec2</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>m_TabVec3</tabstop>
-  <tabstop>m_txtEdit</tabstop>
   <tabstop>m_TimeEdit</tabstop>
  </tabstops>
  <resources>
