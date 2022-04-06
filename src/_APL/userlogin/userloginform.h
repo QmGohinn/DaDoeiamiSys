@@ -10,6 +10,7 @@
 #include <QSystemTrayIcon>
 
 #include "../../_base/UVThread.h"
+#include "../../_APL/regiuser/regiuserform.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class UserLoginForm; }
@@ -22,6 +23,11 @@ class UserLoginForm : public QDialog
 public:
     UserLoginForm(QWidget *parent = nullptr);
     ~UserLoginForm();
+
+    void closeEvent(QCloseEvent* e);
+
+    /// 注册窗口
+    RegiUserForm* m_regiUserForm;
 
     /// 托盘图标
     QSystemTrayIcon* m_trayIcon;
@@ -40,6 +46,9 @@ private slots:
     void showLoadingGif();
     /// accept slot func
     void killAndAccept();
+    /// 注册按钮槽函数
+    void on_m_RegisterBtn_clicked();
+
 private:
     Ui::UserLoginForm *ui;
 };

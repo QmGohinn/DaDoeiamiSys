@@ -12,5 +12,7 @@
         <file>res/loginui/login.ico</file>
         <file>res/loginui/close.ico</file>
         <file>res/sys/menu.ico</file>
+        <file>res/regi/add.ico</file>
+        <file>res/regi/return.ico</file>
     </qresource>
 </RCC>

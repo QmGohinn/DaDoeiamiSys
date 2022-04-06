@@ -53,17 +53,15 @@ int main(int argc, char *argv[])
     SysInit::Init();
 
     /// 登录界面
-    UserLoginForm _userLoginForm;
-    /// 显示
-    _userLoginForm.show();
+    UserLoginForm* _userLoginForm = new UserLoginForm ;
 
     /// 登录失败 或 点击退出
-    if(_userLoginForm.exec() != QDialog::Accepted)
+    if(_userLoginForm->exec() != QDialog::Accepted)
     {
         return 0;
     }
     /// 销毁登录界面
-    _userLoginForm.~UserLoginForm();
+    _userLoginForm->~UserLoginForm();
 
     /// 主界面
     EiamiSysWindows w;

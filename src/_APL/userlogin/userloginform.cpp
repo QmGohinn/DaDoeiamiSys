@@ -7,6 +7,7 @@
 
 #include "userloginform.h"
 #include "ui_userloginform.h"
+#include "../../_APL/regiuser/regiuserform.h"
 
 #include "../../_base/DBSetup.h"
 #include "../../_base/UVGlobal.h"
@@ -22,6 +23,9 @@ UserLoginForm::UserLoginForm(QWidget *parent)
     this->setWindowState(Qt::WindowActive);
     this->setWindowIcon(QIcon(":/res/windows/people.ico"));
 
+    /// init regiUserForm
+    m_regiUserForm = new RegiUserForm(this);
+
     /// all new action
     m_thread = new UVThread;
 
@@ -34,8 +38,8 @@ UserLoginForm::UserLoginForm(QWidget *parent)
     ui->m_RegisterBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     /// 为方便登录 预先设置好账号密码
-    ui->m_AccountLineEdit->setText("qm");
-    ui->m_PasswordLineEdit->setText("qm");
+    ui->m_AccountLineEdit->setText("wubin");
+    ui->m_PasswordLineEdit->setText("221376");
 
     /// 设置登录界面的LabelLogo
     ui->m_LogoLabel->setPixmap(QPixmap(":/res/loading.png").scaled(243,149));
@@ -103,6 +107,7 @@ void UserLoginForm::on_m_LoginBtn_clicked()
 /// 退出按钮绑定的槽函数
 void UserLoginForm::on_m_ExitBtn_clicked()
 {
+    m_trayIcon->hide();
     QDialog::close();
 }
 
@@ -141,7 +146,18 @@ void UserLoginForm::killAndAccept()
     this->hide();
     m_trayIcon->hide();
 
-    LogEnt::Create(SysLog, "登录 UVision 客户端");
+//    LogEnt::Create(SysLog, "登录 UVision 客户端");
 
     QDialog::accept();
+}
+
+void UserLoginForm::on_m_RegisterBtn_clicked()
+{
+    m_regiUserForm->exec();
+}
+
+void UserLoginForm::closeEvent(QCloseEvent *e)
+{
+    Q_UNUSED(e)
+    m_trayIcon->hide();
 }

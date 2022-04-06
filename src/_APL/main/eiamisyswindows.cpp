@@ -82,7 +82,7 @@ void EiamiSysWindows::closeEvent(QCloseEvent *e)
     {
         this->~EiamiSysWindows();
         QLOG_INFO() << "    退出系统";
-        LogEnt::Create(SysLog, "退出优视客户端");
+//        LogEnt::Create(SysLog, "退出优视客户端");
         e->accept();
     }
     else
@@ -221,7 +221,7 @@ void EiamiSysWindows::sltTooltip(bool status, int index, QBarSet *barset)
 void EiamiSysWindows::updateLogTable()
 {
     int _currrentLogNum = qx::dao::count<LogEnt>();
-    if(_currrentLogNum == 0 || _currrentLogNum == UVGlobal::g_logNum){
+    if(_currrentLogNum == UVGlobal::g_logNum){
         return;
     }
 

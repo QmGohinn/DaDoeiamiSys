@@ -53,6 +53,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/_APL/main/eiamisyswindows.cpp \
+    src/_APL/regiuser/regiuserform.cpp \
     src/_APL/userlogin/userloginform.cpp \
     src/_BK/AccountEnt/AccountEnt.cpp \
     src/_BK/BaseEnt/BaseEnt.cpp \
@@ -73,6 +74,7 @@ SOURCES += \
 
 HEADERS += \
     src/_APL/main/eiamisyswindows.h \
+    src/_APL/regiuser/regiuserform.h \
     src/_APL/userlogin/userloginform.h \
     src/_BK/AccountEnt/AccountEnt.h \
     src/_BK/BaseEnt/BaseEnt.h \
@@ -95,6 +97,7 @@ HEADERS += \
 
 FORMS += \
     src/_APL/main/eiamisyswindows.ui \
+    src/_APL/regiuser/regiuserform.ui \
     src/_APL/userlogin/userloginform.ui
 
 # Default rules for deployment.
@@ -112,6 +115,7 @@ DISTFILES += \
     3rd/QxOrm/lib/libQxOrm.a \
     3rd/QxOrm/lib/libQxOrmd.a \
     README.md \
+    bat/fix.bat \
     config/cfg.xml \
     doc/中间文档/uvision.xlsx \
     doc/交付物/开题报告.doc \
@@ -146,3 +150,5 @@ UI_DIR      = $$build_type/ui
 ## Res File
 RESOURCES += \
     Resource.qrc
+
+CONFIG += QMAKE_CXXFLAGS_WARN_OFF
