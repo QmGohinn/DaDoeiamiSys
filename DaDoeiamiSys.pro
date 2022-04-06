@@ -121,13 +121,22 @@ DISTFILES += \
     doc/交付物/开题报告.doc \
     doc/交付物/文献综述.doc \
     doc/交付物/文献翻译.doc \
+    doc/打印.zip \
+    doc/打印/任务书.doc \
+    doc/打印/开题报告.docx \
+    doc/打印/文献综述.docx \
+    doc/打印/文献翻译.docx \
+    doc/打印/毕业设计档案袋封皮.docx \
     doc/提供物/企业巡检分析管理信息系统设计与开发-任务书-吴斌.docx \
     doc/提供物/关于做好2022届本科毕业设计（论文）工作的通知.doc \
     doc/提供物/开题报告.doc \
     doc/提供物/文献综述.doc \
     doc/提供物/文献翻译.doc \
     doc/提供物/题目.txt \
-    doc/版本文档/开题报告初版.doc
+    doc/版本文档/开题报告.doc \
+    doc/版本文档/开题报告初版.doc \
+    doc/版本文档/文献综述.doc \
+    doc/版本文档/文献翻译.doc
 
 ## 程序LOGO
 RC_ICONS += res/logo/exelogo.ico
