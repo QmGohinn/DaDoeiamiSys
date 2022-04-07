@@ -52,6 +52,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/_APL/SimulateDataToolForm/simulatedatatoolform.cpp \
     src/_APL/main/eiamisyswindows.cpp \
     src/_APL/regiuser/regiuserform.cpp \
     src/_APL/userlogin/userloginform.cpp \
@@ -73,6 +74,7 @@ SOURCES += \
     src/_base/main.cpp
 
 HEADERS += \
+    src/_APL/SimulateDataToolForm/simulatedatatoolform.h \
     src/_APL/main/eiamisyswindows.h \
     src/_APL/regiuser/regiuserform.h \
     src/_APL/userlogin/userloginform.h \
@@ -96,6 +98,7 @@ HEADERS += \
     src/_base/precompiled.h
 
 FORMS += \
+    src/_APL/SimulateDataToolForm/simulatedatatoolform.ui \
     src/_APL/main/eiamisyswindows.ui \
     src/_APL/regiuser/regiuserform.ui \
     src/_APL/userlogin/userloginform.ui

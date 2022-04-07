@@ -50,24 +50,14 @@
     </item>
     <item row="1" column="3">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="2">
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+      <item row="1" column="1">
+       <widget class="Line" name="line_12">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
       </item>
-      <item row="1" column="4">
+      <item row="1" column="2">
        <layout class="QFormLayout" name="formLayout">
         <item row="0" column="0" colspan="2">
          <widget class="QToolBox" name="toolBox">
@@ -94,7 +84,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>227</width>
+             <width>211</width>
              <height>314</height>
             </rect>
            </property>
@@ -107,7 +97,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>227</width>
+             <width>211</width>
              <height>314</height>
             </rect>
            </property>
@@ -120,7 +110,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>227</width>
+             <width>211</width>
              <height>314</height>
             </rect>
            </property>
@@ -131,13 +121,6 @@
          </widget>
         </item>
        </layout>
-      </item>
-      <item row="1" column="1">
-       <widget class="Line" name="line_12">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
       </item>
       <item row="1" column="0">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -173,7 +156,7 @@
            <widget class="QTabWidget" name="tabWidget">
             <property name="minimumSize">
              <size>
-              <width>440</width>
+              <width>700</width>
               <height>0</height>
              </size>
             </property>
@@ -190,6 +173,9 @@
              <bool>false</bool>
             </property>
             <widget class="QWidget" name="tab_8">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(240, 240, 240);</string>
+             </property>
              <attribute name="title">
               <string>巡检日志</string>
              </attribute>
@@ -198,7 +184,7 @@
                <rect>
                 <x>-1</x>
                 <y>-1</y>
-                <width>441</width>
+                <width>691</width>
                 <height>371</height>
                </rect>
               </property>
@@ -221,7 +207,7 @@
                   <cursorShape>OpenHandCursor</cursorShape>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="editTriggers">
                   <set>QAbstractItemView::NoEditTriggers</set>
@@ -294,6 +280,9 @@
                  <property name="cursor" stdset="0">
                   <cursorShape>ForbiddenCursor</cursorShape>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -309,13 +298,6 @@
          </layout>
         </item>
        </layout>
-      </item>
-      <item row="1" column="3">
-       <widget class="Line" name="line_13">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>
@@ -626,6 +608,7 @@
     <property name="title">
      <string>工具(&amp;T)</string>
     </property>
+    <addaction name="action_simulatedata"/>
    </widget>
    <widget class="QMenu" name="menu_U">
     <property name="cursor">
@@ -723,7 +706,7 @@
     <string>退出优视</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+S, Ctrl+C</string>
+    <string>Esc</string>
    </property>
   </action>
   <action name="action_help">
@@ -736,6 +719,21 @@
    </property>
    <property name="shortcut">
     <string>F1</string>
+   </property>
+  </action>
+  <action name="action_simulatedata">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/tool.ico</normaloff>:/res/action/tool.ico</iconset>
+   </property>
+   <property name="text">
+    <string>数据模拟工具</string>
+   </property>
+   <property name="toolTip">
+    <string>仅限管理员测试使用</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+T</string>
    </property>
   </action>
  </widget>

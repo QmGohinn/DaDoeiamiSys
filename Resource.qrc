@@ -14,5 +14,6 @@
         <file>res/sys/menu.ico</file>
         <file>res/regi/add.ico</file>
         <file>res/regi/return.ico</file>
+        <file>res/action/tool.ico</file>
     </qresource>
 </RCC>

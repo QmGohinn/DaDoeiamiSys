@@ -73,5 +73,6 @@ private slots:
     void on_action_adduser_triggered();
     void on_action_exit_triggered();
     void on_action_help_triggered();
+    void on_action_simulatedata_triggered();
 };
 #endif // EIAMISYSWINDOWS_H

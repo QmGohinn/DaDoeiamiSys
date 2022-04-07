@@ -4,6 +4,7 @@
 #include "ui_eiamisyswindows.h"
 
 #include "../../_APL/regiuser/regiuserform.h"
+#include "../../_APL/SimulateDataToolForm/simulatedatatoolform.h"
 
 #include "../../_base/UVGlobal.h"
 #include "../../_BK/TotalShow/TotalShow.h"
@@ -22,8 +23,8 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// 日志窗口初始化操作
     ui->m_logTable->hideColumn(2);
     ui->m_mmsgLineEdit->hide();
-    ui->m_logTable->setColumnWidth(0, 120);
-    ui->m_logTable->setColumnWidth(1, 300);
+    ui->m_logTable->setColumnWidth(0, 200);
+    ui->m_logTable->setColumnWidth(1, 500);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
@@ -304,4 +305,16 @@ void EiamiSysWindows::on_action_exit_triggered()
 void EiamiSysWindows::on_action_help_triggered()
 {
     QMessageBox::information(this, "提示", "帮助文档等待吴斌后续接入!", tr("确定"));
+}
+
+void EiamiSysWindows::on_action_simulatedata_triggered()
+{
+    if(UVGlobal::g_currentRole != 1){
+        QMessageBox::warning(this, "说明", "该工具仅限管理员使用,请联系管理员进行权限升级!", tr("确定"));
+        return;
+    }
+    else{
+        SimulateDataToolForm* _pDataTool = new SimulateDataToolForm;
+        _pDataTool->show();
+    }
 }
