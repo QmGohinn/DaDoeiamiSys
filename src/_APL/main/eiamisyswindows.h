@@ -9,6 +9,8 @@
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 
+#include "../../_APL/SimulateDataToolForm/simulatedatatoolform.h"
+
 /// dynamic charts module
 #include <QtCharts>
 #include <QtCharts/QChartGlobal>
@@ -27,6 +29,9 @@ public:
     ~EiamiSysWindows();
 
     void closeEvent(QCloseEvent* e);
+
+    /// 工具窗口
+    SimulateDataToolForm* m_toolForm = nullptr;
 
     /// 鼠标悬停时显示设备数
     QLabel* m_tooltip = nullptr;

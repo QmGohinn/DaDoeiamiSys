@@ -314,7 +314,11 @@ void EiamiSysWindows::on_action_simulatedata_triggered()
         return;
     }
     else{
-        SimulateDataToolForm* _pDataTool = new SimulateDataToolForm;
-        _pDataTool->show();
+        if(m_toolForm == nullptr){
+            m_toolForm = new SimulateDataToolForm;
+        }
+        m_toolForm->show();
+        m_toolForm->raise();
+        m_toolForm->activateWindow();
     }
 }

@@ -15,5 +15,10 @@
         <file>res/regi/add.ico</file>
         <file>res/regi/return.ico</file>
         <file>res/action/tool.ico</file>
+        <file>res/action/changePWD.ico</file>
+        <file>res/action/close.png</file>
+        <file>res/action/menu.png</file>
+        <file>res/action/refresh.ico</file>
+        <file>res/action/rise.ico</file>
     </qresource>
 </RCC>

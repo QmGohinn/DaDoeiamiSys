@@ -20,7 +20,7 @@ UserLoginForm::UserLoginForm(QWidget *parent)
     , ui(new Ui::UserLoginForm)
 {
     ui->setupUi(this);
-    this->setWindowState(Qt::WindowActive);
+    this->activateWindow();
     this->setWindowIcon(QIcon(":/res/windows/people.ico"));
 
     /// init regiUserForm

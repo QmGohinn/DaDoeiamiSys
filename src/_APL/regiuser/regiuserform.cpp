@@ -9,6 +9,7 @@ RegiUserForm::RegiUserForm(QDialog *parent)
     , ui(new Ui::RegiUserForm)
 {
     ui->setupUi(this);
+    this->setWindowIcon(QIcon(":/res/windows/people.ico"));
 
     ui->m_nameEdit->clear();
     ui->m_password1Edit->clear();
