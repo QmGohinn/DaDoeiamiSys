@@ -48,7 +48,7 @@ void RegiUserForm::on_m_sureButton_clicked()
     else{
         UserEnt::Create(_name, _pwd1, 0);
 
-        if(0 == QMessageBox::information(this, "提示", QString("%1, 恭喜您注册成功!").arg(_name), tr("返回登录"), tr("继续注册")))
+        if(0 == QMessageBox::information(this, "提示", QString("%1, 恭喜您注册成功!").arg(_name), tr("返回上级"), tr("继续注册")))
         {
             QDialog::accept();
         }

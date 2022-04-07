@@ -3,6 +3,8 @@
 #include "eiamisyswindows.h"
 #include "ui_eiamisyswindows.h"
 
+#include "../../_APL/regiuser/regiuserform.h"
+
 #include "../../_base/UVGlobal.h"
 #include "../../_BK/TotalShow/TotalShow.h"
 
@@ -278,4 +280,28 @@ void EiamiSysWindows::on_tabWidget_currentChanged(int index)
 {
     Q_UNUSED(index)
     ui->m_mmsgLineEdit->hide();
+}
+
+void EiamiSysWindows::on_action_adduser_triggered()
+{
+    RegiUserForm* _pRegi = new RegiUserForm();
+    _pRegi->exec();
+}
+
+void EiamiSysWindows::on_action_exit_triggered()
+{
+    if(0 == QMessageBox::information(this, "提示", "您确定退出优视巡检吗?", tr("确定"), tr("取消")))
+    {
+        this->~EiamiSysWindows();
+        QLOG_INFO() << "    退出系统";
+    }
+    else
+    {
+        ;;
+    }
+}
+
+void EiamiSysWindows::on_action_help_triggered()
+{
+    QMessageBox::information(this, "提示", "帮助文档等待吴斌后续接入!", tr("确定"));
 }

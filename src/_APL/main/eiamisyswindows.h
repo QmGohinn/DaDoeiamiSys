@@ -70,5 +70,8 @@ private slots:
     void on_m_logTable_itemClicked(QTableWidgetItem *item);
     /// widget1tab1 changed slot
     void on_tabWidget_currentChanged(int index);
+    void on_action_adduser_triggered();
+    void on_action_exit_triggered();
+    void on_action_help_triggered();
 };
 #endif // EIAMISYSWINDOWS_H
