@@ -5,9 +5,7 @@
         <file>res/windows/user.ico</file>
         <file>res/sys/program.ico</file>
         <file>res/windows/people.ico</file>
-        <file>res/logo/exelogo.ico</file>
         <file>res/tp/exeunlogo.jpg</file>
-        <file>res/tp/logo.png</file>
         <file>res/loginui/add.ico</file>
         <file>res/loginui/login.ico</file>
         <file>res/loginui/close.ico</file>
@@ -20,5 +18,23 @@
         <file>res/action/menu.png</file>
         <file>res/action/refresh.ico</file>
         <file>res/action/rise.ico</file>
+        <file>res/action/log.ico</file>
+        <file>res/action/about.ico</file>
+        <file>res/action/syslog.ico</file>
+        <file>res/action/Options.ico</file>
+        <file>res/tp/exelogo.ico</file>
+        <file>res/logo/exelogo.ico</file>
+        <file>res/tab/info.ico</file>
+        <file>res/tab/time.ico</file>
+        <file>res/tab/id.ico</file>
+        <file>res/tab/kind.ico</file>
+        <file>res/tab/local.ico</file>
+        <file>res/tab/statu.ico</file>
+        <file>res/action/self.ico</file>
+        <file>res/action/shift.ico</file>
+        <file>res/action/bug.ico</file>
+        <file>res/action/request.ico</file>
+        <file>res/tab/find.ico</file>
+        <file>res/tab/clear.ico</file>
     </qresource>
 </RCC>

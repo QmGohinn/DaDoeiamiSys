@@ -52,6 +52,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/_APL/ErrorPredict/errorpredictform.cpp \
+    src/_APL/KindOfDevLog/kindofdevlogform.cpp \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.cpp \
     src/_APL/main/eiamisyswindows.cpp \
     src/_APL/regiuser/regiuserform.cpp \
@@ -74,6 +76,8 @@ SOURCES += \
     src/_base/main.cpp
 
 HEADERS += \
+    src/_APL/ErrorPredict/errorpredictform.h \
+    src/_APL/KindOfDevLog/kindofdevlogform.h \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.h \
     src/_APL/main/eiamisyswindows.h \
     src/_APL/regiuser/regiuserform.h \
@@ -98,6 +102,8 @@ HEADERS += \
     src/_base/precompiled.h
 
 FORMS += \
+    src/_APL/ErrorPredict/errorpredictform.ui \
+    src/_APL/KindOfDevLog/kindofdevlogform.ui \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.ui \
     src/_APL/main/eiamisyswindows.ui \
     src/_APL/regiuser/regiuserform.ui \
@@ -139,7 +145,10 @@ DISTFILES += \
     doc/版本文档/开题报告.doc \
     doc/版本文档/开题报告初版.doc \
     doc/版本文档/文献综述.doc \
-    doc/版本文档/文献翻译.doc
+    doc/版本文档/文献翻译.doc \
+    res/tab/find.ico \
+    res/tab/info.ico \
+    res/tab/time.ico
 
 ## 程序LOGO
 RC_ICONS += res/logo/exelogo.ico

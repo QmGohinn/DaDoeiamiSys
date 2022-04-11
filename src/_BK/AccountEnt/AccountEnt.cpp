@@ -32,5 +32,5 @@ void UserEnt::Create(const QString & _username, const QString & _password, const
 
     qx::dao::save(p);
 
-    LogEnt::Create(SysLog, QString("新建用户").arg(_username));
+//    LogEnt::Create(SysLog, QString("新建用户").arg(_username));
 }

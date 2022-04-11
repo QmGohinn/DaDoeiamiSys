@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     /// 设置Logo图片
-    a.setWindowIcon(QIcon(":/res/tp/logo.png"));
+    a.setWindowIcon(QIcon(":/res/logo/exelogo.ico"));
     /// 设置程序名字
     a.setApplicationName("UVision");
     /// 设置程序版本

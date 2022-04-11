@@ -92,7 +92,7 @@ void DBSetup::AddDefaultUser()
 {
     if (qx::dao::count<UserEnt>() == 0)
     {
-        UserEnt::Create("qm", "qm", 1);
+        UserEnt::Create("wubin", "221376", 1);
     }
 }
 

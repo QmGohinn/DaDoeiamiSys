@@ -3,28 +3,60 @@
 #include "eiamisyswindows.h"
 #include "ui_eiamisyswindows.h"
 
-#include "../../_APL/regiuser/regiuserform.h"
-#include "../../_APL/SimulateDataToolForm/simulatedatatoolform.h"
+#include <src/_APL/regiuser/regiuserform.h>
+#include <src/_APL/SimulateDataToolForm/simulatedatatoolform.h>
+#include <src/_APL/ErrorPredict/errorpredictform.h>
+#include <src/_APL/KindOfDevLog/kindofdevlogform.h>
 
-#include "../../_base/UVGlobal.h"
-#include "../../_BK/TotalShow/TotalShow.h"
+#include <src/_base/UVGlobal.h>
+#include <src/_BK/TotalShow/TotalShow.h>
 
-#include "../../_BK/LogEnt/LogEnt.h"
+#include <src/_BK/LogEnt/LogEnt.h>
+
+#include <src/_BK/BeltEnt/BeltEnt.h>
+#include <src/_BK/BoilerEnt/BoilerEnt.h>
+#include <src/_BK/InspectorEnt/InspectorEnt.h>
+#include <src/_BK/MotorEnt/MotorEnt.h>
+#include <src/_BK/PipelineEnt/PipelineEnt.h>
+#include <src/_BK/TransformerEnt/TransformerEnt.h>
 
 EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::EiamiSysWindows)
 {
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     ui->setupUi(this);
-
     /// 窗口最大化
     this->setWindowState(Qt::WindowMaximized);
+    this->show();
+    this->raise();
+    this->activateWindow();
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+    m_tabKindDevLog = new KindOfDevLogForm;
+    ui->m_TabVec3->insertTab(0, m_tabKindDevLog, tr("定向巡检记录"));
+
+    m_tabErrorPre = new ErrorPredictForm;
+    ui->m_TabVec3->insertTab(1, m_tabErrorPre, tr("故障预测"));
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+
+/// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
+    /// 设备信息总览
+    ui->m_devTotal->setColumnWidth(0, 120);
+    ui->m_devTotal->setColumnWidth(1, 120);
+    ui->m_devTotal->setColumnWidth(2, 255);
+    ui->m_devTotal->setColumnWidth(3, 128);
+    ui->m_devTotal->setColumnWidth(4, 285);
+/// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
+
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
 /// 日志窗口初始化操作
+    ui->m_logTable->verticalHeader()->setHidden(true);
     ui->m_logTable->hideColumn(2);
     ui->m_mmsgLineEdit->hide();
     ui->m_logTable->setColumnWidth(0, 200);
-    ui->m_logTable->setColumnWidth(1, 500);
+    ui->m_logTable->setColumnWidth(1, 440);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
@@ -43,6 +75,11 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     m_logTableTimer = new QTimer;
     connect(m_logTableTimer, SIGNAL(timeout()), this, SLOT(updateLogTable()));
     m_logTableTimer->start(1000);
+
+    updateDevTotal();
+    m_devTotalTimer = new QTimer;
+    connect(m_devTotalTimer, SIGNAL(timeout()), this, SLOT(updateDevTotal()));
+//    m_devTotalTimer->start(1000);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -61,7 +98,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_trayIcon = new QSystemTrayIcon(this);
     /// 设置图标
-    m_trayIcon->setIcon(QIcon(":/res/tp/logo.png"));
+    m_trayIcon->setIcon(QIcon(":/res/tp/exelogo.ico"));
     /// 设置鼠标放上去显示的信息
     m_trayIcon->setToolTip(tr("UVision"));
     /// 右键菜单                                      设置托盘栏程序图标
@@ -127,7 +164,7 @@ void EiamiSysWindows::updatew1tab1Chart()
 {
     List_TotalShowEntPtr lst;
     qx::dao::fetch_all(lst);
-    if(lst.size() <= 0){
+    if(lst.size() < 0){
         return;
     }
 
@@ -176,7 +213,8 @@ void EiamiSysWindows::updatew1tab1Chart()
 ///                                                                 设置图表
     m_w1tab1Chart = new QChart();
     m_w1tab1Chart->addSeries(_series);
-    m_w1tab1Chart->setTitle("各设备巡检进度");
+    m_w1tab1Chart->setTitle("设备巡检进度");
+    m_w1tab1Chart->setTitleFont(QFont("", 10));
     m_w1tab1Chart->setAnimationOptions(QChart::AllAnimations);
     m_w1tab1Chart->createDefaultAxes();
     m_w1tab1Chart->setAxisX(_axis);
@@ -277,16 +315,15 @@ void EiamiSysWindows::on_m_logTable_itemClicked(QTableWidgetItem *item)
     }
 }
 
-void EiamiSysWindows::on_tabWidget_currentChanged(int index)
-{
-    Q_UNUSED(index)
-    ui->m_mmsgLineEdit->hide();
-}
-
 void EiamiSysWindows::on_action_adduser_triggered()
 {
-    RegiUserForm* _pRegi = new RegiUserForm();
-    _pRegi->exec();
+    if(_pRegi == nullptr){
+        _pRegi = new RegiUserForm;
+    }
+
+    _pRegi->show();
+    _pRegi->raise();
+    _pRegi->activateWindow();
 }
 
 void EiamiSysWindows::on_action_exit_triggered()
@@ -321,4 +358,107 @@ void EiamiSysWindows::on_action_simulatedata_triggered()
         m_toolForm->raise();
         m_toolForm->activateWindow();
     }
+}
+
+void EiamiSysWindows::on_action_refreshTotal_triggered()
+{
+    updatew1tab1Chart();
+}
+
+void EiamiSysWindows::on_action_refreshLog_triggered()
+{
+    updateLogTable();
+}
+
+void EiamiSysWindows::on_action_about_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/QmGohinn/DaDoeiamiSys"));
+}
+
+void EiamiSysWindows::updateDevTotal()
+{
+    while(ui->m_devTotal->rowCount() != 0){
+        ui->m_devTotal->removeRow(0);
+    }
+
+    List_BeltEnt lst_belt;
+    qx::dao::fetch_all(lst_belt);
+
+    int i = 0;
+    for(const auto& loop_belt : lst_belt)
+    {
+        ui->m_devTotal->insertRow(i);
+
+        ui->m_devTotal->setItem(i, 0, new QTableWidgetItem(loop_belt.second.m_devSerial));
+        ui->m_devTotal->setItem(i, 1, new QTableWidgetItem("输煤皮带"));
+        ui->m_devTotal->setItem(i, 2, new QTableWidgetItem("未知地点"));
+        ++i;
+    }
+
+    List_MotorEnt lst_motor;
+    qx::dao::fetch_all(lst_motor);
+
+    for(const auto& loop_motor : lst_motor)
+    {
+        ui->m_devTotal->insertRow(i);
+
+        ui->m_devTotal->setItem(i, 0, new QTableWidgetItem(loop_motor.second.m_devSerial));
+        ui->m_devTotal->setItem(i, 1, new QTableWidgetItem("汽机"));
+        ui->m_devTotal->setItem(i, 2, new QTableWidgetItem("未知地点"));
+        ++i;
+    }
+
+    List_BoilerEnt lst_boiler;
+    qx::dao::fetch_all(lst_boiler);
+
+    for(const auto& loop_boiler : lst_boiler)
+    {
+        ui->m_devTotal->insertRow(i);
+
+        ui->m_devTotal->setItem(i, 0, new QTableWidgetItem(loop_boiler.second.m_devSerial));
+        ui->m_devTotal->setItem(i, 1, new QTableWidgetItem("高温锅炉"));
+        ui->m_devTotal->setItem(i, 2, new QTableWidgetItem("未知地点"));
+        ++i;
+    }
+
+    List_PipelineEnt lst_pipeline;
+    qx::dao::fetch_all(lst_pipeline);
+
+    for(const auto& loop_pipeline : lst_pipeline)
+    {
+        ui->m_devTotal->insertRow(i);
+
+        ui->m_devTotal->setItem(i, 0, new QTableWidgetItem(loop_pipeline.second.m_devSerial));
+        ui->m_devTotal->setItem(i, 1, new QTableWidgetItem("高压管道"));
+        ui->m_devTotal->setItem(i, 2, new QTableWidgetItem("未知地点"));
+        ++i;
+    }
+
+    List_TransformerEnt lst_transformer;
+    qx::dao::fetch_all(lst_transformer);
+
+    for(const auto& loop_transformer : lst_transformer)
+    {
+        ui->m_devTotal->insertRow(i);
+
+        ui->m_devTotal->setItem(i, 0, new QTableWidgetItem(loop_transformer.second.m_devSerial));
+        ui->m_devTotal->setItem(i, 1, new QTableWidgetItem("变压器"));
+        ui->m_devTotal->setItem(i, 2, new QTableWidgetItem("未知地点"));
+        ++i;
+    }
+}
+
+void EiamiSysWindows::on_m_TabVec3_tabCloseRequested(int index)
+{
+    ui->m_TabVec3->removeTab(index);
+}
+
+void EiamiSysWindows::on_actionBug_U_triggered()
+{
+     QDesktopServices::openUrl(QUrl("https://github.com/QmGohinn/DaDoeiamiSys/issues"));
+}
+
+void EiamiSysWindows::on_action_R_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJFflLdkbqnRbhNhHHzjVkzSDpkRtLPjpDffqzmrBxNLrzszKvvCJJhhxsFsJwZlcmrXV"));
 }

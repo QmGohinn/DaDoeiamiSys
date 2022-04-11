@@ -23,151 +23,103 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string> 优视 ( UVision )</string>
+   <string>优视 ( UVision )</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_5">
-    <item row="1" column="1">
-     <widget class="Line" name="line_5">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="4">
-     <widget class="Line" name="line_17">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="4">
      <widget class="Line" name="line_13">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="Line" name="line_3">
+    <item row="4" column="2">
+     <widget class="Line" name="line_16">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="Line" name="line_6">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4">
-     <widget class="Line" name="line_14">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="0">
-       <widget class="QTabWidget" name="m_TabVec3">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="currentIndex">
-         <number>2</number>
-        </property>
-        <widget class="QWidget" name="tab_5">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <attribute name="title">
-          <string>分类巡检记录</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab_6">
-         <attribute name="title">
-          <string>设备定向巡检记录</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab_7">
-         <attribute name="title">
-          <string>故障预测</string>
-         </attribute>
-        </widget>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="1">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="Line" name="line_12">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="Line" name="line_8">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QChartView" name="m_w1tab1Chart">
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor" stdset="0">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="toolTip">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="0">
-     <widget class="Line" name="line_4">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="Line" name="line_9">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="Line" name="line_7">
+     <widget class="Line" name="line_18">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
+    <item row="1" column="3">
      <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="2">
+       <widget class="QToolBox" name="toolBox">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift Light</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="page">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>250</width>
+           <height>320</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>功能选项</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="page_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>250</width>
+           <height>320</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>业务选项</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>250</width>
+           <height>320</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>管理员</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
       <item row="1" column="0">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -189,159 +141,134 @@
             <property name="focusPolicy">
              <enum>Qt::NoFocus</enum>
             </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::UpDownArrows</enum>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+            <property name="timeSpec">
+             <enum>Qt::UTC</enum>
+            </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0">
-           <widget class="QTabWidget" name="tabWidget">
+          <item>
+           <widget class="QTableWidget" name="m_logTable">
             <property name="minimumSize">
              <size>
-              <width>700</width>
+              <width>0</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
-              <family>宋体</family>
+              <family>JetBrains Mono</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="cursor" stdset="0">
+             <cursorShape>OpenHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <column>
+             <property name="text">
+              <string>时间</string>
+             </property>
+             <property name="font">
+              <font>
+               <family>JetBrains Mono ExtraLight</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignJustify|AlignVCenter</set>
+             </property>
+             <property name="icon">
+              <iconset resource="../../../Resource.qrc">
+               <normaloff>:/res/tab/time.ico</normaloff>:/res/tab/time.ico</iconset>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>日志信息</string>
+             </property>
+             <property name="font">
+              <font>
+               <family>JetBrains Mono</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignJustify|AlignVCenter</set>
+             </property>
+             <property name="background">
+              <color>
+               <red>170</red>
+               <green>170</green>
+               <blue>255</blue>
+              </color>
+             </property>
+             <property name="icon">
+              <iconset resource="../../../Resource.qrc">
+               <normaloff>:/res/tab/info.ico</normaloff>:/res/tab/info.ico</iconset>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>日志编号</string>
+             </property>
+             <property name="font">
+              <font>
+               <family>JetBrains Mono</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="m_mmsgLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>JetBrains Mono NL Light</family>
               <pointsize>10</pointsize>
              </font>
             </property>
-            <property name="currentIndex">
-             <number>1</number>
+            <property name="cursor" stdset="0">
+             <cursorShape>ForbiddenCursor</cursorShape>
             </property>
-            <property name="tabBarAutoHide">
-             <bool>false</bool>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
-            <widget class="QWidget" name="tab_8">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(240, 240, 240);</string>
-             </property>
-             <attribute name="title">
-              <string>巡检日志</string>
-             </attribute>
-             <widget class="QWidget" name="verticalLayoutWidget">
-              <property name="geometry">
-               <rect>
-                <x>-1</x>
-                <y>-1</y>
-                <width>691</width>
-                <height>371</height>
-               </rect>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_3">
-               <item>
-                <widget class="QTableWidget" name="m_logTable">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>JetBrains Mono</family>
-                   <pointsize>9</pointsize>
-                  </font>
-                 </property>
-                 <property name="cursor" stdset="0">
-                  <cursorShape>OpenHandCursor</cursorShape>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);</string>
-                 </property>
-                 <property name="editTriggers">
-                  <set>QAbstractItemView::NoEditTriggers</set>
-                 </property>
-                 <column>
-                  <property name="text">
-                   <string>时间</string>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>JetBrains Mono ExtraLight</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="textAlignment">
-                   <set>AlignJustify|AlignVCenter</set>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>日志信息</string>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>JetBrains Mono</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="textAlignment">
-                   <set>AlignJustify|AlignVCenter</set>
-                  </property>
-                  <property name="background">
-                   <color>
-                    <red>170</red>
-                    <green>170</green>
-                    <blue>255</blue>
-                   </color>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>日志编号</string>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>JetBrains Mono</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                 </column>
-                </widget>
-               </item>
-               <item>
-                <widget class="QTextEdit" name="m_mmsgLineEdit">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>JetBrains Mono NL Light</family>
-                   <pointsize>10</pointsize>
-                  </font>
-                 </property>
-                 <property name="cursor" stdset="0">
-                  <cursorShape>ForbiddenCursor</cursorShape>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </widget>
-            <widget class="QWidget" name="tab_9">
-             <attribute name="title">
-              <string>日志筛选</string>
-             </attribute>
-            </widget>
            </widget>
           </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3"/>
+          </item>
          </layout>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_6"/>
         </item>
        </layout>
       </item>
@@ -352,133 +279,364 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <layout class="QFormLayout" name="formLayout">
-        <item row="0" column="0" colspan="2">
-         <widget class="QToolBox" name="toolBox">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Bahnschrift Light</family>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="currentIndex">
-           <number>2</number>
-          </property>
-          <widget class="QWidget" name="page">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>211</width>
-             <height>324</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>功能选项</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="page_3">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>211</width>
-             <height>324</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>业务选项</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="page_2">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>211</width>
-             <height>324</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>管理员</string>
-           </attribute>
-          </widget>
-         </widget>
-        </item>
-       </layout>
-      </item>
      </layout>
     </item>
-    <item row="3" column="2">
-     <widget class="Line" name="line_16">
+    <item row="4" column="4">
+     <widget class="Line" name="line_17">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <layout class="QGridLayout" name="gridLayout_3">
+    <item row="3" column="0">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <widget class="QTabWidget" name="m_TabVec2">
-          <property name="font">
-           <font>
-            <family>宋体</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="currentIndex">
-           <number>1</number>
-          </property>
-          <widget class="QWidget" name="tab_3">
-           <attribute name="title">
-            <string>巡检设备查询</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="tab_4">
-           <attribute name="title">
-            <string>分类查询</string>
-           </attribute>
-          </widget>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QChartView" name="m_w1tab1Chart">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor" stdset="0">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="toolTip">
+         <string/>
+        </property>
+       </widget>
       </item>
      </layout>
+    </item>
+    <item row="4" column="0">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="Line" name="line_12">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
     </item>
     <item row="1" column="2">
-     <widget class="Line" name="line_10">
+     <widget class="Line" name="line_9">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="Line" name="line">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item row="3" column="3">
-     <widget class="Line" name="line_15">
+    <item row="2" column="0">
+     <widget class="Line" name="line_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="Line" name="line_14">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="Line" name="line_20">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="Line" name="line_7">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
     <item row="0" column="0">
+     <widget class="Line" name="line_19">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="Line" name="line_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QTabWidget" name="m_TabVec3">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="tabPosition">
+         <enum>QTabWidget::South</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Triangular</enum>
+        </property>
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+        <property name="elideMode">
+         <enum>Qt::ElideLeft</enum>
+        </property>
+        <property name="tabsClosable">
+         <bool>false</bool>
+        </property>
+        <property name="movable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
      <widget class="Line" name="line_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="Line" name="line_8">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="Line" name="line_10">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="Line" name="line_15">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="Line" name="line_21">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="Line" name="line_22">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_4"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QTableWidget" name="m_devTotal">
+        <property name="font">
+         <font>
+          <family>JetBrains Mono</family>
+         </font>
+        </property>
+        <property name="cursor" stdset="0">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderMinimumSectionSize">
+         <number>28</number>
+        </attribute>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>183</number>
+        </attribute>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>30</number>
+        </attribute>
+        <attribute name="verticalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>设备编号</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>JetBrains Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignTop</set>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/tab/id.ico</normaloff>:/res/tab/id.ico</iconset>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>分类</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>JetBrains Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignTop</set>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/tab/kind.ico</normaloff>:/res/tab/kind.ico</iconset>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>设备地点</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>JetBrains Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignTop</set>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/tab/local.ico</normaloff>:/res/tab/local.ico</iconset>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>运行状态</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>JetBrains Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignTop</set>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/tab/statu.ico</normaloff>:/res/tab/statu.ico</iconset>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>最近巡检时间</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>JetBrains Mono</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignTop</set>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/tab/time.ico</normaloff>:/res/tab/time.ico</iconset>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>JetBrains Mono</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>设备信息总览</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -488,13 +646,13 @@
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>28</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono NL</family>
-     <pointsize>10</pointsize>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
     </font>
    </property>
    <widget class="QMenu" name="menu_T">
@@ -504,7 +662,9 @@
     <property name="title">
      <string>工具(&amp;T)</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="action_simulatedata"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_U">
     <property name="cursor">
@@ -513,20 +673,13 @@
     <property name="title">
      <string>用户(&amp;U)</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="action_adduser"/>
     <addaction name="separator"/>
     <addaction name="action_addRole"/>
     <addaction name="separator"/>
     <addaction name="action_changePWD"/>
-   </widget>
-   <widget class="QMenu" name="menu_C">
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="title">
-     <string>退出(&amp;C)</string>
-    </property>
-    <addaction name="action_exit"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_V">
     <property name="cursor">
@@ -535,15 +688,21 @@
     <property name="title">
      <string>视图(&amp;V)</string>
     </property>
+    <addaction name="separator"/>
+    <addaction name="action_refreshTotal"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_R">
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="title">
-     <string>刷新(&amp;R)</string>
+     <string>日志(&amp;L)</string>
     </property>
-    <addaction name="action_refreshTotal"/>
+    <addaction name="separator"/>
+    <addaction name="action_refreshLog"/>
+    <addaction name="separator"/>
+    <addaction name="action_opensysLog"/>
    </widget>
    <widget class="QMenu" name="menu_H">
     <property name="cursor">
@@ -552,17 +711,44 @@
     <property name="title">
      <string>帮助(&amp;H)</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="action_help"/>
+    <addaction name="separator"/>
+    <addaction name="action_about"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_M">
     <property name="title">
      <string>菜单(&amp;M)</string>
     </property>
+    <addaction name="separator"/>
+    <addaction name="action_self"/>
+    <addaction name="separator"/>
+    <addaction name="action_shiftUser"/>
+    <addaction name="separator"/>
+    <addaction name="action_exit"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_S">
     <property name="title">
      <string>选项(&amp;S)</string>
     </property>
+    <addaction name="separator"/>
+    <addaction name="action_sysSetUp"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_U_2">
+    <property name="font">
+     <font>
+      <family>JetBrains Mono</family>
+     </font>
+    </property>
+    <property name="title">
+     <string>反馈(&amp;R)</string>
+    </property>
+    <addaction name="actionBug_U"/>
+    <addaction name="separator"/>
+    <addaction name="action_R"/>
    </widget>
    <addaction name="menu_M"/>
    <addaction name="menu_S"/>
@@ -570,8 +756,8 @@
    <addaction name="menu_V"/>
    <addaction name="menu_R"/>
    <addaction name="menu_T"/>
+   <addaction name="menu_U_2"/>
    <addaction name="menu_H"/>
-   <addaction name="menu_C"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -581,13 +767,19 @@
      <height>0</height>
     </size>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="windowTitle">
     <string>快捷用户工具栏</string>
    </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomToolBarArea|Qt::TopToolBarArea</set>
+   </property>
    <property name="iconSize">
     <size>
-     <width>70</width>
-     <height>32</height>
+     <width>80</width>
+     <height>36</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -599,8 +791,14 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_self"/>
+   <addaction name="separator"/>
    <addaction name="action_adduser"/>
+   <addaction name="separator"/>
    <addaction name="action_changePWD"/>
+   <addaction name="separator"/>
+   <addaction name="action_shiftUser"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="minimumSize">
@@ -609,13 +807,19 @@
      <height>0</height>
     </size>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="windowTitle">
     <string>快捷工具栏</string>
    </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomToolBarArea|Qt::TopToolBarArea</set>
+   </property>
    <property name="iconSize">
     <size>
-     <width>70</width>
-     <height>32</height>
+     <width>80</width>
+     <height>36</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -628,7 +832,9 @@
     <bool>false</bool>
    </attribute>
    <addaction name="action_refreshTotal"/>
+   <addaction name="separator"/>
    <addaction name="action_simulatedata"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QToolBar" name="toolBar_3">
    <property name="minimumSize">
@@ -637,13 +843,25 @@
      <height>0</height>
     </size>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="windowTitle">
     <string>快捷选项</string>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomToolBarArea|Qt::TopToolBarArea</set>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
    <property name="iconSize">
     <size>
-     <width>70</width>
-     <height>32</height>
+     <width>80</width>
+     <height>36</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -655,8 +873,10 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_help"/>
-   <addaction name="action_exit"/>
+   <addaction name="action_sysSetUp"/>
+   <addaction name="separator"/>
+   <addaction name="action_about"/>
+   <addaction name="separator"/>
   </widget>
   <action name="action_adduser">
    <property name="icon">
@@ -665,6 +885,15 @@
    </property>
    <property name="text">
     <string>创建用户(&amp;N)</string>
+   </property>
+   <property name="toolTip">
+    <string>创建普通权限用户</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="shortcut">
     <string>Ctrl+U, Ctrl+N</string>
@@ -676,7 +905,16 @@
      <normaloff>:/res/loginui/close.ico</normaloff>:/res/loginui/close.ico</iconset>
    </property>
    <property name="text">
-    <string>退出优视(&amp;E)</string>
+    <string>退出优视(&amp;Esc)</string>
+   </property>
+   <property name="toolTip">
+    <string>退出</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="shortcut">
     <string>Esc</string>
@@ -689,6 +927,15 @@
    </property>
    <property name="text">
     <string>帮助文档(&amp;F1)</string>
+   </property>
+   <property name="toolTip">
+    <string>打开帮助文档</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="shortcut">
     <string>F1</string>
@@ -705,6 +952,12 @@
    <property name="toolTip">
     <string>仅限管理员测试使用</string>
    </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="shortcut">
     <string>F2</string>
    </property>
@@ -717,8 +970,14 @@
    <property name="text">
     <string>修改密码(&amp;C)</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+U, Ctrl+C</string>
+   <property name="toolTip">
+    <string>修改当前账户密码</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
    </property>
   </action>
   <action name="action_refreshTotal">
@@ -732,8 +991,14 @@
    <property name="toolTip">
     <string>刷新设备总览图</string>
    </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="shortcut">
-    <string>Ctrl+R, Ctrl+T</string>
+    <string>F5</string>
    </property>
   </action>
   <action name="action_addRole">
@@ -742,13 +1007,171 @@
      <normaloff>:/res/action/rise.ico</normaloff>:/res/action/rise.ico</iconset>
    </property>
    <property name="text">
-    <string>提升权限</string>
+    <string>提升权限(&amp;R)</string>
    </property>
    <property name="toolTip">
     <string>管理员用来提升普通用户的权限</string>
    </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="shortcut">
     <string>Ctrl+U, Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_refreshLog">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/log.ico</normaloff>:/res/action/log.ico</iconset>
+   </property>
+   <property name="text">
+    <string>更新日志(&amp;L)</string>
+   </property>
+   <property name="toolTip">
+    <string>巡检日志更新</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L, Ctrl+R</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/about.ico</normaloff>:/res/action/about.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关于优视(&amp;A)</string>
+   </property>
+   <property name="toolTip">
+    <string>关于</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_opensysLog">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/syslog.ico</normaloff>:/res/action/syslog.ico</iconset>
+   </property>
+   <property name="text">
+    <string>打开系统日志(&amp;F2)</string>
+   </property>
+   <property name="toolTip">
+    <string>查看优视运行中生成的日志</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+  </action>
+  <action name="action_sysSetUp">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/Options.ico</normaloff>:/res/action/Options.ico</iconset>
+   </property>
+   <property name="text">
+    <string>系统设置(&amp;T)</string>
+   </property>
+   <property name="toolTip">
+    <string>更改优视系统设置</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="action_self">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/self.ico</normaloff>:/res/action/self.ico</iconset>
+   </property>
+   <property name="text">
+    <string>个人中心(&amp;F)</string>
+   </property>
+   <property name="toolTip">
+    <string>查看当前用户信息</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U, Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_shiftUser">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/shift.ico</normaloff>:/res/action/shift.ico</iconset>
+   </property>
+   <property name="text">
+    <string>切换用户(&amp;S)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U, Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionBug_U">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/bug.ico</normaloff>:/res/action/bug.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Bug上报(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>向开发者报告软件错误</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_R">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/request.ico</normaloff>:/res/action/request.ico</iconset>
+   </property>
+   <property name="text">
+    <string>特性请求(&amp;R)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>JetBrains Mono</family>
+    </font>
    </property>
   </action>
  </widget>
@@ -759,11 +1182,6 @@
    <header>qtcharts/qchartview.h</header>
   </customwidget>
  </customwidgets>
- <tabstops>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>m_TabVec3</tabstop>
-  <tabstop>m_TimeEdit</tabstop>
- </tabstops>
  <resources>
   <include location="../../../Resource.qrc"/>
  </resources>
