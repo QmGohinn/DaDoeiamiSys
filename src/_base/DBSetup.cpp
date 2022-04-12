@@ -147,7 +147,7 @@ void DBSetup::DB_Pipeline_Simulate()
         return;
     }
 
-    for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
+    for(int _size = 1; _size <= UVGlobal::g_pipelineNum; _size++)
     {
         QString _devName = QString("GD%1").arg(_size);
 
@@ -162,7 +162,7 @@ void DBSetup::DB_Transformer_Simulate()
         return;
     }
 
-    for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
+    for(int _size = 1; _size <= UVGlobal::g_transformsNum; _size++)
     {
         QString _devName = QString("BY%1").arg(_size);
 

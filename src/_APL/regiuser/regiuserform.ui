@@ -102,7 +102,7 @@
        </property>
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -134,7 +134,7 @@
       <widget class="QLabel" name="m_password2Label">
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -153,7 +153,7 @@
        </property>
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -172,7 +172,7 @@
        </property>
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -201,7 +201,7 @@
       <widget class="QLabel" name="m_password1Label">
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -220,7 +220,7 @@
        </property>
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>9</pointsize>
         </font>
        </property>

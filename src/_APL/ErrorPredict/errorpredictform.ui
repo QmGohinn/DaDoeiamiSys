@@ -22,6 +22,12 @@
     <height>424</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>宋体</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>ErrorPredictForm</string>
   </property>
@@ -43,10 +49,26 @@
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton">
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Maximum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="m_totalRadio">
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -60,9 +82,12 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
+         <width>80</width>
          <height>20</height>
         </size>
        </property>
@@ -76,10 +101,26 @@
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton_2">
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Maximum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="m_kindRadio">
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>宋体</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -89,13 +130,78 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox">
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Maximum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QComboBox" name="m_kindComboBox">
        <property name="minimumSize">
         <size>
          <width>150</width>
-         <height>30</height>
+         <height>35</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="insertPolicy">
+        <enum>QComboBox::InsertAtCurrent</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+       </property>
+       <property name="duplicatesEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>高温锅炉</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>汽机</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>变压器</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>高压管道</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>输煤皮带</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
@@ -128,14 +234,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="Line" name="line_6">
+      <widget class="Line" name="line_7">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCommandLinkButton" name="commandLinkButton">
+      <widget class="QCommandLinkButton" name="m_sureButton">
        <property name="maximumSize">
         <size>
          <width>120</width>
@@ -144,12 +250,51 @@
        </property>
        <property name="font">
         <font>
-         <family>JetBrains Mono</family>
+         <family>等线</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
         <string>开始预测</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_6">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCommandLinkButton" name="m_crtButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>等线</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>当前页报告生成</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line_5">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
@@ -163,7 +308,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QTableWidget" name="tableWidget"/>
+    <widget class="QTableWidget" name="m_devTable"/>
    </item>
   </layout>
  </widget>

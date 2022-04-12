@@ -6,6 +6,8 @@ ErrorPredictForm::ErrorPredictForm(QWidget *parent)
     , ui(new Ui::ErrorPredictForm)
 {
     ui->setupUi(this);
+
+    ui->m_totalRadio->setChecked(true);
 }
 
 ErrorPredictForm::~ErrorPredictForm()

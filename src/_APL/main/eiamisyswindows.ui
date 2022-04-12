@@ -29,6 +29,11 @@
    <layout class="QGridLayout" name="gridLayout_5">
     <item row="3" column="4">
      <widget class="Line" name="line_13">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -36,6 +41,11 @@
     </item>
     <item row="4" column="2">
      <widget class="Line" name="line_16">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -43,6 +53,11 @@
     </item>
     <item row="0" column="1">
      <widget class="Line" name="line_18">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -66,7 +81,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Bahnschrift Light</family>
+          <family>宋体</family>
           <pointsize>10</pointsize>
          </font>
         </property>
@@ -77,7 +92,7 @@
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page">
          <property name="geometry">
@@ -85,7 +100,7 @@
            <x>0</x>
            <y>0</y>
            <width>250</width>
-           <height>320</height>
+           <height>335</height>
           </rect>
          </property>
          <attribute name="label">
@@ -98,7 +113,7 @@
            <x>0</x>
            <y>0</y>
            <width>250</width>
-           <height>320</height>
+           <height>335</height>
           </rect>
          </property>
          <attribute name="label">
@@ -111,7 +126,7 @@
            <x>0</x>
            <y>0</y>
            <width>250</width>
-           <height>320</height>
+           <height>335</height>
           </rect>
          </property>
          <attribute name="label">
@@ -168,8 +183,8 @@
             </property>
             <property name="font">
              <font>
-              <family>JetBrains Mono</family>
-              <pointsize>9</pointsize>
+              <family>宋体</family>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="cursor" stdset="0">
@@ -181,13 +196,19 @@
             <property name="editTriggers">
              <set>QAbstractItemView::NoEditTriggers</set>
             </property>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
             <column>
              <property name="text">
               <string>时间</string>
              </property>
              <property name="font">
               <font>
-               <family>JetBrains Mono ExtraLight</family>
+               <family>宋体</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -205,7 +226,7 @@
              </property>
              <property name="font">
               <font>
-               <family>JetBrains Mono</family>
+               <family>宋体</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -230,7 +251,7 @@
              </property>
              <property name="font">
               <font>
-               <family>JetBrains Mono</family>
+               <family>宋体</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -250,7 +271,7 @@
             </property>
             <property name="font">
              <font>
-              <family>JetBrains Mono NL Light</family>
+              <family>宋体</family>
               <pointsize>10</pointsize>
              </font>
             </property>
@@ -262,18 +283,17 @@
             </property>
            </widget>
           </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3"/>
-          </item>
          </layout>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout_6"/>
         </item>
        </layout>
       </item>
       <item row="1" column="1">
        <widget class="Line" name="line_11">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -283,6 +303,11 @@
     </item>
     <item row="4" column="4">
      <widget class="Line" name="line_17">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -290,6 +315,11 @@
     </item>
     <item row="3" column="0">
      <widget class="Line" name="line_4">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -301,7 +331,7 @@
        <widget class="QChartView" name="m_w1tab1Chart">
         <property name="font">
          <font>
-          <family>Arial</family>
+          <family>宋体</family>
           <pointsize>10</pointsize>
          </font>
         </property>
@@ -317,6 +347,11 @@
     </item>
     <item row="4" column="0">
      <widget class="Line" name="line_3">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -324,6 +359,11 @@
     </item>
     <item row="1" column="4">
      <widget class="Line" name="line_12">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -331,6 +371,11 @@
     </item>
     <item row="1" column="2">
      <widget class="Line" name="line_9">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -338,6 +383,11 @@
     </item>
     <item row="4" column="1">
      <widget class="Line" name="line">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -345,6 +395,11 @@
     </item>
     <item row="2" column="0">
      <widget class="Line" name="line_6">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -352,6 +407,11 @@
     </item>
     <item row="2" column="4">
      <widget class="Line" name="line_14">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -359,6 +419,11 @@
     </item>
     <item row="0" column="2">
      <widget class="Line" name="line_20">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -366,6 +431,11 @@
     </item>
     <item row="2" column="3">
      <widget class="Line" name="line_7">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -373,6 +443,11 @@
     </item>
     <item row="0" column="0">
      <widget class="Line" name="line_19">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -380,6 +455,11 @@
     </item>
     <item row="2" column="1">
      <widget class="Line" name="line_5">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -428,6 +508,11 @@
     </item>
     <item row="1" column="0">
      <widget class="Line" name="line_2">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -435,6 +520,11 @@
     </item>
     <item row="3" column="2">
      <widget class="Line" name="line_8">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -442,6 +532,11 @@
     </item>
     <item row="2" column="2">
      <widget class="Line" name="line_10">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -449,6 +544,11 @@
     </item>
     <item row="4" column="3">
      <widget class="Line" name="line_15">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -456,6 +556,11 @@
     </item>
     <item row="0" column="3">
      <widget class="Line" name="line_21">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -463,6 +568,11 @@
     </item>
     <item row="0" column="4">
      <widget class="Line" name="line_22">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+       </font>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -470,14 +580,84 @@
     </item>
     <item row="3" column="1">
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="1" column="1">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>设备信息总览</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="1">
        <layout class="QVBoxLayout" name="verticalLayout_4"/>
       </item>
-      <item row="1" column="0">
+      <item row="4" column="0">
+       <widget class="QLineEdit" name="m_peopleInfoEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
        <widget class="QTableWidget" name="m_devTotal">
         <property name="font">
          <font>
-          <family>JetBrains Mono</family>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="cursor" stdset="0">
@@ -499,7 +679,7 @@
          <number>28</number>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>183</number>
+         <number>185</number>
         </attribute>
         <attribute name="horizontalHeaderHighlightSections">
          <bool>true</bool>
@@ -525,7 +705,7 @@
          </property>
          <property name="font">
           <font>
-           <family>JetBrains Mono</family>
+           <family>宋体</family>
            <pointsize>10</pointsize>
           </font>
          </property>
@@ -543,7 +723,7 @@
          </property>
          <property name="font">
           <font>
-           <family>JetBrains Mono</family>
+           <family>宋体</family>
            <pointsize>10</pointsize>
           </font>
          </property>
@@ -561,7 +741,7 @@
          </property>
          <property name="font">
           <font>
-           <family>JetBrains Mono</family>
+           <family>宋体</family>
            <pointsize>10</pointsize>
           </font>
          </property>
@@ -579,7 +759,7 @@
          </property>
          <property name="font">
           <font>
-           <family>JetBrains Mono</family>
+           <family>宋体</family>
            <pointsize>10</pointsize>
           </font>
          </property>
@@ -597,7 +777,7 @@
          </property>
          <property name="font">
           <font>
-           <family>JetBrains Mono</family>
+           <family>宋体</family>
            <pointsize>10</pointsize>
           </font>
          </property>
@@ -609,32 +789,34 @@
            <normaloff>:/res/tab/time.ico</normaloff>:/res/tab/time.ico</iconset>
          </property>
         </column>
+        <column>
+         <property name="text">
+          <string>隐藏编号</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>宋体</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+        </column>
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <family>JetBrains Mono</family>
-          <pointsize>10</pointsize>
-         </font>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
         </property>
-        <property name="text">
-         <string>设备信息总览</string>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>5</height>
+         </size>
         </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="textInteractionFlags">
-         <set>Qt::NoTextInteraction</set>
-        </property>
-       </widget>
+       </spacer>
       </item>
      </layout>
     </item>
@@ -646,13 +828,13 @@
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <widget class="QMenu" name="menu_T">
@@ -759,13 +941,26 @@
    <addaction name="menu_U_2"/>
    <addaction name="menu_H"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="minimumSize">
     <size>
      <width>0</width>
      <height>0</height>
     </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
@@ -807,6 +1002,12 @@
      <height>0</height>
     </size>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
@@ -842,6 +1043,12 @@
      <width>0</width>
      <height>0</height>
     </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
@@ -891,8 +1098,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -912,8 +1119,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -933,8 +1140,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -954,8 +1161,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -975,8 +1182,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
   </action>
@@ -993,8 +1200,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1014,8 +1221,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1035,8 +1242,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1056,8 +1263,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
   </action>
@@ -1074,8 +1281,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1095,8 +1302,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1116,8 +1323,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1134,8 +1341,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="shortcut">
@@ -1155,8 +1362,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
-     <pointsize>9</pointsize>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
   </action>
@@ -1170,7 +1377,8 @@
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
   </action>

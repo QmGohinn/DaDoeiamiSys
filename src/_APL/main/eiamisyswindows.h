@@ -97,5 +97,6 @@ private slots:
     void on_m_TabVec3_tabCloseRequested(int index);
     void on_actionBug_U_triggered();
     void on_action_R_triggered();
+    void on_m_devTotal_itemClicked(QTableWidgetItem *item);
 };
 #endif // EIAMISYSWINDOWS_H
