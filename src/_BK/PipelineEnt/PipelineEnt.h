@@ -6,8 +6,8 @@
 #ifndef PIPELINEENT_H
 #define PIPELINEENT_H
 
-#include "../../_BK/BaseEnt/BaseEnt.h"
-#include "../../_BK/InspectorEnt/InspectorEnt.h"
+#include <src/_BK/BaseEnt/BaseEnt.h>
+#include <src/_BK/InspectorEnt/InspectorEnt.h>
 
 class PipelineEnt;
 

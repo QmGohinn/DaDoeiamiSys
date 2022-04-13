@@ -1,10 +1,10 @@
-#include "../../_base/precompiled.h"
+#include <src/_base/precompiled.h>
 #include <QxOrm_Impl.h>
 
 #include "InspectorEnt.h"
-#include "../LogEnt/LogEnt.h"
+#include <src/_BK/LogEnt/LogEnt.h>
 
-#include "../../_base/UVGlobal.h"
+#include <src/_base/UVGlobal.h>
 
 QX_REGISTER_CPP_QM(InspecorEnt)
 QX_PERSISTABLE_CPP(InspecorEnt)

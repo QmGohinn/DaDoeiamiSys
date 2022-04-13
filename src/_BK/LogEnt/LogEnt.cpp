@@ -1,8 +1,8 @@
-#include "../../_base/precompiled.h"
+#include <src/_base/precompiled.h>
 #include <QxOrm_Impl.h>
 
 #include "LogEnt.h"
-#include "../../_base/UVGlobal.h"
+#include <src/_base/UVGlobal.h>
 
 QX_REGISTER_CPP_QM(LogEnt)
 QX_PERSISTABLE_CPP(LogEnt)

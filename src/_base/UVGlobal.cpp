@@ -1,5 +1,5 @@
 #include "UVGlobal.h"
-#include "../_BK/TotalShow/TotalShow.h"
+#include <src/_BK/TotalShow/TotalShow.h>
 
 #include <QApplication>
 
@@ -9,7 +9,8 @@ using namespace QsLogging;
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
 
-int UVGlobal::g_logNum = 0;int UVGlobal::g_boilerNum = 0;
+int UVGlobal::g_logNum = 0;
+int UVGlobal::g_boilerNum = 0;
 int UVGlobal::g_motorNum = 0;
 int UVGlobal::g_beltNum = 0;
 int UVGlobal::g_pipelineNum = 0;

@@ -6,7 +6,7 @@
 #ifndef LOGENT_H
 #define LOGENT_H
 
-#include "../../_BK/BaseEnt/BaseEnt.h"
+#include <src/_BK/BaseEnt/BaseEnt.h>
 
 class LogEnt;
 

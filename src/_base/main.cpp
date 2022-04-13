@@ -1,13 +1,13 @@
 #include <QApplication>
 #include <QThreadPool>
 
-#include "../_base/SysInit.h"
+#include <src/_base/SysInit.h>
 /// 主界面
-#include "../_APL/main/eiamisyswindows.h"
+#include <src/_APL/main/eiamisyswindows.h>
 /// 登录界面
-#include "../_APL/userlogin/userloginform.h"
+#include <src/_APL/userlogin/userloginform.h>
 /// 数据库表注册头文件
-#include "../_base/dbTableReg.hpp"
+#include <src/_base/dbTableReg.hpp>
 
 int main(int argc, char *argv[])
 {

@@ -148,6 +148,7 @@ DISTFILES += \
     doc/版本文档/文献翻译.doc \
     res/tab/find.ico \
     res/tab/info.ico \
+    res/tab/kinds.ico \
     res/tab/time.ico
 
 ## 程序LOGO

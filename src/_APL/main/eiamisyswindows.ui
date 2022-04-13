@@ -65,76 +65,6 @@
     </item>
     <item row="1" column="3">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="2">
-       <widget class="QToolBox" name="toolBox">
-        <property name="minimumSize">
-         <size>
-          <width>250</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>250</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="currentIndex">
-         <number>1</number>
-        </property>
-        <widget class="QWidget" name="page">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>250</width>
-           <height>335</height>
-          </rect>
-         </property>
-         <attribute name="label">
-          <string>功能选项</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="page_3">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>250</width>
-           <height>335</height>
-          </rect>
-         </property>
-         <attribute name="label">
-          <string>业务选项</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="page_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>250</width>
-           <height>335</height>
-          </rect>
-         </property>
-         <attribute name="label">
-          <string>管理员</string>
-         </attribute>
-        </widget>
-       </widget>
-      </item>
       <item row="1" column="0">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -255,6 +185,13 @@
                <pointsize>10</pointsize>
               </font>
              </property>
+             <property name="textAlignment">
+              <set>AlignLeading|AlignTop</set>
+             </property>
+             <property name="icon">
+              <iconset resource="../../../Resource.qrc">
+               <normaloff>:/res/logo/exelogo.ico</normaloff>:/res/logo/exelogo.ico</iconset>
+             </property>
             </column>
            </widget>
           </item>
@@ -297,6 +234,52 @@
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="minimumSize">
+         <size>
+          <width>293</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="tabWidgetPage1" native="true">
+         <attribute name="title">
+          <string>功能选项</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tabWidgetPage2" native="true">
+         <attribute name="title">
+          <string>业务选项</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tabWidgetPage3" native="true">
+         <attribute name="title">
+          <string>管理选项</string>
+         </attribute>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -580,78 +563,6 @@
     </item>
     <item row="3" column="1">
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="1" column="0">
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>设备信息总览</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="textInteractionFlags">
-         <set>Qt::NoTextInteraction</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Maximum</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>5</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="3" column="1">
-       <layout class="QVBoxLayout" name="verticalLayout_4"/>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLineEdit" name="m_peopleInfoEdit">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="0">
        <widget class="QTableWidget" name="m_devTotal">
         <property name="font">
@@ -799,11 +710,87 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignTop</set>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/logo/exelogo.ico</normaloff>:/res/logo/exelogo.ico</iconset>
+         </property>
         </column>
        </widget>
       </item>
       <item row="0" column="0">
        <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLineEdit" name="m_peopleInfoEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>设备信息总览</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -857,6 +844,8 @@
     </property>
     <addaction name="separator"/>
     <addaction name="action_adduser"/>
+    <addaction name="separator"/>
+    <addaction name="action_shiftUser"/>
     <addaction name="separator"/>
     <addaction name="action_addRole"/>
     <addaction name="separator"/>
@@ -1102,9 +1091,6 @@
      <pointsize>10</pointsize>
     </font>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+U, Ctrl+N</string>
-   </property>
   </action>
   <action name="action_exit">
    <property name="icon">
@@ -1225,9 +1211,6 @@
      <pointsize>10</pointsize>
     </font>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+U, Ctrl+A</string>
-   </property>
   </action>
   <action name="action_refreshLog">
    <property name="icon">
@@ -1344,9 +1327,6 @@
      <family>宋体</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+U, Ctrl+C</string>
    </property>
   </action>
   <action name="actionBug_U">

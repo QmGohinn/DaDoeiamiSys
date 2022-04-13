@@ -6,7 +6,7 @@
 #ifndef ACCOUNTENT_H
 #define ACCOUNTENT_H
 
-#include "../../_BK/BaseEnt/BaseEnt.h"
+#include <src/_BK/BaseEnt/BaseEnt.h>
 
 class UserEnt;
 

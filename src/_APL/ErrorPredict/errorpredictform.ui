@@ -250,7 +250,7 @@
        </property>
        <property name="font">
         <font>
-         <family>等线</family>
+         <family>Segoe UI</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -276,7 +276,7 @@
        </property>
        <property name="font">
         <font>
-         <family>等线</family>
+         <family>Segoe UI</family>
          <pointsize>10</pointsize>
         </font>
        </property>

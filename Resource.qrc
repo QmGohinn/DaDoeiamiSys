@@ -36,5 +36,7 @@
         <file>res/action/request.ico</file>
         <file>res/tab/find.ico</file>
         <file>res/tab/clear.ico</file>
+        <file>res/tab/kinds.ico</file>
+        <file>res/tab/predict.ico</file>
     </qresource>
 </RCC>

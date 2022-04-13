@@ -1,14 +1,13 @@
 #include "DBSetup.h"
 
-#include "../_BK/TotalShow/TotalShow.h"
-#include "../_BK/AccountEnt/AccountEnt.h"
-#include "../_BK/BeltEnt/BeltEnt.h"
-#include "../_BK/BoilerEnt/BoilerEnt.h"
-#include "../_BK/MotorEnt/MotorEnt.h"
-#include "../_BK/PipelineEnt/PipelineEnt.h"
-#include "../_BK/TransformerEnt/TransformerEnt.h"
-
-#include "../_base/UVGlobal.h"
+#include <src/_BK/TotalShow/TotalShow.h>
+#include <src/_BK/AccountEnt/AccountEnt.h>
+#include <src/_BK/BeltEnt/BeltEnt.h>
+#include <src/_BK/BoilerEnt/BoilerEnt.h>
+#include <src/_BK/MotorEnt/MotorEnt.h>
+#include <src/_BK/PipelineEnt/PipelineEnt.h>
+#include <src/_BK/TransformerEnt/TransformerEnt.h>
+#include <src/_base/UVGlobal.h>
 
 DBSetup::DBSetup(){ ;; };
 
@@ -82,7 +81,7 @@ void DBSetup::DB_TotalShow_Simulate()
             UVGlobal::g_beltNum = loop_TotalInfo.second.totalDevNum;
         }else if(loop_TotalInfo.second.devType == DEV4TYPE){
             UVGlobal::g_pipelineNum = loop_TotalInfo.second.totalDevNum;
-        }else if(loop_TotalInfo.second.devType == DEV5TYPE){
+        }else{
             UVGlobal::g_transformsNum = loop_TotalInfo.second.totalDevNum;
         }
     }
@@ -98,75 +97,78 @@ void DBSetup::AddDefaultUser()
 
 void DBSetup::DB_Belt_Simulate()
 {
-    if(qx::dao::count<BeltEnt>() != 0){
-        return;
-    }
-
     for(int _size = 1; _size <= UVGlobal::g_beltNum; _size++)
     {
         QString _devName = QString("PD%1").arg(_size);
-
         BeltEnt::Create(_devName,
-                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
+                        InspecorEnt::Create(randRes(), UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
 void DBSetup::DB_Boiler_Simulate()
 {
-    if(qx::dao::count<BoilerEnt>() != 0){
-        return;
-    }
-
     for(int _size = 1; _size <= UVGlobal::g_boilerNum; _size++)
     {
         QString _devName = QString("GL%1").arg(_size);
-
         BoilerEnt::Create(_devName,
-                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
+                        InspecorEnt::Create(randRes(), UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
 void DBSetup::DB_Motor_Simulate()
 {
-    if(qx::dao::count<MotorEnt>() != 0){
-        return;
-    }
-
     for(int _size = 1; _size <= UVGlobal::g_motorNum; _size++)
     {
         QString _devName = QString("QJ%1").arg(_size);
-
         MotorEnt::Create(_devName,
-                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
+                        InspecorEnt::Create(randRes(), UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
 void DBSetup::DB_Pipeline_Simulate()
 {
-    if(qx::dao::count<PipelineEnt>() != 0){
-        return;
-    }
-
     for(int _size = 1; _size <= UVGlobal::g_pipelineNum; _size++)
     {
         QString _devName = QString("GD%1").arg(_size);
-
         PipelineEnt::Create(_devName,
-                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
+                        InspecorEnt::Create(randRes(), UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
 }
 
 void DBSetup::DB_Transformer_Simulate()
 {
-    if(qx::dao::count<TransformerEnt>() != 0){
-        return;
-    }
-
     for(int _size = 1; _size <= UVGlobal::g_transformsNum; _size++)
     {
         QString _devName = QString("BY%1").arg(_size);
-
         TransformerEnt::Create(_devName,
-                        InspecorEnt::Create(NRM, UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
+                        InspecorEnt::Create(randRes(), UVGlobal::g_DATETIME, "17191206623", "吴斌", _devName));
     }
+}
+
+PATROLRES DBSetup::randRes(){
+
+    QTime time = QTime::currentTime();
+    qsrand(time.msec() + time.second() * 1000);
+
+    PATROLRES _res = NRM;
+    switch ((qrand() + 24) % 40) {
+    case 24:
+    case 25:
+    case 26:
+        _res = QUESTION_1_LEVEL;
+        break;
+    case 28:
+    case 21:
+        _res = QUESTION_2_LEVEL;
+        break;
+    case 35:
+        _res = QUESTION_3_LEVEL;
+        break;
+    case 23:
+        _res = ERROE;
+        break;
+    default:
+        break;
+    }
+    return _res;
 }

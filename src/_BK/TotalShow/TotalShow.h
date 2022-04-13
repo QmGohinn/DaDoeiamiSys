@@ -6,7 +6,7 @@
 #ifndef TOTALSHOW_H
 #define TOTALSHOW_H
 
-#include "../../_BK/BaseEnt/BaseEnt.h"
+#include <src/_BK/BaseEnt/BaseEnt.h>
 
 class TotalShowEnt;
 

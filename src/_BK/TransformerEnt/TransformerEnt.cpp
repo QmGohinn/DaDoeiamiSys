@@ -1,8 +1,8 @@
-#include "../../_base/precompiled.h"
+#include <src/_base/precompiled.h>
 #include <QxOrm_Impl.h>
 
 #include "TransformerEnt.h"
-#include "../LogEnt/LogEnt.h"
+#include <src/_BK/LogEnt/LogEnt.h>
 
 QX_REGISTER_CPP_QM(TransformerEnt)
 QX_PERSISTABLE_CPP(TransformerEnt)

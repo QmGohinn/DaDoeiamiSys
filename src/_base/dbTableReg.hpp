@@ -9,19 +9,19 @@
 
 #include "QxDao/QxSqlDatabase.h"
 
-#include "../_BK/BaseEnt/BaseEnt.h"
-#include "../_BK/AccountEnt/AccountEnt.h"
-#include "../_BK/TotalShow/TotalShow.h"
+#include <src/_BK/BaseEnt/BaseEnt.h>
+#include <src/_BK/AccountEnt/AccountEnt.h>
+#include <src/_BK/TotalShow/TotalShow.h>
 
-#include "../_BK/InspectorEnt/InspectorEnt.h"
+#include <src/_BK/InspectorEnt/InspectorEnt.h>
 
-#include "../_BK/BeltEnt/BeltEnt.h"
-#include "../_BK/BoilerEnt/BoilerEnt.h"
-#include "../_BK/MotorEnt/MotorEnt.h"
-#include "../_BK/PipelineEnt/PipelineEnt.h"
-#include "../_BK/TransformerEnt/TransformerEnt.h"
+#include <src/_BK/BeltEnt/BeltEnt.h>
+#include <src/_BK/BoilerEnt/BoilerEnt.h>
+#include <src/_BK/MotorEnt/MotorEnt.h>
+#include <src/_BK/PipelineEnt/PipelineEnt.h>
+#include <src/_BK/TransformerEnt/TransformerEnt.h>
 
-#include "../_BK/LogEnt/LogEnt.h"
+#include <src/_BK/LogEnt/LogEnt.h>
 
 class DBScratch
 {

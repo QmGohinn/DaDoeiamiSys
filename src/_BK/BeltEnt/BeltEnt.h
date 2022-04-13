@@ -6,8 +6,8 @@
 #ifndef BELTENT_H
 #define BELTENT_H
 
-#include "../../_BK/InspectorEnt/InspectorEnt.h"
-#include "../../_BK/BaseEnt/BaseEnt.h"
+#include <src/_BK/InspectorEnt/InspectorEnt.h>
+#include <src/_BK/BaseEnt/BaseEnt.h>
 
 class BeltEnt;
 

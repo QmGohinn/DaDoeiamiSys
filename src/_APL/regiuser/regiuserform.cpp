@@ -2,7 +2,7 @@
 #include "ui_regiuserform.h"
 
 #include <QMessageBox>
-#include "../../_BK/AccountEnt/AccountEnt.h"
+#include <src/_BK/AccountEnt/AccountEnt.h>
 
 RegiUserForm::RegiUserForm(QDialog *parent)
     : QDialog(parent)

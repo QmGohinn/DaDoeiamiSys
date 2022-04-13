@@ -7,6 +7,8 @@
 #ifndef DBSETUP_H
 #define DBSETUP_H
 
+#include<src/_BK/InspectorEnt/InspectorEnt.h>
+
 class DBSetup
 {
 public:
@@ -15,7 +17,7 @@ public:
     static void DBConnect();
     /// 插入模拟数据
     static void DBInsertSimulate();
-    /// add a default user named 'qm' passworded 'qm'
+    /// add a default user named 'wubin' passworded '221376' roled 'admin'
     /// when user num == 0
     static void AddDefaultUser();
     /// 插入输煤皮带数据
@@ -28,6 +30,8 @@ public:
     static void DB_Pipeline_Simulate();
     /// 插入变压器数据
     static void DB_Transformer_Simulate();
+    /// Rand Res
+    static PATROLRES randRes();
 private:
     /// 总数表模拟
     static void DB_TotalShow_Simulate();

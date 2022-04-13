@@ -37,9 +37,11 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_tabKindDevLog = new KindOfDevLogForm;
     ui->m_TabVec3->insertTab(0, m_tabKindDevLog, tr("定向巡检记录"));
+    ui->m_TabVec3->setTabIcon(0, QIcon(":/res/tab/kinds.ico"));
 
     m_tabErrorPre = new ErrorPredictForm;
     ui->m_TabVec3->insertTab(1, m_tabErrorPre, tr("故障预测"));
+    ui->m_TabVec3->setTabIcon(1, QIcon(":/res/tab/predict.ico"));
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
@@ -59,7 +61,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     ui->m_logTable->verticalHeader()->setHidden(true);
     ui->m_logTable->hideColumn(2);
     ui->m_mmsgLineEdit->hide();
-    ui->m_logTable->setColumnWidth(0, 320);
+    ui->m_logTable->setColumnWidth(0, 250);
 //    ui->m_logTable->setColumnWidth(1, 320);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -277,8 +279,6 @@ void EiamiSysWindows::updateLogTable()
 
     qx::dao::fetch_by_query(_query, _logLst);
 
-//    ui->m_logTable->clear();
-
     while(ui->m_logTable->rowCount() != 0){
         ui->m_logTable->removeRow(0);
     }
@@ -385,7 +385,7 @@ void EiamiSysWindows::updateDevTotal()
         ui->m_devTotal->removeRow(0);
     }
 
-    qx_query _query("select DISTINCT ON(devserial) * from inspecorbaseinfo order by devserial DESC");
+    qx_query _query("select DISTINCT ON(devserial) * from inspecorbaseinfo order by devserial ASC, updated_at DESC");
     List_InspecorEnt lst;
 
     qx::dao::execute_query(_query, lst);
@@ -416,18 +416,23 @@ void EiamiSysWindows::updateDevTotal()
         switch (_p.second.m_res) {
         case 1:
             ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("正常"));
+            ui->m_devTotal->item(i, 3)->setForeground(Qt::blue);
             break;
         case 0:
             ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("故障停工"));
+            ui->m_devTotal->item(i, 3)->setForeground(Qt::gray);
             break;
         case -1:
             ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("一级风险"));
+            ui->m_devTotal->item(i, 3)->setForeground(Qt::red);
             break;
         case -2:
             ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("二级风险"));
+            ui->m_devTotal->item(i, 3)->setForeground(Qt::red);
             break;
         case -3:
             ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("三级风险"));
+            ui->m_devTotal->item(i, 3)->setForeground(Qt::red);
             break;
         }
 
@@ -467,12 +472,12 @@ void EiamiSysWindows::on_m_devTotal_itemClicked(QTableWidgetItem *item)
     switch (item->column()) {
     case 0:
     case 1:
-    case 3:
         ui->m_peopleInfoEdit->hide();
         break;
     case 2:
         ui->m_peopleInfoEdit->setText("设备具体地点暂未接入该版本优视,点击特性请求或尝试更新!");
         break;
+    case 3:
     case 4:
         ui->m_peopleInfoEdit->setText(QString("检员姓名:%1,检员电话:%2.").arg(_p->m_name).arg(_p->m_phone));
         break;

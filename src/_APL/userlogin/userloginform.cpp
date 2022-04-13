@@ -7,13 +7,13 @@
 
 #include "userloginform.h"
 #include "ui_userloginform.h"
-#include "../../_APL/regiuser/regiuserform.h"
+#include <src/_APL/regiuser/regiuserform.h>
 
-#include "../../_base/DBSetup.h"
-#include "../../_base/UVGlobal.h"
+#include <src/_base/DBSetup.h>
+#include <src/_base/UVGlobal.h>
 
-#include "../../_BK/AccountEnt/AccountEnt.h"
-#include "../../_BK/LogEnt/LogEnt.h"
+#include <src/_BK/AccountEnt/AccountEnt.h>
+#include <src/_BK/LogEnt/LogEnt.h>
 
 UserLoginForm::UserLoginForm(QWidget *parent)
     : QDialog(parent)

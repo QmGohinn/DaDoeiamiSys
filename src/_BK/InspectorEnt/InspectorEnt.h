@@ -1,13 +1,13 @@
 ///*********************************
 ///
-/// 输煤皮带总览表
+/// 巡检信息总览表
 ///
 
 #ifndef INSPECTORENT_H
 #define INSPECTORENT_H
 
-#include "../../_BK/BaseEnt/BaseEnt.h"
-#include "../../_base/UVGlobal.h"
+#include <src/_BK/BaseEnt/BaseEnt.h>
+#include <src/_base/UVGlobal.h>
 
 class InspecorEnt;
 

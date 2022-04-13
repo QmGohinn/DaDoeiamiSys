@@ -328,12 +328,12 @@
      <x>0</x>
      <y>0</y>
      <width>960</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>JetBrains Mono</family>
+     <family>宋体</family>
      <pointsize>9</pointsize>
     </font>
    </property>
