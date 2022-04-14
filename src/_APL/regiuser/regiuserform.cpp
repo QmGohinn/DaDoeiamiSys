@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <src/_BK/AccountEnt/AccountEnt.h>
 
+#include <src/_base/UVGlobal.h>
+
 RegiUserForm::RegiUserForm(QDialog *parent)
     : QDialog(parent)
     , ui(new Ui::RegiUserForm)
@@ -27,6 +29,10 @@ void RegiUserForm::on_m_sureButton_clicked()
     QString _pwd1 = ui->m_password1Edit->text();
     QString _pwd2 = ui->m_password2Edit->text();
 
+    ui->m_nameEdit->clear();
+    ui->m_password1Edit->clear();
+    ui->m_password2Edit->clear();
+
     if(_name.isEmpty() || _pwd1.isEmpty() || _pwd2.isEmpty()){
         QMessageBox::critical(this, "提示", "账号和密码不能为空!", tr("确定"));
         return;
@@ -47,7 +53,12 @@ void RegiUserForm::on_m_sureButton_clicked()
         return;
     }
     else{
-        UserEnt::Create(_name, _pwd1, 0);
+        if(UVGlobal::_adminFlg){
+            UserEnt::Create(_name, _pwd1, 1);
+        }
+        else{
+            UserEnt::Create(_name, _pwd1, 0);
+        }
 
         if(0 == QMessageBox::information(this, "提示", QString("%1, 恭喜您注册成功!").arg(_name), tr("返回上级"), tr("继续注册")))
         {
@@ -58,5 +69,9 @@ void RegiUserForm::on_m_sureButton_clicked()
 
 void RegiUserForm::on_m_returnButton_clicked()
 {
+    ui->m_nameEdit->clear();
+    ui->m_password1Edit->clear();
+    ui->m_password2Edit->clear();
+
     QDialog::accept();
 }

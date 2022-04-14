@@ -153,6 +153,7 @@ void UserLoginForm::killAndAccept()
 
 void UserLoginForm::on_m_RegisterBtn_clicked()
 {
+    UVGlobal::_adminFlg = false;
     m_regiUserForm->exec();
 }
 

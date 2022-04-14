@@ -9,6 +9,7 @@ using namespace QsLogging;
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
 
+bool UVGlobal::_adminFlg = false;
 int UVGlobal::g_logNum = 0;
 int UVGlobal::g_boilerNum = 0;
 int UVGlobal::g_motorNum = 0;
@@ -72,19 +73,19 @@ QString UVGlobal::gFunc_PatrolRes2Str(const PATROLRES& _tmpRes)
     QString _tmpStrRes = "";
     switch (_tmpRes) {
     case NRM:
-        _tmpStrRes = "正常";
+        _tmpStrRes = "正常运行";
         break;
     case ERROE:
-        _tmpStrRes = "故障";
+        _tmpStrRes = "故障停工";
         break;
     case QUESTION_1_LEVEL:
-        _tmpStrRes = "一级风险";
+        _tmpStrRes = "Ⅰ级风险";
         break;
     case QUESTION_2_LEVEL:
-        _tmpStrRes = "二级风险";
+        _tmpStrRes = "Ⅱ级风险";
         break;
     case QUESTION_3_LEVEL:
-        _tmpStrRes = "三级风险";
+        _tmpStrRes = "Ⅲ级风险";
         break;
     }
     return _tmpStrRes;

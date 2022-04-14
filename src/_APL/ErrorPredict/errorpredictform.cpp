@@ -8,6 +8,8 @@
 #include <src/_BK/BoilerEnt/BoilerEnt.h>
 #include <src/_BK/BeltEnt/BeltEnt.h>
 
+#include <src/_base/UVGlobal.h>
+
 QVector<QString> ErrorPredictForm::m_devSerial;
 QMap<QString, QPair<QPair<QString, QString>, QPair<QString, QString>>> ErrorPredictForm::m_predictRes;
 
@@ -50,6 +52,20 @@ void ErrorPredictForm::getPredictByInputSerial()
         qx::dao::execute_query(_query, lst);
 
         int _num = lst.size() < 10 ? lst.size() : 10;
+
+        if(lst.size() > 3){
+            if(lst.getByIndex(2).m_res == 0){
+                if(lst.getByIndex(1).m_res == 0){
+                    if(lst.getByIndex(0).m_res == 0){
+                        this->insertRes(_devStr, "故障停工", "82%", "正常运行", "17%"); continue;
+                    }
+                    else{
+                        this->insertRes(_devStr, UVGlobal::gFunc_PatrolRes2Str(lst.getByIndex(0).m_res), "99%", "", ""); continue;
+                    }
+                }
+            }
+        }
+
         int _totalRes = 0;
         for(int i = 0; i < _num; i++){
             _totalRes += lst.getByIndex(i).m_res;
@@ -58,11 +74,19 @@ void ErrorPredictForm::getPredictByInputSerial()
         int _averageRes = _totalRes / _num;
         switch (_averageRes) {
         case 1:
+            this->insertRes(_devStr, "正常运行", "99%", "Ⅰ级风险", "1%");
             break;
-        default:
-            ErrorPredictForm::m_predictRes.insert(_devStr,
-                                                  QPair<QPair<QString, QString>, QPair<QString, QString>>
-                                                  (QPair<QString, QString>("30%", "正常运行"), QPair<QString, QString>("70%", "故障停工")));
+        case 0:
+            this->insertRes(_devStr, "正常运行", "93%", "Ⅰ级或Ⅱ级风险", "6%");
+            break;
+        case -1:
+            this->insertRes(_devStr, "Ⅰ级风险", "62%", "Ⅱ级风险", "37%");
+            break;
+        case -2:
+            this->insertRes(_devStr, "Ⅱ级风险", "88%", "Ⅰ级或Ⅲ级风险", "11%");
+            break;
+        case -3:
+            this->insertRes(_devStr, "Ⅲ级风险", "90%", "故障停工", "9%");
             break;
         }
     }
@@ -140,13 +164,7 @@ void ErrorPredictForm::on_m_sureButton_clicked()
             if(it.value().first.second.contains("正常运行")){
                 ui->m_devTable->item(i, 1)->setForeground(Qt::blue);
             }
-            else if(it.value().first.second.contains("Ⅰ级风险")){
-                ui->m_devTable->item(i, 1)->setForeground(Qt::red);
-            }
-            else if(it.value().first.second.contains("Ⅱ级风险")){
-                ui->m_devTable->item(i, 1)->setForeground(Qt::red);
-            }
-            else if(it.value().first.second.contains("Ⅲ级风险")){
+            else if(it.value().first.second.contains("风险")){
                 ui->m_devTable->item(i, 1)->setForeground(Qt::red);
             }
             else if(it.value().first.second.contains("故障停工")){
@@ -157,13 +175,7 @@ void ErrorPredictForm::on_m_sureButton_clicked()
             if(it.value().second.second.contains("正常运行")){
                 ui->m_devTable->item(i, 3)->setForeground(Qt::blue);
             }
-            else if(it.value().second.second.contains("Ⅰ级风险")){
-                ui->m_devTable->item(i, 3)->setForeground(Qt::red);
-            }
-            else if(it.value().second.second.contains("Ⅱ级风险")){
-                ui->m_devTable->item(i, 3)->setForeground(Qt::red);
-            }
-            else if(it.value().second.second.contains("Ⅲ级风险")){
+            else if(it.value().second.second.contains("风险")){
                 ui->m_devTable->item(i, 3)->setForeground(Qt::red);
             }
             else if(it.value().second.second.contains("故障停工")){
@@ -174,3 +186,11 @@ void ErrorPredictForm::on_m_sureButton_clicked()
         i++;
     }
 }
+
+void ErrorPredictForm::insertRes(const QString& _devStr,const QString& _res1, const QString& _num1, const QString& _res2, const QString& _num2)
+{
+    ErrorPredictForm::m_predictRes.insert(_devStr,
+                                          QPair<QPair<QString, QString>, QPair<QString, QString>>
+                                          (QPair<QString, QString>(_num1, _res1), QPair<QString, QString>(_num2, _res2)));
+}
+

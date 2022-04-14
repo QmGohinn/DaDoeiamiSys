@@ -155,16 +155,26 @@ PATROLRES DBSetup::randRes(){
     case 24:
     case 25:
     case 26:
+    case 27:
+    case 28:
+    case 29:
         _res = QUESTION_1_LEVEL;
         break;
-    case 28:
+    case 20:
     case 21:
+    case 1:
+    case 2:
         _res = QUESTION_2_LEVEL;
         break;
     case 35:
+    case 36:
         _res = QUESTION_3_LEVEL;
         break;
     case 23:
+    case 14:
+    case 13:
+    case 12:
+    case 11:
         _res = ERROE;
         break;
     default:

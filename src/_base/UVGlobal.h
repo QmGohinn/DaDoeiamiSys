@@ -62,6 +62,8 @@ public:
     static QString g_userName;
     static QString g_passWord;
 
+    static bool _adminFlg;
+
     /// 日志数量
     static int g_logNum;
     /// 全局日志类

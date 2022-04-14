@@ -23,6 +23,9 @@ public:
     /// 传入设备编号获取到预测结果
     void getPredictByInputSerial();
 
+    /// 预测结果插入数据
+    void insertRes(const QString&, const QString&, const QString&, const QString&, const QString&);
+
 private slots:
     void on_m_sureButton_clicked();
 

@@ -325,6 +325,7 @@ void EiamiSysWindows::on_action_adduser_triggered()
         _pRegi = new RegiUserForm;
     }
 
+    UVGlobal::_adminFlg = false;
     _pRegi->show();
     _pRegi->raise();
     _pRegi->activateWindow();
@@ -423,15 +424,15 @@ void EiamiSysWindows::updateDevTotal()
             ui->m_devTotal->item(i, 3)->setForeground(Qt::gray);
             break;
         case -1:
-            ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("一级风险"));
+            ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("Ⅰ级风险"));
             ui->m_devTotal->item(i, 3)->setForeground(Qt::red);
             break;
         case -2:
-            ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("二级风险"));
+            ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("Ⅱ级风险"));
             ui->m_devTotal->item(i, 3)->setForeground(Qt::red);
             break;
         case -3:
-            ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("三级风险"));
+            ui->m_devTotal->setItem(i, 3, new QTableWidgetItem("Ⅲ级风险"));
             ui->m_devTotal->item(i, 3)->setForeground(Qt::red);
             break;
         }

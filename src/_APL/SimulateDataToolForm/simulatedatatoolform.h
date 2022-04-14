@@ -2,6 +2,7 @@
 #define SIMULATEDATATOOLFORM_H
 
 #include <QMainWindow>
+#include <src/_APL/regiuser/regiuserform.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SimulateDataToolForm; }
@@ -14,6 +15,12 @@ class SimulateDataToolForm : public QMainWindow
 public:
     SimulateDataToolForm(QWidget *parent = nullptr);
     ~SimulateDataToolForm();
+
+    /// 注册窗口
+    RegiUserForm* m_addAdminForm = nullptr;
+
+private slots:
+    void on_pushButton_7_clicked();
 
 private:
     Ui::SimulateDataToolForm *ui;
