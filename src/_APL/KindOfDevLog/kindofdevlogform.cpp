@@ -43,7 +43,7 @@ void KindOfDevLogForm::on_m_findButton_clicked()
     ui->m_msgLineEdit->hide();
 
     if(ui->m_numLineEdit->text().isEmpty()){
-        QMessageBox::information(this, "提示", "定向筛选之前请输入设备编号!", QMessageBox::Ok);
+        QMessageBox::information(this, "提示", "定向筛选之前请输入设备编号!", tr("确定"));
         return;
     }
 

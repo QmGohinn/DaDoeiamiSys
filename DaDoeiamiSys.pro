@@ -149,6 +149,7 @@ DISTFILES += \
     res/tab/find.ico \
     res/tab/info.ico \
     res/tab/kinds.ico \
+    res/tab/prob.ico \
     res/tab/time.ico
 
 ## 程序LOGO

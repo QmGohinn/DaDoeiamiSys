@@ -38,5 +38,6 @@
         <file>res/tab/clear.ico</file>
         <file>res/tab/kinds.ico</file>
         <file>res/tab/predict.ico</file>
+        <file>res/tab/prob.ico</file>
     </qresource>
 </RCC>
