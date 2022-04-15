@@ -123,6 +123,7 @@ DISTFILES += \
     3rd/QxOrm/lib/QxOrmd.dll \
     3rd/QxOrm/lib/libQxOrm.a \
     3rd/QxOrm/lib/libQxOrmd.a \
+    HELP.txt \
     README.md \
     bat/fix.bat \
     config/cfg.xml \

@@ -242,6 +242,12 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="toolTip">
+        <string>不区分大小写</string>
+       </property>
+       <property name="placeholderText">
+        <string>编号不区分大小写</string>
+       </property>
       </widget>
      </item>
      <item>
@@ -314,10 +320,10 @@
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <property name="gridStyle">
-      <enum>Qt::DashDotLine</enum>
+      <enum>Qt::DashDotDotLine</enum>
      </property>
      <attribute name="horizontalHeaderVisible">
-      <bool>true</bool>
+      <bool>false</bool>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>170</number>

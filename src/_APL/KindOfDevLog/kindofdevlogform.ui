@@ -84,6 +84,12 @@
          <pointsize>10</pointsize>
         </font>
        </property>
+       <property name="toolTip">
+        <string>不区分大小写</string>
+       </property>
+       <property name="placeholderText">
+        <string>编号不区分大小写</string>
+       </property>
       </widget>
      </item>
      <item>

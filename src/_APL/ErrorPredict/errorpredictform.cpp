@@ -51,6 +51,11 @@ void ErrorPredictForm::getPredictByInputSerial()
         lst.clear();
         qx::dao::execute_query(_query, lst);
 
+        if(!lst.size()){
+            QMessageBox::information(this, "提示", "该设备编号不存在,请仔细核对!", tr("确定"));
+            return;
+        }
+
         int _num = lst.size() < 10 ? lst.size() : 10;
 
         if(lst.size() > 3){
@@ -149,6 +154,7 @@ void ErrorPredictForm::on_m_sureButton_clicked()
     /// 根据用户选项智能生成预测的设备编号数组
     getPredictByInputSerial();
 
+    if(m_predictRes.size())
     {   /// 插入数据到表格中
         ui->m_devTable->horizontalHeader()->show();
 
