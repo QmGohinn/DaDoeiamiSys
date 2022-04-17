@@ -94,6 +94,7 @@ void UserLoginForm::on_m_LoginBtn_clicked()
         UVGlobal::g_currentRole = _tmpUserLst.begin()->second->role;
         UVGlobal::g_userName = input_Account;
         UVGlobal::g_passWord = input_Password;
+        UVGlobal::g_userID = _tmpUserLst.begin()->second->id;
 
         m_thread->start();
         QTimer::singleShot(rand() % 2000 + 1800, this, SLOT(killAndAccept()));

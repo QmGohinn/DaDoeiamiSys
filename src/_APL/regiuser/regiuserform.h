@@ -15,6 +15,8 @@ public:
     RegiUserForm(QDialog *parent = nullptr);
     ~RegiUserForm();
 
+    void setDefaultTxt();
+
 private slots:
     void on_m_sureButton_clicked();
     void on_m_returnButton_clicked();

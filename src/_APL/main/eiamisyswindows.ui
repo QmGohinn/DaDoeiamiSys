@@ -268,8 +268,11 @@
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tabWidgetPage1">
          <attribute name="title">
@@ -886,9 +889,10 @@
      <string>日志(&amp;L)</string>
     </property>
     <addaction name="separator"/>
+    <addaction name="action_opensysLog"/>
+    <addaction name="separator"/>
     <addaction name="action_refreshLog"/>
     <addaction name="separator"/>
-    <addaction name="action_opensysLog"/>
    </widget>
    <widget class="QMenu" name="menu_H">
     <property name="cursor">
@@ -930,9 +934,11 @@
     <property name="title">
      <string>反馈(&amp;R)</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="actionBug_U"/>
     <addaction name="separator"/>
     <addaction name="action_R"/>
+    <addaction name="separator"/>
    </widget>
    <addaction name="menu_M"/>
    <addaction name="menu_S"/>

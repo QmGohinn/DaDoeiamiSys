@@ -59,6 +59,7 @@ public:
 
     /// 当前用户权限 账号名 密码
     static int g_currentRole;
+    static int g_userID;
     static QString g_userName;
     static QString g_passWord;
 

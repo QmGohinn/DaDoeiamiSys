@@ -23,6 +23,9 @@ void SimulateDataToolForm::on_pushButton_7_clicked()
         m_addAdminForm = new RegiUserForm;
     }
 
+    m_addAdminForm->setWindowTitle("管理员添加");
+    m_addAdminForm->setDefaultTxt();
+
     m_addAdminForm->raise();
     m_addAdminForm->show();
     m_addAdminForm->activateWindow();

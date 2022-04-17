@@ -52,9 +52,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/_APL/ChangePWD/changepwdform.cpp \
     src/_APL/ErrorPredict/errorpredictform.cpp \
     src/_APL/KindOfDevLog/kindofdevlogform.cpp \
+    src/_APL/SelfCenter/selfcenterform.cpp \
+    src/_APL/ShiftUser/shiftuserform.cpp \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.cpp \
+    src/_APL/SysSettings/syssettingsform.cpp \
     src/_APL/main/eiamisyswindows.cpp \
     src/_APL/regiuser/regiuserform.cpp \
     src/_APL/userlogin/userloginform.cpp \
@@ -76,9 +80,13 @@ SOURCES += \
     src/_base/main.cpp
 
 HEADERS += \
+    src/_APL/ChangePWD/changepwdform.h \
     src/_APL/ErrorPredict/errorpredictform.h \
     src/_APL/KindOfDevLog/kindofdevlogform.h \
+    src/_APL/SelfCenter/selfcenterform.h \
+    src/_APL/ShiftUser/shiftuserform.h \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.h \
+    src/_APL/SysSettings/syssettingsform.h \
     src/_APL/main/eiamisyswindows.h \
     src/_APL/regiuser/regiuserform.h \
     src/_APL/userlogin/userloginform.h \
@@ -102,9 +110,13 @@ HEADERS += \
     src/_base/precompiled.h
 
 FORMS += \
+    src/_APL/ChangePWD/changepwdform.ui \
     src/_APL/ErrorPredict/errorpredictform.ui \
     src/_APL/KindOfDevLog/kindofdevlogform.ui \
+    src/_APL/SelfCenter/selfcenterform.ui \
+    src/_APL/ShiftUser/shiftuserform.ui \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.ui \
+    src/_APL/SysSettings/syssettingsform.ui \
     src/_APL/main/eiamisyswindows.ui \
     src/_APL/regiuser/regiuserform.ui \
     src/_APL/userlogin/userloginform.ui
@@ -147,6 +159,7 @@ DISTFILES += \
     doc/版本文档/开题报告初版.doc \
     doc/版本文档/文献综述.doc \
     doc/版本文档/文献翻译.doc \
+    res/selections/box.ico \
     res/tab/find.ico \
     res/tab/info.ico \
     res/tab/kinds.ico \

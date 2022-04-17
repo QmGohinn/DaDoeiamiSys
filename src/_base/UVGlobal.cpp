@@ -23,6 +23,7 @@ QMap<int, QString> UVGlobal::g_devType;
 QDateTime UVGlobal::g_DATETIME;
 QString UVGlobal::g_userName = "";
 QString UVGlobal::g_passWord = "";
+int UVGlobal::g_userID = 0;
 QsLogging::Logger& UVGlobal::Log = QsLogging::Logger::instance();
 
 /// the global param define end

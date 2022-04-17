@@ -28,7 +28,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     ui->setupUi(this);
     /// 窗口最大化
     this->setWindowState(Qt::WindowMaximized);
-    this->show();
+//    this->show();
     this->raise();
     this->activateWindow();
 //    this->setWindowFlag(Qt::FramelessWindowHint);
@@ -483,4 +483,44 @@ void EiamiSysWindows::on_m_devTotal_itemClicked(QTableWidgetItem *item)
         ui->m_peopleInfoEdit->setText(QString("检员姓名:%1,检员电话:%2.").arg(_p->m_name).arg(_p->m_phone));
         break;
     }
+}
+
+void EiamiSysWindows::on_action_changePWD_triggered()
+{
+    if(m_changePWdForm == nullptr){
+        m_changePWdForm = new ChangePWDForm;
+    }
+    m_changePWdForm->show();
+    m_changePWdForm->raise();
+    m_changePWdForm->activateWindow();
+}
+
+void EiamiSysWindows::on_action_self_triggered()
+{
+    if(m_selfCenterForm == nullptr){
+        m_selfCenterForm = new SelfCenterForm;
+    }
+    m_selfCenterForm->show();
+    m_selfCenterForm->raise();
+    m_selfCenterForm->activateWindow();
+}
+
+void EiamiSysWindows::on_action_shiftUser_triggered()
+{
+    if(m_shiftUser == nullptr){
+        m_shiftUser = new ShiftUserForm;
+    }
+    m_shiftUser->show();
+    m_shiftUser->raise();
+    m_shiftUser->activateWindow();
+}
+
+void EiamiSysWindows::on_action_sysSetUp_triggered()
+{
+    if(m_sysSetting == nullptr){
+        m_sysSetting = new SysSettingsForm;
+    }
+    m_sysSetting->show();
+    m_sysSetting->raise();
+    m_sysSetting->activateWindow();
 }

@@ -13,6 +13,10 @@
 #include <src/_APL/regiuser/regiuserform.h>
 #include <src/_APL/ErrorPredict/errorpredictform.h>
 #include <src/_APL/KindOfDevLog/kindofdevlogform.h>
+#include <src/_APL/ChangePWD/changepwdform.h>
+#include <src/_APL/SelfCenter/selfcenterform.h>
+#include <src/_APL/ShiftUser/shiftuserform.h>
+#include <src/_APL/SysSettings/syssettingsform.h>
 
 /// dynamic charts module
 #include <QtCharts>
@@ -32,6 +36,18 @@ public:
     ~EiamiSysWindows();
 
     void closeEvent(QCloseEvent* e);
+
+    /// 系统设置Dialog
+    SysSettingsForm* m_sysSetting = nullptr;
+
+    /// 切换用户Dialog
+    ShiftUserForm* m_shiftUser = nullptr;
+
+    /// 个人中心Dialog
+    SelfCenterForm* m_selfCenterForm = nullptr;
+
+    /// 修改密码Dialog
+    ChangePWDForm* m_changePWdForm = nullptr;
 
     /// 设备分类记录
     KindOfDevLogForm* m_tabKindDevLog = nullptr;
@@ -98,5 +114,9 @@ private slots:
     void on_actionBug_U_triggered();
     void on_action_R_triggered();
     void on_m_devTotal_itemClicked(QTableWidgetItem *item);
+    void on_action_changePWD_triggered();
+    void on_action_self_triggered();
+    void on_action_shiftUser_triggered();
+    void on_action_sysSetUp_triggered();
 };
 #endif // EIAMISYSWINDOWS_H

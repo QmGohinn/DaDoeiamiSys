@@ -11,7 +11,7 @@ RegiUserForm::RegiUserForm(QDialog *parent)
     , ui(new Ui::RegiUserForm)
 {
     ui->setupUi(this);
-    this->setWindowIcon(QIcon(":/res/windows/people.ico"));
+//    this->setWindowIcon(QIcon(":/res/windows/people.ico"));
 
     ui->m_nameEdit->clear();
     ui->m_password1Edit->clear();
@@ -74,4 +74,9 @@ void RegiUserForm::on_m_returnButton_clicked()
     ui->m_password2Edit->clear();
 
     QDialog::accept();
+}
+
+void RegiUserForm::setDefaultTxt()
+{
+    ui->m_password2Edit->setPlaceholderText("此时注册为管理员权限");
 }
