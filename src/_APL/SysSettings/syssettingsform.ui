@@ -6,17 +6,50 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>850</width>
+    <height>488</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>850</width>
+    <height>488</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>850</width>
+    <height>488</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>宋体</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>SysSettingsForm</string>
+   <string>系统设置</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../Resource.qrc">
+    <normaloff>:/res/action/Options.ico</normaloff>:/res/action/Options.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>850</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../Resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

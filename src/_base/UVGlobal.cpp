@@ -9,6 +9,7 @@ using namespace QsLogging;
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
 
+int UVGlobal::g_currentStyle = 0;
 bool UVGlobal::_adminFlg = false;
 int UVGlobal::g_logNum = 0;
 int UVGlobal::g_boilerNum = 0;
@@ -20,6 +21,7 @@ int UVGlobal::g_currentRole = -1;
 int UVGlobal::g_devKindNum = 5;
 QMap<int, QString> UVGlobal::g_mapIntQStr;
 QMap<int, QString> UVGlobal::g_devType;
+QVector<QString> UVGlobal::g_widgetStyle;
 QDateTime UVGlobal::g_DATETIME;
 QString UVGlobal::g_userName = "";
 QString UVGlobal::g_passWord = "";
@@ -48,6 +50,10 @@ void UVGlobal::init()
     UVGlobal::g_devType[2] = DEV3TYPE;
     UVGlobal::g_devType[3] = DEV4TYPE;
     UVGlobal::g_devType[4] = DEV5TYPE;
+
+    UVGlobal::g_widgetStyle.push_back("Fusion");
+    UVGlobal::g_widgetStyle.push_back("windowsvista");
+    UVGlobal::g_widgetStyle.push_back("Windows");
 
     UVGlobal::Log.setLoggingLevel(QsLogging::TraceLevel);
 

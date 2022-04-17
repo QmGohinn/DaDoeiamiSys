@@ -41,5 +41,7 @@
         <file>res/tab/prob.ico</file>
         <file>res/selections/box.ico</file>
         <file>res/selections/files.ico</file>
+        <file>res/gif/main.gif</file>
+        <file>res/action/style.ico</file>
     </qresource>
 </RCC>

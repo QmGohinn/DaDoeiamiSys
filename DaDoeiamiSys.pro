@@ -159,6 +159,7 @@ DISTFILES += \
     doc/版本文档/开题报告初版.doc \
     doc/版本文档/文献综述.doc \
     doc/版本文档/文献翻译.doc \
+    res/gif/main.gif \
     res/selections/box.ico \
     res/tab/find.ico \
     res/tab/info.ico \

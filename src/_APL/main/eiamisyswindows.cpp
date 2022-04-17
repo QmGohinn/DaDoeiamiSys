@@ -34,6 +34,11 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 //    this->setWindowFlag(Qt::FramelessWindowHint);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
+    QMovie* _movie = new QMovie(":/res/gif/main.gif");
+    ui->label_2->setMovie(_movie);
+    _movie->setSpeed(300);
+    _movie->start();
+
 /// -▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼-▼ //
     m_tabKindDevLog = new KindOfDevLogForm;
     ui->m_TabVec3->insertTab(0, m_tabKindDevLog, tr("定向巡检记录"));
@@ -523,4 +528,10 @@ void EiamiSysWindows::on_action_sysSetUp_triggered()
     m_sysSetting->show();
     m_sysSetting->raise();
     m_sysSetting->activateWindow();
+}
+
+void EiamiSysWindows::on_pushButton_6_clicked()
+{
+    QApplication::setStyle(UVGlobal::g_widgetStyle.at(UVGlobal::g_currentStyle % UVGlobal::g_widgetStyle.size()));
+    UVGlobal::g_currentStyle += 1;
 }

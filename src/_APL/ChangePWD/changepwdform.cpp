@@ -72,5 +72,9 @@ void ChangePWDForm::on_buttonBox_accepted()
 
 void ChangePWDForm::on_buttonBox_rejected()
 {
+    ui->m_beforePWDEdit->clear();
+    ui->m_newPWDEdit->clear();
+    ui->m_newPWDEdit2->clear();
+
     this->close();
 }

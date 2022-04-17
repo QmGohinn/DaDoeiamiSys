@@ -41,6 +41,8 @@ public:
 
 public:
     static void init();
+    static int g_currentStyle;
+    static QVector<QString> g_widgetStyle;
     /// 介绍标语
     static QMap<int, QString> g_mapIntQStr;
     /// 巡检设备类型数量

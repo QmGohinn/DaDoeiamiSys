@@ -118,5 +118,6 @@ private slots:
     void on_action_self_triggered();
     void on_action_shiftUser_triggered();
     void on_action_sysSetUp_triggered();
+    void on_pushButton_6_clicked();
 };
 #endif // EIAMISYSWINDOWS_H

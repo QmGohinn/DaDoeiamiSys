@@ -62,7 +62,7 @@ void ErrorPredictForm::getPredictByInputSerial()
             if(lst.getByIndex(2).m_res == 0){
                 if(lst.getByIndex(1).m_res == 0){
                     if(lst.getByIndex(0).m_res == 0){
-                        this->insertRes(_devStr, "故障停工", "82%", "正常运行", "17%"); continue;
+                        this->insertRes(_devStr, "故障停工", "82.5%", "正常运行", "17.5%"); continue;
                     }
                     else{
                         this->insertRes(_devStr, UVGlobal::gFunc_PatrolRes2Str(lst.getByIndex(0).m_res), "99%", "", ""); continue;
@@ -79,19 +79,19 @@ void ErrorPredictForm::getPredictByInputSerial()
         int _averageRes = _totalRes / _num;
         switch (_averageRes) {
         case 1:
-            this->insertRes(_devStr, "正常运行", "99%", "Ⅰ级风险", "1%");
+            this->insertRes(_devStr, "正常运行", "98.8%", "Ⅰ级风险", "1.2%");
             break;
         case 0:
-            this->insertRes(_devStr, "正常运行", "93%", "Ⅰ级或Ⅱ级风险", "6%");
+            this->insertRes(_devStr, "正常运行", "86.2%", "Ⅰ级或Ⅱ级风险", "13.7%");
             break;
         case -1:
-            this->insertRes(_devStr, "Ⅰ级风险", "62%", "Ⅱ级风险", "37%");
+            this->insertRes(_devStr, "Ⅰ级风险", "62.5%", "Ⅱ级风险", "36.5%");
             break;
         case -2:
-            this->insertRes(_devStr, "Ⅱ级风险", "88%", "Ⅰ级或Ⅲ级风险", "11%");
+            this->insertRes(_devStr, "Ⅱ级风险", "88.8%", "Ⅰ级或Ⅲ级风险", "11.1%");
             break;
         case -3:
-            this->insertRes(_devStr, "Ⅲ级风险", "90%", "故障停工", "9%");
+            this->insertRes(_devStr, "Ⅲ级风险", "90.9%", "故障停工", "9.0%");
             break;
         }
     }
