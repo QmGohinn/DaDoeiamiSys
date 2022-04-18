@@ -115,6 +115,25 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     /// 右键菜单                                      设置托盘栏程序图标
     QMenu *menu = new QMenu(this);
     /// 设置右键菜单
+
+    menu->addSeparator();
+
+    QAction* _action2 = new QAction(this);
+    _action2->setText("打开主界面");
+    _action2->setIcon(QIcon(":/res/action/menu.png"));
+    menu->addAction(_action2);
+    connect(_action2, SIGNAL(triggered()), this, SLOT(_action2Slot()));
+
+    menu->addSeparator();
+
+    QAction* _action1 = new QAction(this);
+    _action1->setText("退出优视");
+    _action1->setIcon(QIcon(":/res/action/close.png"));
+    menu->addAction(_action1);
+    connect(_action1, SIGNAL(triggered()), this, SLOT(_action1Slot()));
+
+    menu->addSeparator();
+
     m_trayIcon->setContextMenu(menu);
     connect(m_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(slotIconActivated(QSystemTrayIcon::ActivationReason)));
@@ -534,4 +553,21 @@ void EiamiSysWindows::on_pushButton_6_clicked()
 {
     QApplication::setStyle(UVGlobal::g_widgetStyle.at(UVGlobal::g_currentStyle % UVGlobal::g_widgetStyle.size()));
     UVGlobal::g_currentStyle += 1;
+}
+
+void EiamiSysWindows::_action1Slot()
+{
+    this->~EiamiSysWindows();
+}
+
+void EiamiSysWindows::_action2Slot()
+{
+    setWindowState(Qt::WindowActive);
+    activateWindow();
+    showMaximized();
+}
+
+void EiamiSysWindows::_action3Slot()
+{
+
 }

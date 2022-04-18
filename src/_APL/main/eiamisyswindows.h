@@ -119,5 +119,9 @@ private slots:
     void on_action_shiftUser_triggered();
     void on_action_sysSetUp_triggered();
     void on_pushButton_6_clicked();
+
+    void _action1Slot();
+    void _action2Slot();
+    void _action3Slot();
 };
 #endif // EIAMISYSWINDOWS_H
