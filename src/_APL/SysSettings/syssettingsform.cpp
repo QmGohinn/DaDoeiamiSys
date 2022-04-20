@@ -13,6 +13,8 @@ SysSettingsForm::SysSettingsForm(QWidget *parent)
     m_ycodeSet = new Ycodeset;
     ui->m_tabWidget->insertTab(1, m_ycodeSet, tr("预测属性"));
 
+    m_thresholdset = new thresholdset;
+    ui->m_tabWidget->insertTab(2, m_thresholdset, tr("阈值设定"));
 
 }
 

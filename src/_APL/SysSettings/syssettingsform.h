@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <src/_APL/settingTime/timeset.h>
 #include <src/_APL/settingYCode/ycodeset.h>
+#include <src/_APL/ThresholdSet/thresholdset.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SysSettingsForm; }
@@ -19,6 +20,7 @@ public:
 
     timeset* m_timeSet = nullptr;
     Ycodeset* m_ycodeSet = nullptr;
+    thresholdset* m_thresholdset = nullptr;
 
 private:
     Ui::SysSettingsForm *ui;
