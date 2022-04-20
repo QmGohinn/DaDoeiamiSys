@@ -2,6 +2,8 @@
 #define SYSSETTINGSFORM_H
 
 #include <QMainWindow>
+#include <src/_APL/settingTime/timeset.h>
+#include <src/_APL/settingYCode/ycodeset.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SysSettingsForm; }
@@ -14,6 +16,9 @@ class SysSettingsForm : public QMainWindow
 public:
     SysSettingsForm(QWidget *parent = nullptr);
     ~SysSettingsForm();
+
+    timeset* m_timeSet = nullptr;
+    Ycodeset* m_ycodeSet = nullptr;
 
 private:
     Ui::SysSettingsForm *ui;

@@ -123,5 +123,6 @@ private slots:
     void _action1Slot();
     void _action2Slot();
     void _action3Slot();
+    void on_pushButton_4_clicked();
 };
 #endif // EIAMISYSWINDOWS_H

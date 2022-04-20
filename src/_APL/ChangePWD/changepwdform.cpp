@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <src/_base/UVGlobal.h>
 #include <src/_BK/AccountEnt/AccountEnt.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 ChangePWDForm::ChangePWDForm(QWidget *parent)
     : QDialog(parent)
@@ -66,6 +67,7 @@ void ChangePWDForm::on_buttonBox_accepted()
 
     if(0 == QMessageBox::information(this, "提示", QString("修改密码成功!"), tr("确定")))
     {
+        UserLogEnt::Create(UVGlobal::g_userName, "修改密码");
         this->close();
     }
 }

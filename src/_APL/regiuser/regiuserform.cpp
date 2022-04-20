@@ -5,6 +5,7 @@
 #include <src/_BK/AccountEnt/AccountEnt.h>
 
 #include <src/_base/UVGlobal.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 RegiUserForm::RegiUserForm(QDialog *parent)
     : QDialog(parent)
@@ -62,6 +63,7 @@ void RegiUserForm::on_m_sureButton_clicked()
 
         if(0 == QMessageBox::information(this, "提示", QString("%1, 恭喜您注册成功!").arg(_name), tr("返回上级"), tr("继续注册")))
         {
+            UserLogEnt::Create(_name, "注册成功");
             QDialog::accept();
         }
     }

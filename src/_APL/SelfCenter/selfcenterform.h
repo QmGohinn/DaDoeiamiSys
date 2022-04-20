@@ -15,6 +15,7 @@ public:
     SelfCenterForm(QWidget *parent = nullptr);
     ~SelfCenterForm();
 
+    void init();
 private:
     Ui::SelfCenterForm *ui;
 };

@@ -52,6 +52,9 @@ public:
     /// 运行日期
     static QDateTime g_DATETIME;
 
+    static int g_screenWidth;
+    static int g_screenHeight;
+
     /// 五种巡检设备的总数
     static int g_transformsNum ;
     static int g_pipelineNum;

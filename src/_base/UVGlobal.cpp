@@ -2,6 +2,7 @@
 #include <src/_BK/TotalShow/TotalShow.h>
 
 #include <QApplication>
+#include <QScreen>
 
 /// QsLog namespace
 using namespace QsLogging;
@@ -9,6 +10,8 @@ using namespace QsLogging;
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
 
+int UVGlobal::g_screenWidth = 0;
+int UVGlobal::g_screenHeight = 0;
 int UVGlobal::g_currentStyle = 0;
 bool UVGlobal::_adminFlg = false;
 int UVGlobal::g_logNum = 0;
@@ -70,6 +73,9 @@ void UVGlobal::init()
 
 //    Log.addDestination(debugDestination);
 //    Log.addDestination(functorDestination);
+
+    UVGlobal::g_screenWidth = QGuiApplication::primaryScreen()->geometry().width();
+    UVGlobal::g_screenHeight = QGuiApplication::primaryScreen()->geometry().height();
 
     QLOG_INFO() << "    系统初始化";
     QLOG_INFO() << "    系统启动";

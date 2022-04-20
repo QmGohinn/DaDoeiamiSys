@@ -14,6 +14,7 @@
 
 #include <src/_BK/AccountEnt/AccountEnt.h>
 #include <src/_BK/LogEnt/LogEnt.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 UserLoginForm::UserLoginForm(QWidget *parent)
     : QDialog(parent)
@@ -147,7 +148,7 @@ void UserLoginForm::killAndAccept()
     this->hide();
     m_trayIcon->hide();
 
-//    LogEnt::Create(SysLog, "登录 UVision 客户端");
+    UserLogEnt::Create(ui->m_AccountLineEdit->text(), "登录 UVision 客户端");
 
     QDialog::accept();
 }

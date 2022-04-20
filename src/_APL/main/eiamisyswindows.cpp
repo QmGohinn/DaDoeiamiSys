@@ -19,6 +19,7 @@
 #include <src/_BK/MotorEnt/MotorEnt.h>
 #include <src/_BK/PipelineEnt/PipelineEnt.h>
 #include <src/_BK/TransformerEnt/TransformerEnt.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     : QMainWindow(parent)
@@ -126,6 +127,14 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
 
     menu->addSeparator();
 
+    QAction* _action3 = new QAction(this);
+    _action3->setText("关于优视");
+    _action3->setIcon(QIcon(":/res/action/about.ico"));
+    menu->addAction(_action3);
+    connect(_action3, SIGNAL(triggered()), this, SLOT(_action3Slot()));
+
+    menu->addSeparator();
+
     QAction* _action1 = new QAction(this);
     _action1->setText("退出优视");
     _action1->setIcon(QIcon(":/res/action/close.png"));
@@ -152,7 +161,7 @@ void EiamiSysWindows::closeEvent(QCloseEvent *e)
     {
         this->~EiamiSysWindows();
         QLOG_INFO() << "    退出系统";
-//        LogEnt::Create(SysLog, "退出优视客户端");
+        UserLogEnt::Create(UVGlobal::g_userName, "退出 UVision 客户端");
         e->accept();
     }
     else
@@ -524,6 +533,7 @@ void EiamiSysWindows::on_action_self_triggered()
     if(m_selfCenterForm == nullptr){
         m_selfCenterForm = new SelfCenterForm;
     }
+    m_selfCenterForm->init();
     m_selfCenterForm->show();
     m_selfCenterForm->raise();
     m_selfCenterForm->activateWindow();
@@ -569,5 +579,9 @@ void EiamiSysWindows::_action2Slot()
 
 void EiamiSysWindows::_action3Slot()
 {
+    on_action_about_triggered();
+}
 
+void EiamiSysWindows::on_pushButton_4_clicked()
+{
 }

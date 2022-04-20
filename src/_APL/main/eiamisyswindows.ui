@@ -1417,7 +1417,7 @@
      <normaloff>:/res/action/syslog.ico</normaloff>:/res/action/syslog.ico</iconset>
    </property>
    <property name="text">
-    <string>打开系统日志(&amp;F2)</string>
+    <string>系统日志(&amp;F2)</string>
    </property>
    <property name="toolTip">
     <string>查看优视运行中生成的日志</string>

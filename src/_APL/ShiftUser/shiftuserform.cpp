@@ -6,6 +6,7 @@
 
 #include <src/_BK/AccountEnt/AccountEnt.h>
 #include <src/_base/UVGlobal.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 ShiftUserForm::ShiftUserForm(QWidget *parent)
     : QDialog(parent)
@@ -29,6 +30,8 @@ ShiftUserForm::~ShiftUserForm()
 
 void ShiftUserForm::on_buttonBox_accepted()
 {
+    QString _beforeUser = UVGlobal::g_userName;
+
     QString _username = ui->m_usernameEdit->text().trimmed();
     QString _pwd = ui->m_pwdEdit->text();
 
@@ -63,6 +66,8 @@ void ShiftUserForm::on_buttonBox_accepted()
         UVGlobal::g_userID = _tmpUserLst.begin()->second->id;
 
         if(0 == QMessageBox::information(this, "提示", "更换用户成功!", tr("确定"))){
+            UserLogEnt::Create(_beforeUser, "退出 UVision 客户端");
+            UserLogEnt::Create(UVGlobal::g_userName, "登录 UVision 客户端");
             this->close();
         }
     }

@@ -59,8 +59,11 @@ SOURCES += \
     src/_APL/ShiftUser/shiftuserform.cpp \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.cpp \
     src/_APL/SysSettings/syssettingsform.cpp \
+    src/_APL/ThresholdSet/thresholdset.cpp \
     src/_APL/main/eiamisyswindows.cpp \
     src/_APL/regiuser/regiuserform.cpp \
+    src/_APL/settingTime/timeset.cpp \
+    src/_APL/settingYCode/ycodeset.cpp \
     src/_APL/userlogin/userloginform.cpp \
     src/_BK/AccountEnt/AccountEnt.cpp \
     src/_BK/BaseEnt/BaseEnt.cpp \
@@ -72,6 +75,7 @@ SOURCES += \
     src/_BK/PipelineEnt/PipelineEnt.cpp \
     src/_BK/TotalShow/TotalShow.cpp \
     src/_BK/TransformerEnt/TransformerEnt.cpp \
+    src/_BK/UserLogEnt/UserLogEnt.cpp \
     src/_base/DBSetup.cpp \
     src/_base/SysInit.cpp \
     src/_base/UVConfigXmlHander.cpp \
@@ -87,8 +91,11 @@ HEADERS += \
     src/_APL/ShiftUser/shiftuserform.h \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.h \
     src/_APL/SysSettings/syssettingsform.h \
+    src/_APL/ThresholdSet/thresholdset.h \
     src/_APL/main/eiamisyswindows.h \
     src/_APL/regiuser/regiuserform.h \
+    src/_APL/settingTime/timeset.h \
+    src/_APL/settingYCode/ycodeset.h \
     src/_APL/userlogin/userloginform.h \
     src/_BK/AccountEnt/AccountEnt.h \
     src/_BK/BaseEnt/BaseEnt.h \
@@ -100,6 +107,7 @@ HEADERS += \
     src/_BK/PipelineEnt/PipelineEnt.h \
     src/_BK/TotalShow/TotalShow.h \
     src/_BK/TransformerEnt/TransformerEnt.h \
+    src/_BK/UserLogEnt/UserLogEnt.h \
     src/_base/DBSetup.h \
     src/_base/SysInit.h \
     src/_base/UVConfigXmlHander.h \
@@ -117,8 +125,11 @@ FORMS += \
     src/_APL/ShiftUser/shiftuserform.ui \
     src/_APL/SimulateDataToolForm/simulatedatatoolform.ui \
     src/_APL/SysSettings/syssettingsform.ui \
+    src/_APL/ThresholdSet/thresholdset.ui \
     src/_APL/main/eiamisyswindows.ui \
     src/_APL/regiuser/regiuserform.ui \
+    src/_APL/settingTime/timeset.ui \
+    src/_APL/settingYCode/ycodeset.ui \
     src/_APL/userlogin/userloginform.ui
 
 # Default rules for deployment.

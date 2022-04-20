@@ -20,6 +20,7 @@
 #include <src/_BK/MotorEnt/MotorEnt.h>
 #include <src/_BK/PipelineEnt/PipelineEnt.h>
 #include <src/_BK/TransformerEnt/TransformerEnt.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 #include <src/_BK/LogEnt/LogEnt.h>
 
@@ -47,6 +48,7 @@ public:
         daoError = qx::dao::create_table<PipelineEnt>();
         daoError = qx::dao::create_table<TransformerEnt>();
         daoError = qx::dao::create_table<LogEnt>();
+        daoError = qx::dao::create_table<UserLogEnt>();
     }
 
     /// 程序走向标志 0：正常执行 1：生成表文件
