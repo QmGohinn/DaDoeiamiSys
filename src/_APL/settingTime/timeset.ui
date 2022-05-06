@@ -95,7 +95,7 @@
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="inputMethodHints">
-          <set>Qt::ImhNone</set>
+          <set>Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
          </property>
          <property name="text">
           <string/>
@@ -190,7 +190,7 @@
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="inputMethodHints">
-          <set>Qt::ImhNone</set>
+          <set>Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
          </property>
          <property name="text">
           <string/>
@@ -285,7 +285,7 @@
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="inputMethodHints">
-          <set>Qt::ImhNone</set>
+          <set>Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
          </property>
          <property name="text">
           <string/>

@@ -35,6 +35,10 @@ public:
     EiamiSysWindows(QWidget *parent = nullptr);
     ~EiamiSysWindows();
 
+    void setJDHeart(const int& _m);
+    void setZLHeart(const int& _m);
+    void setLOGHeart(const int& _m);
+
     void closeEvent(QCloseEvent* e);
 
     /// 系统设置Dialog

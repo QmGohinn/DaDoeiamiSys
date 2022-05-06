@@ -66,6 +66,7 @@ int main(int argc, char *argv[])
     /// 主界面
     EiamiSysWindows w;
     QThread::sleep(2);
+    UVGlobal::g_mainUI = &w;
     w.show();
     w.m_trayIcon->show();
 

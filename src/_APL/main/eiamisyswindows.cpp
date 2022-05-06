@@ -78,7 +78,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     updatew1tab1Chart();
     m_w1tab1Timer = new QTimer;
     connect(m_w1tab1Timer, SIGNAL(timeout()), this, SLOT(updatew1tab1Chart()));
-    m_w1tab1Timer->start(10000);
+    m_w1tab1Timer->start(UVGlobal::g_JDHeart * 1000);
 
     updateButtomTxt();
     m_buttomTxtTimer = new QTimer;
@@ -88,12 +88,12 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     updateLogTable();
     m_logTableTimer = new QTimer;
     connect(m_logTableTimer, SIGNAL(timeout()), this, SLOT(updateLogTable()));
-    m_logTableTimer->start(1000);
+    m_logTableTimer->start(UVGlobal::g_LOGHeart * 1000);
 
     updateDevTotal();
     m_devTotalTimer = new QTimer;
     connect(m_devTotalTimer, SIGNAL(timeout()), this, SLOT(updateDevTotal()));
-    m_devTotalTimer->start(1000);
+    m_devTotalTimer->start(UVGlobal::g_ZLHeart * 1000);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -620,4 +620,16 @@ void EiamiSysWindows::on_action_addRole_triggered()
 void EiamiSysWindows::on_action_opensysLog_triggered()
 {
     QProcess::startDetached("explorer Z:\\DaDoeiamiSys\\log");
+}
+
+void EiamiSysWindows::setJDHeart(const int &_m){
+    m_w1tab1Timer->start(_m * 1000);
+}
+
+void EiamiSysWindows::setZLHeart(const int &_m){
+    m_devTotalTimer->start(_m * 1000);
+}
+
+void EiamiSysWindows::setLOGHeart(const int &_m){
+    m_logTableTimer->start(_m * 1000);
 }

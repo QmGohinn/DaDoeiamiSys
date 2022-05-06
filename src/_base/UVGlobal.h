@@ -16,6 +16,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <iostream>
+#include "src/_APL/main/eiamisyswindows.h"
 
 #define DEV1TYPE "高温锅炉"
 #define DEV2TYPE "汽机"
@@ -40,6 +41,8 @@ public:
     ~UVGlobal();
 
 public:
+    static EiamiSysWindows* g_mainUI;
+
     static void init();
     static int g_currentStyle;
     static QVector<QString> g_widgetStyle;
@@ -51,6 +54,10 @@ public:
     static QMap<int, QString> g_devType;
     /// 运行日期
     static QDateTime g_DATETIME;
+
+    static int g_JDHeart;
+    static int g_ZLHeart;
+    static int g_LOGHeart;
 
     static int g_screenWidth;
     static int g_screenHeight;
