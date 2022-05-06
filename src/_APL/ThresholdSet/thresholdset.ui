@@ -52,8 +52,11 @@
        <property name="font">
         <font>
          <family>宋体</family>
-         <pointsize>10</pointsize>
+         <pointsize>12</pointsize>
         </font>
+       </property>
+       <property name="placeholderText">
+        <string>点击插入巡检日志至数据库中,暂不支持日志明细信息!</string>
        </property>
       </widget>
      </item>
@@ -208,8 +211,11 @@
        <property name="font">
         <font>
          <family>宋体</family>
-         <pointsize>10</pointsize>
+         <pointsize>12</pointsize>
         </font>
+       </property>
+       <property name="placeholderText">
+        <string>点击添加系统日志至文件中!</string>
        </property>
       </widget>
      </item>

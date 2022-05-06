@@ -25,3 +25,8 @@ void timeset::hideParTab(QWidget *_wid)
 {
     _wid->hide();
 }
+
+void timeset::on_pushButton_2_clicked()
+{
+    QMessageBox::information(this, "提示", "设置成功!", tr("确定"));
+}

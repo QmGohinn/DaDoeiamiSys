@@ -611,3 +611,13 @@ void EiamiSysWindows::on_pushButton_clicked()
 {
     on_pushButton_4_clicked();
 }
+
+void EiamiSysWindows::on_action_addRole_triggered()
+{
+    QMessageBox::information(this, "提示", "暂不支持用户权限提升!", tr("确定"));
+}
+
+void EiamiSysWindows::on_action_opensysLog_triggered()
+{
+    QProcess::startDetached("explorer Z:\\DaDoeiamiSys\\log");
+}
