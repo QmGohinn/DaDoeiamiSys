@@ -22,6 +22,8 @@ public:
     Ycodeset* m_ycodeSet = nullptr;
     thresholdset* m_thresholdset = nullptr;
 
+    void setIndex(int _index);
+
 private:
     Ui::SysSettingsForm *ui;
 };

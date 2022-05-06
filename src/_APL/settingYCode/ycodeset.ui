@@ -32,7 +32,7 @@
    <string>Ycodeset</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(240, 240, 240);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -55,6 +55,9 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radioButton">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="font">
           <font>
            <family>宋体</family>
@@ -64,11 +67,24 @@
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
           <string>悲观预测</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/gif/loading.gif</normaloff>:/res/gif/loading.gif</iconset>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -111,6 +127,16 @@
          </property>
          <property name="text">
           <string>乐观预测</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/gif/loading.gif</normaloff>:/res/gif/loading.gif</iconset>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -195,18 +221,73 @@
         </spacer>
        </item>
        <item>
-        <widget class="QDialogButtonBox" name="buttonBox">
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>111</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>宋体</family>
            <pointsize>10</pointsize>
           </font>
          </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
-         <property name="standardButtons">
-          <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+         <property name="text">
+          <string>确认</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/tab/sure.ico</normaloff>:/res/tab/sure.ico</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="minimumSize">
+          <size>
+           <width>111</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>宋体</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>退出</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Resource.qrc">
+           <normaloff>:/res/action/close.png</normaloff>:/res/action/close.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>20</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -216,6 +297,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../Resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

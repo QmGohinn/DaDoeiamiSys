@@ -43,5 +43,6 @@
         <file>res/selections/files.ico</file>
         <file>res/gif/main.gif</file>
         <file>res/action/style.ico</file>
+        <file>res/tab/sure.ico</file>
     </qresource>
 </RCC>

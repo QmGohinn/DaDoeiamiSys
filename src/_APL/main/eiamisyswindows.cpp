@@ -21,6 +21,8 @@
 #include <src/_BK/TransformerEnt/TransformerEnt.h>
 #include <src/_BK/UserLogEnt/UserLogEnt.h>
 
+SysSettingsForm* EiamiSysWindows::m_return = nullptr;
+
 EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::EiamiSysWindows)
@@ -91,7 +93,7 @@ EiamiSysWindows::EiamiSysWindows(QWidget *parent)
     updateDevTotal();
     m_devTotalTimer = new QTimer;
     connect(m_devTotalTimer, SIGNAL(timeout()), this, SLOT(updateDevTotal()));
-//    m_devTotalTimer->start(1000);
+    m_devTotalTimer->start(1000);
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 
@@ -553,6 +555,7 @@ void EiamiSysWindows::on_action_sysSetUp_triggered()
 {
     if(m_sysSetting == nullptr){
         m_sysSetting = new SysSettingsForm;
+        m_return = m_sysSetting;
     }
     m_sysSetting->show();
     m_sysSetting->raise();
@@ -584,4 +587,27 @@ void EiamiSysWindows::_action3Slot()
 
 void EiamiSysWindows::on_pushButton_4_clicked()
 {
+    on_action_sysSetUp_triggered();
+    m_sysSetting->setIndex(2);
+}
+
+void EiamiSysWindows::on_pushButton_3_clicked()
+{
+    on_action_sysSetUp_triggered();
+    m_sysSetting->setIndex(0);
+}
+
+void EiamiSysWindows::on_pushButton_2_clicked()
+{
+    on_pushButton_3_clicked();
+}
+
+void EiamiSysWindows::on_pushButton_5_clicked()
+{
+    on_pushButton_3_clicked();
+}
+
+void EiamiSysWindows::on_pushButton_clicked()
+{
+    on_pushButton_4_clicked();
 }

@@ -39,6 +39,10 @@ public:
 
     /// 系统设置Dialog
     SysSettingsForm* m_sysSetting = nullptr;
+    static SysSettingsForm* m_return;
+    static SysSettingsForm* getSysSetting(){
+        return m_return;
+    }
 
     /// 切换用户Dialog
     ShiftUserForm* m_shiftUser = nullptr;
@@ -124,5 +128,9 @@ private slots:
     void _action2Slot();
     void _action3Slot();
     void on_pushButton_4_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_5_clicked();
+    void on_pushButton_clicked();
 };
 #endif // EIAMISYSWINDOWS_H

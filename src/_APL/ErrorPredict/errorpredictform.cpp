@@ -52,7 +52,7 @@ void ErrorPredictForm::getPredictByInputSerial()
         qx::dao::execute_query(_query, lst);
 
         if(!lst.size()){
-            QMessageBox::information(this, "提示", "该设备编号不存在,请仔细核对!", tr("确定"));
+            QMessageBox::information(this, "提示", "该设备编号不存在或该设备还未进行巡检!", tr("确定"));
             return;
         }
 
@@ -101,6 +101,11 @@ void ErrorPredictForm::getPredictByInputSerial()
 void ErrorPredictForm::on_m_sureButton_clicked()
 {
     m_devSerial.clear();
+
+    while(ui->m_devTable->rowCount() != 0){
+        ui->m_devTable->removeRow(0);
+    }
+    ui->m_devTable->horizontalHeader()->hide();
 
     if(ui->m_totalRadio->isChecked()){
         qx_query _query("select DISTINCT ON(devserial) * from inspecorbaseinfo");

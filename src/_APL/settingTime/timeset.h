@@ -15,6 +15,11 @@ public:
     timeset(QWidget *parent = nullptr);
     ~timeset();
 
+    void hideParTab(QWidget* _wid);
+
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::timeset *ui;
 };

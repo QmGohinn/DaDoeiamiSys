@@ -14,7 +14,7 @@ SysSettingsForm::SysSettingsForm(QWidget *parent)
     ui->m_tabWidget->insertTab(1, m_ycodeSet, tr("预测属性"));
 
     m_thresholdset = new thresholdset;
-    ui->m_tabWidget->insertTab(2, m_thresholdset, tr("阈值设定"));
+    ui->m_tabWidget->insertTab(2, m_thresholdset, tr("插入日志"));
 
 }
 
@@ -23,3 +23,6 @@ SysSettingsForm::~SysSettingsForm()
     delete ui;
 }
 
+void SysSettingsForm::setIndex(int _index){
+    ui->m_tabWidget->setCurrentIndex(_index);
+}

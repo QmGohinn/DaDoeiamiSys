@@ -8,6 +8,7 @@
 #include <src/_BK/PipelineEnt/PipelineEnt.h>
 #include <src/_BK/TransformerEnt/TransformerEnt.h>
 #include <src/_base/UVGlobal.h>
+#include <src/_BK/UserLogEnt/UserLogEnt.h>
 
 DBSetup::DBSetup(){ ;; };
 
@@ -92,6 +93,7 @@ void DBSetup::AddDefaultUser()
     if (qx::dao::count<UserEnt>() == 0)
     {
         UserEnt::Create("wubin", "221376", 1);
+        UserLogEnt::Create("wubin", "注册成功!");
     }
 }
 
@@ -151,30 +153,17 @@ PATROLRES DBSetup::randRes(){
     qsrand(time.msec() + time.second() * 1000);
 
     PATROLRES _res = NRM;
-    switch ((qrand() + 24) % 40) {
+    switch (qrand() % 140) {
     case 24:
-    case 25:
-    case 26:
-    case 27:
-    case 28:
-    case 29:
         _res = QUESTION_1_LEVEL;
         break;
     case 20:
-    case 21:
-    case 1:
-    case 2:
         _res = QUESTION_2_LEVEL;
         break;
     case 35:
-    case 36:
         _res = QUESTION_3_LEVEL;
         break;
     case 23:
-    case 14:
-    case 13:
-    case 12:
-    case 11:
         _res = ERROE;
         break;
     default:

@@ -53,6 +53,11 @@ void KindOfDevLogForm::on_m_findButton_clicked()
 
     qx::dao::execute_query(_query, lst);
 
+    if(0 == lst.size()){
+        QMessageBox::information(this, "提示", "该设备编号不存在或该设备还未进行巡检!", tr("确定"));
+        return;
+    }
+
     while(ui->m_devTable->rowCount() != 0){
         ui->m_devTable->removeRow(0);
     }

@@ -64,7 +64,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -107,7 +107,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -136,7 +136,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -172,7 +172,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -222,7 +222,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -306,7 +306,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -335,7 +335,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -378,7 +378,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -400,7 +400,7 @@
          </font>
         </property>
         <property name="text">
-         <string>预留</string>
+         <string>-</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -429,7 +429,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
           <property name="flat">
            <bool>false</bool>
@@ -439,7 +439,7 @@
         <item row="6" column="6">
          <widget class="QPushButton" name="pushButton_20">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -498,7 +498,7 @@
         <item row="10" column="6">
          <widget class="QPushButton" name="pushButton_24">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -547,7 +547,7 @@
         <item row="10" column="4">
          <widget class="QPushButton" name="pushButton_22">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -599,7 +599,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
           <property name="default">
            <bool>false</bool>
@@ -632,7 +632,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
           <property name="flat">
            <bool>false</bool>
@@ -642,21 +642,21 @@
         <item row="4" column="4">
          <widget class="QPushButton" name="pushButton_14">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
         <item row="8" column="6">
          <widget class="QPushButton" name="pushButton_23">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
         <item row="4" column="6">
          <widget class="QPushButton" name="pushButton_18">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -669,7 +669,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
           <property name="default">
            <bool>false</bool>
@@ -682,7 +682,7 @@
         <item row="8" column="4">
          <widget class="QPushButton" name="pushButton_21">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -705,7 +705,7 @@
         <item row="6" column="4">
          <widget class="QPushButton" name="pushButton_19">
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -771,7 +771,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -784,7 +784,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -797,7 +797,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -810,7 +810,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -823,7 +823,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -835,8 +835,24 @@
             <height>50</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="text">
-           <string>预留</string>
+           <string>清空数据库</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../Resource.qrc">
+            <normaloff>:/res/tab/clear.ico</normaloff>:/res/tab/clear.ico</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
           </property>
           <property name="default">
            <bool>false</bool>
@@ -855,7 +871,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -868,7 +884,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
           <property name="default">
            <bool>false</bool>
@@ -887,7 +903,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -900,7 +916,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -913,7 +929,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
@@ -926,7 +942,7 @@
            </size>
           </property>
           <property name="text">
-           <string>预留</string>
+           <string>-</string>
           </property>
          </widget>
         </item>
