@@ -13,13 +13,13 @@ timeset::timeset(QWidget *parent)
     QRegExp regx("[1-9][0-9]");
     QValidator *validator = new QRegExpValidator(regx, ui->lineEdit );
     ui->lineEdit->setValidator(validator);
-    ui->lineEdit->setText("10");
+    ui->lineEdit->setText("5");
     QValidator *validator_2 = new QRegExpValidator(regx, ui->lineEdit_2 );
     ui->lineEdit_2->setValidator(validator_2);
-    ui->lineEdit_2->setText("1");
+    ui->lineEdit_2->setText("5");
     QValidator *validator_3 = new QRegExpValidator(regx, ui->lineEdit_3 );
     ui->lineEdit_3->setValidator(validator_3);
-    ui->lineEdit_3->setText("1");
+    ui->lineEdit_3->setText("5");
 }
 
 timeset::~timeset()

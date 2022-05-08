@@ -588,12 +588,14 @@ void EiamiSysWindows::_action3Slot()
 void EiamiSysWindows::on_pushButton_4_clicked()
 {
     on_action_sysSetUp_triggered();
+    m_sysSetting->setFocus();
     m_sysSetting->setIndex(2);
 }
 
 void EiamiSysWindows::on_pushButton_3_clicked()
 {
     on_action_sysSetUp_triggered();
+    m_sysSetting->setFocus();
     m_sysSetting->setIndex(0);
 }
 
