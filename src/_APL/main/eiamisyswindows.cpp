@@ -421,12 +421,71 @@ void EiamiSysWindows::updateDevTotal()
         ui->m_devTotal->removeRow(0);
     }
 
+    int index1 = ui->comboBox_2->currentIndex();
+    int index2 = ui->comboBox->currentIndex();
+
+    std::cout << index1 << "," << index2 << std::endl;
+
+    QString _needDevKind = "";
+    int _needRes = 2;
+
+    switch (index1) {
+    case 1:
+        _needDevKind = "GL";
+        break;
+    case 2:
+        _needDevKind = "BY";
+        break;
+    case 3:
+        _needDevKind = "QJ";
+        break;
+    case 4:
+        _needDevKind = "PD";
+        break;
+    case 5:
+        _needDevKind = "GD";
+        break;
+    default:
+        break;
+    }
+
+    switch (index2) {
+    case 1:
+        _needRes = 1;
+        break;
+    case 2:
+        _needRes = -1;
+        break;
+    case 3:
+        _needRes = -2;
+        break;
+    case 4:
+        _needRes = -3;
+        break;
+    case 5:
+        _needRes = 0;
+        break;
+    default:
+        break;
+    }
+
+    std::cout << _needRes << "," << _needDevKind.toStdString() << std::endl;
+
     qx_query _query("select DISTINCT ON(devserial) * from inspecorbaseinfo order by devserial ASC, updated_at DESC");
     List_InspecorEnt lst;
 
     qx::dao::execute_query(_query, lst);
     int i = 0;
     for(const auto& _p : lst){
+
+        if(index1 + index2 != 0){
+            if(index1 != 0 && false == _p.second.m_devSerial.startsWith(_needDevKind)){
+                continue;
+            }
+            if(index2 != 0 && _p.second.m_res != _needRes){
+                continue;
+            }
+        }
 
         ui->m_devTotal->insertRow(i);
 
@@ -634,4 +693,18 @@ void EiamiSysWindows::setZLHeart(const int &_m){
 
 void EiamiSysWindows::setLOGHeart(const int &_m){
     m_logTableTimer->start(_m * 1000);
+}
+
+void EiamiSysWindows::on_comboBox_2_currentIndexChanged(int index)
+{
+//    std::cout << index << std::endl;
+    Q_UNUSED(index)
+    updateDevTotal();
+}
+
+void EiamiSysWindows::on_comboBox_currentIndexChanged(int index)
+{
+//    std::cout << index << std::endl;
+    Q_UNUSED(index)
+    updateDevTotal();
 }

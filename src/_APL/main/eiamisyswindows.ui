@@ -719,7 +719,7 @@
     </item>
     <item row="3" column="1">
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="3" column="0">
+      <item row="5" column="0">
        <widget class="QTableWidget" name="m_devTotal">
         <property name="font">
          <font>
@@ -898,7 +898,7 @@
         </property>
        </spacer>
       </item>
-      <item row="4" column="0">
+      <item row="6" column="0">
        <widget class="QLineEdit" name="m_peopleInfoEdit">
         <property name="enabled">
          <bool>false</bool>
@@ -927,31 +927,193 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>设备信息总览</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="textInteractionFlags">
-         <set>Qt::NoTextInteraction</set>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="text">
+           <string>设备信息总览</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::AutoText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::NoTextInteraction</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Maximum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>250</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>113</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>任意种类</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>高温锅炉</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>变压器</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>汽机</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>输煤皮带</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>高压管道</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_23">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>任意状态</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>正常</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>风险等级Ⅰ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>风险等级Ⅱ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>风险等级Ⅲ</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>故障停工</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item row="2" column="0">
+      <item row="4" column="0">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>

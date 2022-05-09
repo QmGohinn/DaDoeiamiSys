@@ -138,5 +138,7 @@ private slots:
     void on_pushButton_clicked();
     void on_action_addRole_triggered();
     void on_action_opensysLog_triggered();
+    void on_comboBox_2_currentIndexChanged(int index);
+    void on_comboBox_currentIndexChanged(int index);
 };
 #endif // EIAMISYSWINDOWS_H
