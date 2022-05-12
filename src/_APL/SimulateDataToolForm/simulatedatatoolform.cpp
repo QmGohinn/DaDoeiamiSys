@@ -34,18 +34,20 @@ void SimulateDataToolForm::on_pushButton_7_clicked()
 
 void SimulateDataToolForm::on_pushButton_2_clicked()
 {
-    for(int i = 0; i < 3; ++i){
-        qx_query _query(QString("delete from belt;"
-                                "delete from boiler;"
-                                "delete from inspecorbaseinfo;"
-                                "delete from motor;"
-                                "delete from pipeline;"
-                                "delete from totalshow;"
-                                "delete from transformer"
-                                ";delete from userlist;"
-                                "delete from dblog;"
-                                "delete from userlog;"));
-        List_UserEnt _lst;
-        qx::dao::execute_query(_query, _lst);
+    if(0 == QMessageBox::warning(this, "警告", "您确定清空数据库吗?", tr("确定"), tr("取消"))){
+        for(int i = 0; i < 3; ++i){
+            qx_query _query(QString("delete from belt;"
+                                    "delete from boiler;"
+                                    "delete from inspecorbaseinfo;"
+                                    "delete from motor;"
+                                    "delete from pipeline;"
+                                    "delete from totalshow;"
+                                    "delete from transformer;"
+                                    "delete from userlist;"
+                                    "delete from dblog;"
+                                    "delete from userlog;"));
+            List_UserEnt _lst;
+            qx::dao::execute_query(_query, _lst);
+        }
     }
 }

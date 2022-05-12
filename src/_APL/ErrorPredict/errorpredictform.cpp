@@ -205,3 +205,46 @@ void ErrorPredictForm::insertRes(const QString& _devStr,const QString& _res1, co
                                           (QPair<QString, QString>(_num1, _res1), QPair<QString, QString>(_num2, _res2)));
 }
 
+
+void ErrorPredictForm::excelCrt(Document *_doc)
+{
+    if(ui->m_devTable->rowCount()){
+
+        _doc->addSheet("故障预测统计表");
+        _doc->selectSheet("故障预测统计表");
+        _doc->setColumnWidth(2, 20);
+        _doc->setColumnWidth(3, 20);
+        _doc->setColumnWidth(4, 40);
+        _doc->setColumnWidth(5, 40);
+        _doc->setColumnWidth(6, 40);
+        _doc->write("B2", "设备编号");
+        _doc->write("C2", "预测结果Ⅰ");
+        _doc->write("D2", "结果Ⅰ概率");
+        _doc->write("E2", "预测结果Ⅱ");
+        _doc->write("F2", "结果Ⅱ概率");
+
+        QString column = "B";
+        QString column1 = "C";
+        QString column2 = "D";
+        QString column3 = "E";
+        QString column4 = "F";
+
+        int row = 3;
+        for(int i = 0; i < ui->m_devTable->rowCount(); ++i){
+            QString _tmpCell = column + QString("%1").arg(row);
+            QString _tmpCell1 = column1 + QString("%1").arg(row);
+            QString _tmpCell2 = column2 + QString("%1").arg(row);
+            QString _tmpCell3 = column3 + QString("%1").arg(row);
+            QString _tmpCell4 = column4 + QString("%1").arg(row);
+
+            _doc->write(_tmpCell, ui->m_devTable->item(i, 0)->text());
+            _doc->write(_tmpCell1, ui->m_devTable->item(i, 1)->text());
+            _doc->write(_tmpCell2, ui->m_devTable->item(i, 2)->text());
+            _doc->write(_tmpCell3, ui->m_devTable->item(i, 3)->text());
+            _doc->write(_tmpCell4, ui->m_devTable->item(i, 4)->text());
+
+            row += 1;
+        }
+        _doc->selectSheet("设备运行总览表");
+    }
+}

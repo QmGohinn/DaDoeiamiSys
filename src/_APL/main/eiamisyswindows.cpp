@@ -248,6 +248,8 @@ void EiamiSysWindows::updatew1tab1Chart()
 ///                                                                 设置x坐标轴
     QBarCategoryAxis* _axis = new QBarCategoryAxis();
     _axis->append(_devTypeLst);
+//    _axis->setTitleText("设备种类");
+//    _axis->setTitleFont(QFont("宋体", 10));
 /// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 /// - * - * - * - * - *- * - * - * -* - * -* - * -
@@ -261,9 +263,11 @@ void EiamiSysWindows::updatew1tab1Chart()
     m_w1tab1Chart->setAxisX(_axis);
 
     m_w1tab1Chart->axisY()->setRange(0, _maxNum + 18);
+
     m_w1tab1Chart->legend()->setVisible(true);
     m_w1tab1Chart->legend()->setAlignment(Qt::AlignBottom);
-
+    m_w1tab1Chart->axisY()->setTitleText("设备数量/台");
+    m_w1tab1Chart->axisY()->setTitleFont(QFont("宋体", 10));
     ui->m_w1tab1Chart->setChart(m_w1tab1Chart);
 /// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
@@ -424,8 +428,6 @@ void EiamiSysWindows::updateDevTotal()
     int index1 = ui->comboBox_2->currentIndex();
     int index2 = ui->comboBox->currentIndex();
 
-    std::cout << index1 << "," << index2 << std::endl;
-
     QString _needDevKind = "";
     int _needRes = 2;
 
@@ -468,8 +470,6 @@ void EiamiSysWindows::updateDevTotal()
     default:
         break;
     }
-
-    std::cout << _needRes << "," << _needDevKind.toStdString() << std::endl;
 
     qx_query _query("select DISTINCT ON(devserial) * from inspecorbaseinfo order by devserial ASC, updated_at DESC");
     List_InspecorEnt lst;
@@ -697,14 +697,70 @@ void EiamiSysWindows::setLOGHeart(const int &_m){
 
 void EiamiSysWindows::on_comboBox_2_currentIndexChanged(int index)
 {
-//    std::cout << index << std::endl;
     Q_UNUSED(index)
     updateDevTotal();
 }
 
 void EiamiSysWindows::on_comboBox_currentIndexChanged(int index)
 {
-//    std::cout << index << std::endl;
     Q_UNUSED(index)
     updateDevTotal();
+}
+
+void EiamiSysWindows::on_action_Total_triggered()
+{
+    updateDevTotal();
+}
+
+#include "3rd/QXlsx/header/xlsxdocument.h"
+using namespace QXlsx;
+
+void EiamiSysWindows::on_action_Excel_triggered()
+{
+//    QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo("..//..//..//template//template.xlsx").absoluteFilePath()));
+
+    QString filePath = QFileDialog::getSaveFileName(this, tr("选择保存路径"), tr("..\\..\\..\\excel\\新建 Microsoft Excel 工作表.xlsx"), QStringLiteral("*.xlsx"));
+    if(filePath.isEmpty())
+    {
+        return;
+    }
+
+    QXlsx::Document doc;
+    doc.setColumnWidth(2, 30);
+    doc.setColumnWidth(3, 30);
+    doc.setColumnWidth(4, 50);
+    doc.setColumnWidth(5, 50);
+    doc.write("B2", "设备编号");
+    doc.write("C2", "设备类型");
+    doc.write("D2", "前次巡检结果");
+    doc.write("E2", "前次巡检时间");
+
+    QString column = "B";
+    QString column1 = "C";
+    QString column2 = "D";
+    QString column3 = "E";
+    int row = 3;
+    qDebug() << ui->m_devTotal->rowCount() << "\n";
+    for(int i = 0; i < ui->m_devTotal->rowCount(); ++i){
+        QString _tmpCell = column + QString("%1").arg(row);
+        QString _tmpCell1 = column1 + QString("%1").arg(row);
+        QString _tmpCell2 = column2 + QString("%1").arg(row);
+        QString _tmpCell3 = column3 + QString("%1").arg(row);
+
+        qDebug() << _tmpCell << "\n";
+        qDebug() << _tmpCell1 << "\n";
+        qDebug() << _tmpCell2 << "\n";
+        qDebug() << _tmpCell3 << "\n";
+
+        doc.write(_tmpCell, ui->m_devTotal->item(i, 0)->text());
+        doc.write(_tmpCell1, ui->m_devTotal->item(i, 1)->text());
+        doc.write(_tmpCell2, ui->m_devTotal->item(i, 3)->text());
+        doc.write(_tmpCell3, ui->m_devTotal->item(i, 4)->text());
+
+        row += 1;
+    }
+    doc.renameSheet("Sheet1", "设备运行总览表");
+    m_tabErrorPre->excelCrt(&doc);
+    doc.saveAs(filePath);
+    QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(filePath).absoluteFilePath()));
 }

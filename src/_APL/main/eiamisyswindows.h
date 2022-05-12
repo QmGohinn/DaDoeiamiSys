@@ -140,5 +140,15 @@ private slots:
     void on_action_opensysLog_triggered();
     void on_comboBox_2_currentIndexChanged(int index);
     void on_comboBox_currentIndexChanged(int index);
+    void on_action_Total_triggered();
+    void on_action_Excel_triggered();
 };
+
+class ExcelBase1Info{
+    QString m_serial;
+    QString m_kind;
+    QString m_res;
+    QString m_time;
+};
+
 #endif // EIAMISYSWINDOWS_H

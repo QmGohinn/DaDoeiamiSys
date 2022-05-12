@@ -2,6 +2,8 @@
 #define ERRORPREDICTFORM_H
 
 #include <QWidget>
+#include "3rd/QXlsx/header/xlsxdocument.h"
+using namespace QXlsx;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ErrorPredictForm; }
@@ -25,6 +27,10 @@ public:
 
     /// 预测结果插入数据
     void insertRes(const QString&, const QString&, const QString&, const QString&, const QString&);
+
+
+    /// 导出 excel 文件
+    void excelCrt(Document* _doc);
 
 private slots:
     void on_m_sureButton_clicked();

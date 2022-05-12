@@ -1,6 +1,7 @@
 ## 包含QxOrm模块和QsLog库的pri文件
 include($$PWD/3rd/QxOrm/QxOrm.pri)
 include($$PWD/3rd/QsLog/QsLog.pri)
+include($$PWD/3rd/QXlsx/QXlsx.pri)
 
 DEFINES += _BUILDING_APP
 
@@ -141,11 +142,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     .gitignore \
     3rd/QsLog/lib/QsLog2.dll \
-    3rd/QsLog/lib/libQsLog2.a \
     3rd/QxOrm/lib/QxOrm.dll \
     3rd/QxOrm/lib/QxOrmd.dll \
-    3rd/QxOrm/lib/libQxOrm.a \
-    3rd/QxOrm/lib/libQxOrmd.a \
     HELP.txt \
     README.md \
     bat/fix.bat \
@@ -169,14 +167,7 @@ DISTFILES += \
     doc/版本文档/开题报告.doc \
     doc/版本文档/开题报告初版.doc \
     doc/版本文档/文献综述.doc \
-    doc/版本文档/文献翻译.doc \
-    res/gif/main.gif \
-    res/selections/box.ico \
-    res/tab/find.ico \
-    res/tab/info.ico \
-    res/tab/kinds.ico \
-    res/tab/prob.ico \
-    res/tab/time.ico
+    doc/版本文档/文献翻译.doc
 
 ## 程序LOGO
 RC_ICONS += res/logo/exelogo.ico

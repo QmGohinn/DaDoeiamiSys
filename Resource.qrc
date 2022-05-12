@@ -44,5 +44,7 @@
         <file>res/gif/main.gif</file>
         <file>res/action/style.ico</file>
         <file>res/tab/sure.ico</file>
+        <file>res/action/excel.ico</file>
+        <file>res/action/view.ico</file>
     </qresource>
 </RCC>

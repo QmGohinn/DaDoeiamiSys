@@ -414,7 +414,7 @@
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>40</height>
+              <height>30</height>
              </size>
             </property>
             <property name="font">
@@ -906,13 +906,13 @@
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>40</height>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>40</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -1158,6 +1158,8 @@
     <addaction name="separator"/>
     <addaction name="action_simulatedata"/>
     <addaction name="separator"/>
+    <addaction name="action_Excel"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_U">
     <property name="cursor">
@@ -1186,6 +1188,10 @@
     <addaction name="separator"/>
     <addaction name="action_refreshTotal"/>
     <addaction name="separator"/>
+    <addaction name="action_refreshLog"/>
+    <addaction name="separator"/>
+    <addaction name="action_Total"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_R">
     <property name="cursor">
@@ -1197,7 +1203,6 @@
     <addaction name="separator"/>
     <addaction name="action_opensysLog"/>
     <addaction name="separator"/>
-    <addaction name="action_refreshLog"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_H">
@@ -1287,8 +1292,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>80</width>
-     <height>36</height>
+     <width>70</width>
+     <height>28</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -1307,7 +1312,6 @@
    <addaction name="action_changePWD"/>
    <addaction name="separator"/>
    <addaction name="action_shiftUser"/>
-   <addaction name="separator"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="minimumSize">
@@ -1333,8 +1337,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>80</width>
-     <height>36</height>
+     <width>70</width>
+     <height>28</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -1350,6 +1354,7 @@
    <addaction name="separator"/>
    <addaction name="action_simulatedata"/>
    <addaction name="separator"/>
+   <addaction name="action_Excel"/>
   </widget>
   <widget class="QToolBar" name="toolBar_3">
    <property name="minimumSize">
@@ -1381,8 +1386,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>80</width>
-     <height>36</height>
+     <width>70</width>
+     <height>28</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -1554,6 +1559,9 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Alt+F5</string>
+   </property>
   </action>
   <action name="action_about">
    <property name="icon">
@@ -1632,6 +1640,9 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Alt+U</string>
+   </property>
   </action>
   <action name="action_shiftUser">
    <property name="icon">
@@ -1679,6 +1690,39 @@
      <family>宋体</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+  </action>
+  <action name="action_Excel">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/excel.ico</normaloff>:/res/action/excel.ico</iconset>
+   </property>
+   <property name="text">
+    <string>导出文档(&amp;P)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_Total">
+   <property name="icon">
+    <iconset resource="../../../Resource.qrc">
+     <normaloff>:/res/action/view.ico</normaloff>:/res/action/view.ico</iconset>
+   </property>
+   <property name="text">
+    <string>刷新总览</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F5</string>
    </property>
   </action>
  </widget>
