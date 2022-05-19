@@ -46,5 +46,19 @@
         <file>res/tab/sure.ico</file>
         <file>res/action/excel.ico</file>
         <file>res/action/view.ico</file>
+        <file>res/tab/belt.ico</file>
+        <file>res/tab/boiler.ico</file>
+        <file>res/tab/motor.ico</file>
+        <file>res/tab/pipeline.ico</file>
+        <file>res/tab/transformer.ico</file>
+        <file>res/tab/editable.ico</file>
+        <file>res/tab/edit.ico</file>
+        <file>res/tab/insert.ico</file>
+        <file>res/tab/1.ico</file>
+        <file>res/tab/2.ico</file>
+        <file>res/tab/3.ico</file>
+        <file>res/tab/error.ico</file>
+        <file>res/tab/safe.ico</file>
+        <file>res/tab/all.ico</file>
     </qresource>
 </RCC>

@@ -24,6 +24,20 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_29_clicked();
+
+    void on_pushButton_30_clicked();
+
+    void on_pushButton_27_clicked();
+
+    void on_pushButton_28_clicked();
+
+    void on_pushButton_25_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::SimulateDataToolForm *ui;
 };

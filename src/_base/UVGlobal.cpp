@@ -10,6 +10,7 @@ using namespace QsLogging;
 /// * * * * * * * * * * * * * * * * * * *
 /// the global param define start
 EiamiSysWindows* UVGlobal::g_mainUI = nullptr;
+bool UVGlobal::g_insertFlg = false;
 int UVGlobal::g_JDHeart = 5;
 int UVGlobal::g_ZLHeart = 5;
 int UVGlobal::g_LOGHeart = 5;

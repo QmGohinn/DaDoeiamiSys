@@ -613,9 +613,10 @@ void EiamiSysWindows::on_action_shiftUser_triggered()
 void EiamiSysWindows::on_action_sysSetUp_triggered()
 {
     if(m_sysSetting == nullptr){
-        m_sysSetting = new SysSettingsForm;
+        m_sysSetting = new SysSettingsForm(this);
         m_return = m_sysSetting;
     }
+    m_sysSetting->setIndex(0);
     m_sysSetting->show();
     m_sysSetting->raise();
     m_sysSetting->activateWindow();
@@ -699,12 +700,14 @@ void EiamiSysWindows::on_comboBox_2_currentIndexChanged(int index)
 {
     Q_UNUSED(index)
     updateDevTotal();
+    ui->m_peopleInfoEdit->hide();
 }
 
 void EiamiSysWindows::on_comboBox_currentIndexChanged(int index)
 {
     Q_UNUSED(index)
     updateDevTotal();
+    ui->m_peopleInfoEdit->hide();
 }
 
 void EiamiSysWindows::on_action_Total_triggered()
@@ -719,7 +722,7 @@ void EiamiSysWindows::on_action_Excel_triggered()
 {
 //    QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo("..//..//..//template//template.xlsx").absoluteFilePath()));
 
-    QString filePath = QFileDialog::getSaveFileName(this, tr("选择保存路径"), tr("..\\..\\..\\excel\\新建 Microsoft Excel 工作表.xlsx"), QStringLiteral("*.xlsx"));
+    QString filePath = QFileDialog::getSaveFileName(this, tr("选择保存路径"), tr("..\\..\\..\\excel\\巡检信息表.xlsx"), QStringLiteral("*.xlsx"));
     if(filePath.isEmpty())
     {
         return;

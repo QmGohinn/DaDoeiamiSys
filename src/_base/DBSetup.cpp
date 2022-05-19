@@ -35,12 +35,13 @@ void DBSetup::DBInsertSimulate()
     List_InspecorEnt lst;
     qx::dao::fetch_all(lst);
 
-    if(lst.size() < 3000){
+    if(lst.size() < 3000 || UVGlobal::g_insertFlg == true){
         DBSetup::DB_Belt_Simulate();
         DBSetup::DB_Boiler_Simulate();
         DBSetup::DB_Motor_Simulate();
         DBSetup::DB_Pipeline_Simulate();
         DBSetup::DB_Transformer_Simulate();
+        UVGlobal::g_insertFlg = false;
     }
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //
 /// -▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲-▲ //

@@ -1018,30 +1018,54 @@
            <property name="text">
             <string>任意种类</string>
            </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/all.ico</normaloff>:/res/tab/all.ico</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>高温锅炉</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/boiler.ico</normaloff>:/res/tab/boiler.ico</iconset>
            </property>
           </item>
           <item>
            <property name="text">
             <string>变压器</string>
            </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/transformer.ico</normaloff>:/res/tab/transformer.ico</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>汽机</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/motor.ico</normaloff>:/res/tab/motor.ico</iconset>
            </property>
           </item>
           <item>
            <property name="text">
             <string>输煤皮带</string>
            </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/belt.ico</normaloff>:/res/tab/belt.ico</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>高压管道</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/pipeline.ico</normaloff>:/res/tab/pipeline.ico</iconset>
            </property>
           </item>
          </widget>
@@ -1057,13 +1081,13 @@
          <widget class="QComboBox" name="comboBox">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>113</width>
             <height>20</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
+            <width>150</width>
             <height>16777215</height>
            </size>
           </property>
@@ -1083,30 +1107,54 @@
            <property name="text">
             <string>任意状态</string>
            </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/all.ico</normaloff>:/res/tab/all.ico</iconset>
+           </property>
           </item>
           <item>
            <property name="text">
             <string>正常</string>
            </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>风险等级Ⅰ</string>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/safe.ico</normaloff>:/res/tab/safe.ico</iconset>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>风险等级Ⅱ</string>
+            <string>Ⅰ级风险</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/1.ico</normaloff>:/res/tab/1.ico</iconset>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>风险等级Ⅲ</string>
+            <string>Ⅱ级风险</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/2.ico</normaloff>:/res/tab/2.ico</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ⅲ级风险</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/3.ico</normaloff>:/res/tab/3.ico</iconset>
            </property>
           </item>
           <item>
            <property name="text">
             <string>故障停工</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../Resource.qrc">
+             <normaloff>:/res/tab/error.ico</normaloff>:/res/tab/error.ico</iconset>
            </property>
           </item>
          </widget>

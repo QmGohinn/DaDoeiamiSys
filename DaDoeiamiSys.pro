@@ -167,7 +167,8 @@ DISTFILES += \
     doc/版本文档/开题报告.doc \
     doc/版本文档/开题报告初版.doc \
     doc/版本文档/文献综述.doc \
-    doc/版本文档/文献翻译.doc
+    doc/版本文档/文献翻译.doc \
+    res/tab/editable.ico
 
 ## 程序LOGO
 RC_ICONS += res/logo/exelogo.ico

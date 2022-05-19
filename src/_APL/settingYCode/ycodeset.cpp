@@ -23,5 +23,5 @@ void Ycodeset::on_pushButton_2_clicked()
 
 void Ycodeset::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "提示", "设置成功!", tr("确定"));
+    QMessageBox::warning(this, "提示", "暂未支持该功能!", tr("确定"));
 }

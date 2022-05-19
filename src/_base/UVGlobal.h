@@ -42,7 +42,7 @@ public:
 
 public:
     static EiamiSysWindows* g_mainUI;
-
+    static bool g_insertFlg;
     static void init();
     static int g_currentStyle;
     static QVector<QString> g_widgetStyle;

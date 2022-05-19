@@ -162,25 +162,45 @@
         <property name="text">
          <string>高温锅炉</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../../Resource.qrc">
+          <normaloff>:/res/tab/boiler.ico</normaloff>:/res/tab/boiler.ico</iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>汽机</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../Resource.qrc">
+          <normaloff>:/res/tab/motor.ico</normaloff>:/res/tab/motor.ico</iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>变压器</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../../Resource.qrc">
+          <normaloff>:/res/tab/transformer.ico</normaloff>:/res/tab/transformer.ico</iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>高压管道</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../../Resource.qrc">
+          <normaloff>:/res/tab/pipeline.ico</normaloff>:/res/tab/pipeline.ico</iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>输煤皮带</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../Resource.qrc">
+          <normaloff>:/res/tab/belt.ico</normaloff>:/res/tab/belt.ico</iconset>
         </property>
        </item>
       </widget>
