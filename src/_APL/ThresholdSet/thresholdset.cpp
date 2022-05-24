@@ -30,6 +30,11 @@ void thresholdset::on_pushButton_5_clicked()
 
 void thresholdset::on_pushButton_2_clicked()
 {
+    if(0 == UVGlobal::g_currentRole){
+        QMessageBox::warning(this, "警告", "您当前权限不支持该操作!", "我知道了");
+        return;
+    }
+
     if(ui->textEdit->toPlainText().compare("")){
     LogEnt::Create(SysLog, ui->textEdit->toPlainText());
     ui->textEdit->clear();
@@ -38,6 +43,11 @@ void thresholdset::on_pushButton_2_clicked()
 
 void thresholdset::on_pushButton_3_clicked()
 {
+    if(0 == UVGlobal::g_currentRole){
+        QMessageBox::warning(this, "警告", "您当前权限不支持该操作!", "我知道了");
+        return;
+    }
+
     if(ui->textEdit_2->toPlainText().compare("")){
     QLOG_INFO() << ui->textEdit_2->toPlainText();
     ui->textEdit_2->clear();

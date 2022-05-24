@@ -767,3 +767,20 @@ void EiamiSysWindows::on_action_Excel_triggered()
     doc.saveAs(filePath);
     QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(filePath).absoluteFilePath()));
 }
+
+void EiamiSysWindows::on_m_logTable_itemDoubleClicked(QTableWidgetItem *item)
+{
+    if(0 == QMessageBox::question(this, "提示", "确定删除该条日志吗?", "确认", "取消")){
+        if(0 == UVGlobal::g_currentRole){
+            QMessageBox::warning(this, "警告", "您当前权限不支持该操作!", "我知道了");
+            return;
+        }
+        else{
+            int id = ui->m_logTable->item(item->row(), 2)->text().toInt();
+            qx::QxSqlQuery _query(QString("where id = '%1'")
+                                  .arg(id));
+            qx::dao::delete_by_query<LogEnt>(_query);
+            QMessageBox::information(this, "通知", "删除成功!", "我知道了");
+        }
+    }
+}

@@ -142,6 +142,7 @@ private slots:
     void on_comboBox_currentIndexChanged(int index);
     void on_action_Total_triggered();
     void on_action_Excel_triggered();
+    void on_m_logTable_itemDoubleClicked(QTableWidgetItem *item);
 };
 
 class ExcelBase1Info{
